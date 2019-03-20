@@ -4,49 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Sandbox</title>
 		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-		<script>
-			AFRAME.registerComponent("outline", {
-				init: function(){
-
-					this.createOutline = this.createOutline.bind(this);
-
-					const outline1 = this.createOutline();
-				},
-				createOutline: function(object){
-
-					const {
-						children: properties
-					} = object || this.el.object3D;
-
-					if(properties.length > 0){
-						for(let property of properties){
-
-							console.log(property)
-
-							switch(property.type){
-								case "Mesh":
-									console.log("adding mesh!")
-									const geometry       = property.geometry;
-									const material       = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.BackSide });
-									const mesh           = new THREE.Mesh(geometry, material);
-									mesh.scale.multiplyScalar(1.025)
-									this.el.object3D.add(mesh);
-
-									
-									break;
-								case "Group":
-									console.log("recursively calling group...")
-									setTimeout(() => {
-										this.createOutline(property);
-									}, 10);
-									break;
-							}
-						}
-					} else setTimeout(this.createOutline, 50);
-					
-				}//createOutline
-			});
-		</script>
+		<script src="js/components/outline.js"></script>
 	</head>
 	<body>
 		<a-scene>

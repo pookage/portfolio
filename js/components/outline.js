@@ -6,7 +6,7 @@ AFRAME.registerComponent("outline", {
 		const outline1 = this.createOutline(this.el.object3D, .012);
 		const outline2 = this.createOutline(this.el.object3D, -.012);
 	},
-	createOutline: function(object, offset = 0.02, scale = 1){
+	createOutline: async function(object, offset = 0.02, scale = 1){
 
 		const {
 			children: properties
@@ -15,11 +15,8 @@ AFRAME.registerComponent("outline", {
 		if(properties.length > 0){
 			for(let property of properties){
 
-				console.log(property)
-
 				switch(property.type){
 					case "Mesh":
-						console.log("adding mesh!")
 						const geometry       = property.geometry;
 						const material       = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.BackSide });
 						const mesh           = new THREE.Mesh(geometry, material);
@@ -32,18 +29,14 @@ AFRAME.registerComponent("outline", {
 
 						mesh.scale.multiplyScalar(scale)
 						this.el.object3D.add(mesh);
-
-						
 						break;
+
 					case "Group":
-						console.log("recursively calling group...")
-						setTimeout(() => {
-							this.createOutline(property, offset);
-						}, 10);
+						setTimeout(this.createOutline.bind(true, property, offset), 0); 
 						break;
 				}
 			}
-		} else setTimeout(this.createOutline.bind(true, object, offset), 50);
+		} else setTimeout(this.createOutline.bind(true, object, offset), 100);
 		
 	}//createOutline
 });

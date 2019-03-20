@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Portfolio Site WIP</title>
 		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
 		<script src="js/components/outline.js"></script>
 	</head>
 	<body>
@@ -11,15 +12,30 @@
 			background="color: black;"
 			vr-mode-ui="enabled: false">
 
-			<!-- ASSETS -->
+			
 			<a-assets>
+
+				<!-- ASSETS -->	
 				<a-asset-item id="bed-model" src="assets/3d/bed/model.obj"></a-asset-item>
 				<a-asset-item id="desk-model" src="assets/3d/desk/model.obj"></a-asset-item>
 				<a-asset-item id="lighthouse-model" src="assets/3d/lighthouse/model.obj"></a-asset-item>
 				<a-asset-item id="plug-model" src="assets/3d/plug/model.obj"></a-asset-item>
 				<a-asset-item id="vive-model" src="assets/3d/vive/model.obj"></a-asset-item>
 				<a-asset-item id="box-model" src="assets/3d/box/model.obj"></a-asset-item>
-				<a-mixin id="cel-shade" material="color: #000000; roughness: 0.9;" outline></a-mixin>
+				<a-asset-item id="kandinsky-font" src="assets/fonts/kandinsky/kandinsky.json"></a-asset-item>
+				<a-asset-item id="consolas-font" src="assets/fonts/consolas/regular.json"></a-asset-item>
+				<a-asset-item id="consolas-font-bold" src="assets/fonts/consolas/bold.json"></a-asset-item>
+
+				<!-- MIXINS -->
+				<a-mixin 
+					id="cel-shade" 
+					material="color: #000000; roughness: 0.9;" 
+					outline>	
+				</a-mixin>
+				<a-mixin
+					id="text-color"
+					material="color: #FFFFFF">
+				</a-mixin>
 			</a-assets>
 
 
@@ -31,7 +47,49 @@
 					height="5"
 					width="5"
 					color="black"
-					position="0 2.5 -2.5">	
+					position="0 2.5 -2.5">
+					<!-- NOTE: maybe instead of animating the height we should animate the position? -->
+					<a-entity
+						id="wall-text"
+						position="-2.25 -0.333 0">
+
+						<!-- TITLE -->
+						<a-entity
+							id="title"
+							position="0 0.5 -0.015">
+							<a-entity
+								text-geometry="value: POOKAGE; font: #kandinsky-font; size: 0.4; height: 0.02;"
+								mixin="text-color">
+							</a-entity>
+							<a-entity
+								text-geometry="value: .dev; font: #consolas-font; size: 0.152; height: 0.02;"
+								position="2.5 0 0"
+								mixin="text-color">
+							</a-entity>
+						</a-entity>
+
+						<!-- LINKS -->
+						<a-entity 
+							id="links"
+							position="0 0.2 -0.015">
+							<a-entity
+								text-geometry="value: PORTFOLIO; font: #consolas-font-bold; size: 0.162; height: 0.02;"
+								mixin="text-color">
+							</a-entity>
+							<a-entity
+								position="0 -0.19 0"
+								text-geometry="value: ARTICLES; font: #consolas-font-bold; size: 0.162; height: 0.02;"
+								mixin="text-color">
+							</a-entity>
+							<a-entity
+								position="0 -0.38 0"
+								text-geometry="value: CONTACT; font: #consolas-font-bold; size: 0.162; height: 0.02;"
+								mixin="text-color">
+							</a-entity>
+						</a-entity>
+					</a-entity>
+					
+					
 				</a-plane>
 
 				<a-entity
@@ -108,13 +166,17 @@
 			<!-- CAMERA -->
 			<a-entity
 				id="camera-rig"
-				position="-1.25 2.5 1.5"
+				
 				rotation="-12.75 -19.25 0" >
-				<a-camera
-					fov="60"
-					position="0 0 0"
-					look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;">
-				</a-camera>
+				<a-entity
+					position="-2.73 1.9 2"
+					rotation="7 -40 -6.5">
+					<a-camera
+						fov="60"
+						position="0 0 0"
+						look-controls="enabled: false; hmdEnabled: false; touchEnabled: false;">
+					</a-camera>
+				</a-entity>
 			</a-entity>
 		</a-scene>
 	</body>
