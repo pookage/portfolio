@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Portfolio Site WIP</title>
 		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+		<script src="js/components/outline.js"></script>
 	</head>
 	<body>
 		<a-scene 
@@ -18,6 +19,7 @@
 				<a-asset-item id="plug-model" src="assets/3d/plug/model.obj"></a-asset-item>
 				<a-asset-item id="vive-model" src="assets/3d/vive/model.obj"></a-asset-item>
 				<a-asset-item id="box-model" src="assets/3d/box/model.obj"></a-asset-item>
+				<a-mixin id="cel-shade" material="color: #000000; roughness: 0.9;" outline></a-mixin>
 			</a-assets>
 
 
@@ -25,7 +27,7 @@
 			<a-entity id="room">
 				<a-plane
 					id="wall"
-					color="#222" 
+					color="#111" 
 					height="5"
 					width="5"
 					color="black"
@@ -40,7 +42,7 @@
 						position="0 0 2.5">
 						<a-plane
 							id="floor"
-							color="#222" 
+							color="#111" 
 							height="5"
 							width="5"
 							color="black"
@@ -50,8 +52,10 @@
 						
 						<a-obj-model
 							id="bed"
-							position="1.45 0.685 1" 
+							outline
+							position="1.45 0.695 1" 
 							rotation="0 90 0"
+							mixin="cel-shade"
 							src="#bed-model">
 						</a-obj-model>
 						<a-entity 
@@ -60,34 +64,38 @@
 							rotation="0 180 0">
 							<a-obj-model
 								id="desk"
-								src="#desk-model">
+								src="#desk-model"
+								mixin="cel-shade">
 							</a-obj-model>
 							<a-obj-model
 								id="vive"
 								src="#vive-model"
 								scale="0.30 0.30 0.30"
 								position="-0.819 -0.05 0"
-								rotation="10 -30 0">
+								rotation="10 -30 0"
+								mixin="cel-shade">
 							</a-obj-model>
 						</a-entity>
 						<a-obj-model
 							id="lighthouse"
 							src="#lighthouse-model"
-							position="2.4 2.075 -2.4"
-							rotation="0 180 0">
+							position="2.4 2.085 -2.4"
+							rotation="0 180 0"
+							mixin="cel-shade">
 						</a-obj-model>
 						<a-obj-model 
 							id="plug-socket"
 							src="#plug-model"
 							position="2.1 0.325 -2.45"
 							rotation="0 180 0"
-							scale="0.75 0.75 0.75">
+							mixin="cel-shade">
 						</a-obj-model>
 						<a-obj-model
 							id="cardboard-box"
-							position="1.222 0.21 -1.22"
+							position="1.222 0.23 -1.22"
 							rotation="0 160 0"
-							src="#box-model">
+							src="#box-model"
+							mixin="cel-shade">
 						</a-obj-model>
 					</a-entity>
 					</a-entity>
@@ -101,10 +109,10 @@
 			<a-entity
 				id="camera-rig"
 				position="-1.25 2.5 1.5"
-				rotation="-12.75 -19.25 0">
+				rotation="-12.75 -19.25 0" >
 				<a-camera
 					fov="60"
-					position="0 0 0" 	
+					position="0 0 0"
 					look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;">
 				</a-camera>
 			</a-entity>
