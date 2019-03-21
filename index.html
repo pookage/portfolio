@@ -6,11 +6,15 @@
 		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 		<script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
 		<script src="js/components/outline.js"></script>
+		<script src="js/components/chunky-link.js"></script>
+		<script src="js/components/hit-box.js"></script>
 	</head>
 	<body>
 		<a-scene 
 			background="color: black;"
-			vr-mode-ui="enabled: false">
+			vr-mode-ui="enabled: false"
+			cursor="rayOrigin: mouse"
+			raycaster="objects: .clickable">
 
 			
 			<a-assets>
@@ -56,13 +60,13 @@
 						<!-- TITLE -->
 						<a-entity
 							id="title"
-							position="0 0.5 -0.015">
+							position="0 0.5 -0.035">
 							<a-entity
-								text-geometry="value: POOKAGE; font: #kandinsky-font; size: 0.4; height: 0.02;"
+								text-geometry="value: POOKAGE; font: #kandinsky-font; size: 0.4; height: 0.04;"
 								mixin="text-color">
 							</a-entity>
 							<a-entity
-								text-geometry="value: .dev; font: #consolas-font; size: 0.152; height: 0.02;"
+								text-geometry="value: .dev; font: #consolas-font; size: 0.152; height: 0.04;"
 								position="2.5 0 0"
 								mixin="text-color">
 							</a-entity>
@@ -71,20 +75,27 @@
 						<!-- LINKS -->
 						<a-entity 
 							id="links"
-							position="0 0.2 -0.015">
+							position="0 0.2 -0.03">
 							<a-entity
-								text-geometry="value: PORTFOLIO; font: #consolas-font-bold; size: 0.162; height: 0.02;"
-								mixin="text-color">
+								position="0 0 0">
+								<a-chunky-link
+									text-geometry="value: PORTFOLIO; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+									mixin="text-color">
+								</a-chunky-link>
 							</a-entity>
 							<a-entity
-								position="0 -0.19 0"
-								text-geometry="value: ARTICLES; font: #consolas-font-bold; size: 0.162; height: 0.02;"
-								mixin="text-color">
+								position="0 -0.19 0">
+								<a-chunky-link
+									text-geometry="value: ARTICLES; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+									mixin="text-color">
+								</a-chunky-link>
 							</a-entity>
 							<a-entity
-								position="0 -0.38 0"
-								text-geometry="value: CONTACT; font: #consolas-font-bold; size: 0.162; height: 0.02;"
-								mixin="text-color">
+								position="0 -0.38 0">
+								<a-chunky-link
+									text-geometry="value: CONTACT; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+									mixin="text-color">
+								</a-chunky-link>
 							</a-entity>
 						</a-entity>
 					</a-entity>
