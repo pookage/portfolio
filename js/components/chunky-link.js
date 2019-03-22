@@ -58,7 +58,7 @@ AFRAME.registerPrimitive("a-chunky-link", {
 		},
 		animation__material_activate: {
 			property: "material.color",
-			to: "#fc9867", /* 78dce8, fc9867, ff6188 */
+			to: "#ef2d5e", /* 78dce8, fc9867, ff6188 */
 			dur: "300",
 			startEvents: "activate",
 			easing: "easeOutQuad"
