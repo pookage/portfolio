@@ -8,9 +8,35 @@
 		<script src="js/components/outline.js"></script>
 		<script src="js/components/chunky-link.js"></script>
 		<script src="js/components/hit-box.js"></script>
+		<script>
+			window.addEventListener("DOMContentLoaded", init);
+
+			function init(){
+				const scene = document.getElementById("bedroom-scene");
+				scene.addEventListener("loaded", initScene);
+			}//init
+			function initScene(){
+				const wallText = document.getElementById("wall-animation-group");
+				const foldable = document.getElementById("foldable");
+				const camera   = document.getElementById("camera-rig");
+
+				window.addEventListener("keyup", handleKeyPress);
+
+				function handleKeyPress(event){
+					switch(event.key){
+						case "Escape":
+							wallText.emit("show");
+							foldable.emit("show");
+							camera.emit("blur");
+							break;
+					}
+				}//handleKeyPress
+			}//initScene
+		</script>
 	</head>
 	<body>
-		<a-scene 
+		<a-scene
+			id="bedroom-scene" 
 			background="color: black;"
 			vr-mode-ui="enabled: false"
 			cursor="rayOrigin: mouse"
@@ -40,6 +66,34 @@
 					id="text-color"
 					material="color: #FFFFFF">
 				</a-mixin>
+
+				<!-- ANIMATIONS -->
+				<a-mixin
+					id="animation__rotate__out"
+					animation__rotate__out="property: rotation.x; to: -90; dur: 1000; easing: easeInOutQuart; startEvents: hide;">	
+				</a-mixin>
+				<a-mixin
+					id="animation__rotate__in"
+					animation__rotate__in="property: rotation.x; to: 0; dur: 1200; easing: easeInOutQuart; startEvents: show;">		
+				</a-mixin>
+				<a-mixin
+					id="animation__nudge__in"
+					animation__nudge__in="property: position.z; to: 0; dur: 100; delay: 100; easing: easeOutElastic; startEvents: show;">
+				</a-mixin>
+				<a-mixin
+					id="animation__nudge__out"
+					animation__nudge__out="property: position.z; to: -0.04; dur: 300; delay: 700; easing: easeOutQuart; startEvents: hide;">
+				</a-mixin>
+				<a-mixin
+					id="animation__camera__focus"
+					animation__camera__position__focus="property: position; to: 1.1 0.25 -3.2; delay: 150; easing: easeInOutQuart; startEvents: focus;"
+					animation__camera__rotation__focus="property: rotation; to: -12.75 40 0; delay: 150; easing: easeInOutQuart; startEvents: focus;">
+				</a-mixin>
+				<a-mixin
+					id="animation__camera__natural"
+					animation__camera__position__blur="property: position; to: 0 0 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;"
+					animation__camera__rotation__blur="property: rotation; to: -12.75 -19.25 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;">
+				</a-mixin>
 			</a-assets>
 
 
@@ -57,45 +111,54 @@
 						id="wall-text"
 						position="-2.25 -0.333 0">
 
-						<!-- TITLE -->
-						<a-entity
-							id="title"
-							position="0 0.5 -0.035">
-							<a-entity
-								text-geometry="value: POOKAGE; font: #kandinsky-font; size: 0.4; height: 0.04;"
-								mixin="text-color">
-							</a-entity>
-							<a-entity
-								text-geometry="value: .dev; font: #consolas-font; size: 0.152; height: 0.04;"
-								position="2.5 0 0"
-								mixin="text-color">
-							</a-entity>
-						</a-entity>
-
-						<!-- LINKS -->
 						<a-entity 
-							id="links"
-							position="0 0.2 -0.03">
+							id="wall-animation-group"
+							mixin="animation__nudge__in animation__nudge__out">
+
+							<!-- TITLE -->
 							<a-entity
-								position="0 0 0">
-								<a-chunky-link
-									text-geometry="value: PORTFOLIO; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+								id="title"
+								position="0 0.5 -0.035">
+								<a-entity
+									text-geometry="value: POOKAGE; font: #kandinsky-font; size: 0.4; height: 0.04;"
 									mixin="text-color">
-								</a-chunky-link>
+								</a-entity>
+								<a-entity
+									text-geometry="value: .dev; font: #consolas-font; size: 0.152; height: 0.04;"
+									position="2.5 0 0"
+									mixin="text-color">
+								</a-entity>
 							</a-entity>
-							<a-entity
-								position="0 -0.19 0">
-								<a-chunky-link
-									text-geometry="value: ARTICLES; font: #consolas-font-bold; size: 0.162; height: 0.04;"
-									mixin="text-color">
-								</a-chunky-link>
-							</a-entity>
-							<a-entity
-								position="0 -0.38 0">
-								<a-chunky-link
-									text-geometry="value: CONTACT; font: #consolas-font-bold; size: 0.162; height: 0.04;"
-									mixin="text-color">
-								</a-chunky-link>
+
+							<!-- LINKS -->
+							<a-entity 
+								id="links"
+								position="0 0.2 -0.03">
+								<a-entity
+									position="0 0 0">
+									<a-chunky-link
+										text-geometry="value: PORTFOLIO; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+										mixin="text-color"
+										events="fold"
+										target="portfolio">
+									</a-chunky-link>
+								</a-entity>
+								<a-entity
+									position="0 -0.19 0">
+									<a-chunky-link
+										text-geometry="value: ARTICLES; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+										mixin="text-color"
+										target="articles">
+									</a-chunky-link>
+								</a-entity>
+								<a-entity
+									position="0 -0.38 0">
+									<a-chunky-link
+										text-geometry="value: CONTACT; font: #consolas-font-bold; size: 0.162; height: 0.04;"
+										mixin="text-color"
+										target="contact">
+									</a-chunky-link>
+								</a-entity>
 							</a-entity>
 						</a-entity>
 					</a-entity>
@@ -103,7 +166,8 @@
 
 				<a-entity
 					id="foldable"
-					position="0 0 -2.5">
+					position="0 0 -2.5"
+					mixin="animation__rotate__in animation__rotate__out">
 					<a-entity 
 						id="hinge"
 						position="0 0 2.5">
@@ -120,14 +184,14 @@
 						<a-obj-model
 							id="bed"
 							outline
-							position="1.45 0.695 1" 
+							position="1.45 0.7 1" 
 							rotation="0 90 0"
 							mixin="cel-shade"
 							src="#bed-model">
 						</a-obj-model>
 						<a-entity 
 							id="desk-group"
-							position="-1.75 1.175 -2"
+							position="-1.75 1.18 -2"
 							rotation="0 180 0">
 							<a-obj-model
 								id="desk"
@@ -159,7 +223,7 @@
 						</a-obj-model>
 						<a-obj-model
 							id="cardboard-box"
-							position="1.222 0.23 -1.22"
+							position="1.222 0.24 -1.22"
 							rotation="0 160 0"
 							src="#box-model"
 							mixin="cel-shade">
@@ -170,7 +234,7 @@
 			<!-- CAMERA -->
 			<a-entity
 				id="camera-rig"
-				
+				mixin="animation__camera__natural animation__camera__focus"
 				rotation="-12.75 -19.25 0" >
 				<a-entity
 					position="-2.73 1.576 1.927"
