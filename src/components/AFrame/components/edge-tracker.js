@@ -4,22 +4,33 @@ AFRAME.registerComponent("edge-tracker", {
 
 	init: function(){
 
-		const originRotation       = this.originRotation = this.el.components.rotation.data.y;
-		const originRotRadians     = originRotation * (Math.PI / 180);
-		this.originRotationRadians = originRotRadians;
+		this.originRotation        = this.el.components.rotation.data.y;    // designed rotation of the camera at 16:9
+		this.originRotationRadians = this.originRotation * (Math.PI / 180); // convert to radians
+		this.rotationRange         = 2.4175;                                // range (in radians) to rotate camera
+		this.focalOffset           = -20;                                   // degrees to offset final rotation calculation
 
 	},//init
 
 	tick: function(){
 
-		//NOT RIGHT, BUT SOLUTION IS HERE SOMEWHERE: https://discourse.threejs.org/t/camera-zoom-to-fit-object/936/2
+		const {
+			innerWidth,
+			innerHeight
+		} = window;
 
-		const aspectRatio = window.innerWidth / window.innerHeight;
+		const {
+			originRotation,
+			originRotationRadians,
+			rotationRange,
+			focalOffset
+		} = this;
 
-		const test        = (window.innerWidth / this.originRotation * Math.tan( this.originRotationRadians * 2.4175 )) - 20;
-		const radians     = 0.0174533 * test;
+		const aspectRatio = innerWidth / innerHeight; //NOT BEING USED - FIND A WAY TO USE THIS INSTEAD
+		const rotationDeg = (innerWidth / originRotation * Math.tan( originRotationRadians * rotationRange)) + this.focalOffset;
+		const rotationRad = 0.0174533 * rotationDeg;
 		
-		this.el.object3D.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), radians);
+		//apply calculated rotation
+		this.el.object3D.setRotationFromAxisAngle(new THREE.Vector3(0, 1, 0), rotationRad);
 	}//tick
 
 });
