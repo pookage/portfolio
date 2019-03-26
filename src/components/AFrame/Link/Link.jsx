@@ -1,17 +1,33 @@
 import "aframe";
 import "aframe-text-geometry-component";
 import "Components/AFrame/primitives/chunky-link";
-import React from "react";
+import React, { useContext } from "react";
 import { Entity } from "aframe-react";
+import { Page } from "Contexts/Page.js";
 
 export default function Link(props){
 
+	//STATE STUFF
+	//---------------------------
 	const {
 		target         = "",
 		children: text = "",
 		...components
 	} = props;
 
+	const {
+		dispatch
+	} = useContext(Page);
+
+	//EVENT HANDLING
+	//------------------------
+	function action(){
+		dispatch({ type: "setPage", value: target });
+	}//action
+
+
+	//RENDER
+	//-------------------------
 	return(
 		<Entity
 			{...components}>
@@ -19,8 +35,7 @@ export default function Link(props){
 				primitive="a-chunky-link"
 				text-geometry={`value: ${text}; font: #consolas-font-bold; size: 0.162; height: 0.04;`}
 				mixin="text-color"
-				
-				target={target}>
+				events={{ click: action }}>
 			</Entity>
 		</Entity>
 	);

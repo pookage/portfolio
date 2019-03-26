@@ -112,7 +112,8 @@ function buildConfig(env, args){
 		resolve: {
 			alias: {
 				Assets: assets,
-				Components: `${src}/components`
+				Components: `${src}/components`,
+				Contexts: `${src}/contexts`
 			}
 		},
 

@@ -1,7 +1,7 @@
 import "aframe";
 import "Components/AFrame/components/outline.js";
 import "Components/AFrame/components/keyboard-controls.js";
-import React from "react";
+import React, { useContext } from "react";
 import { Scene, Entity } from "aframe-react";
 import Title from "Components/AFrame/Title/Title.jsx";
 import Camera from "Components/AFrame/Camera/Camera.jsx";
