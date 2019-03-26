@@ -1,11 +1,15 @@
 import "aframe";
 import "Components/AFrame/components/outline.js";
+import "Components/AFrame/components/keyboard-controls.js";
 import React from "react";
 import { Scene, Entity } from "aframe-react";
 import Title from "Components/AFrame/Title/Title.jsx";
 import Camera from "Components/AFrame/Camera/Camera.jsx";
 import Link from "Components/AFrame/Link/Link.jsx";
 import Wall from "Components/AFrame/Wall/Wall.jsx";
+import Animations from "Components/AFrame/mixins/Animations.jsx";
+import Styles from "Components/AFrame/mixins/Styles.jsx";
+import Assets from "Components/AFrame/mixins/Assets.jsx";
 
 export default function Bedroom(){
 
@@ -15,57 +19,14 @@ export default function Bedroom(){
 			background="color: black;"
 			vr-mode-ui="enabled: false"
 			cursor="rayOrigin: mouse"
-			raycaster="objects: .clickable">
+			raycaster="objects: .clickable"
+			keyboard-controls>
 
 			
-			<a-assets>
-
-				<a-asset-item id="bed-model" src="Assets/3d/bed/model.obj"></a-asset-item>
-				<a-asset-item id="desk-model" src="Assets/3d/desk/model.obj"></a-asset-item>
-				<a-asset-item id="lighthouse-model" src="Assets/3d/lighthouse/model.obj"></a-asset-item>
-				<a-asset-item id="plug-model" src="Assets/3d/plug/model.obj"></a-asset-item>
-				<a-asset-item id="vive-model" src="Assets/3d/vive/model.obj"></a-asset-item>
-				<a-asset-item id="box-model" src="Assets/3d/box/model.obj"></a-asset-item>
-				<a-asset-item id="kandinsky-font" src="Assets/fonts/kandinsky/kandinsky.json"></a-asset-item>
-				<a-asset-item id="consolas-font" src="Assets/fonts/consolas/regular.json"></a-asset-item>
-				<a-asset-item id="consolas-font-bold" src="Assets/fonts/consolas/bold.json"></a-asset-item>
-
-				<a-mixin 
-					id="cel-shade" 
-					material="color: #000000; roughness: 0.9;" 
-					outline>	
-				</a-mixin>
-				<a-mixin
-					id="text-color"
-					material="color: #FFFFFF">
-				</a-mixin>
-
-				<a-mixin
-					id="animation__rotate__out"
-					animation__rotate__out="property: rotation.x; to: -90; dur: 1000; easing: easeInOutQuart; startEvents: hide;">	
-				</a-mixin>
-				<a-mixin
-					id="animation__rotate__in"
-					animation__rotate__in="property: rotation.x; to: 0; dur: 1200; easing: easeInOutQuart; startEvents: show;">		
-				</a-mixin>
-				<a-mixin
-					id="animation__nudge__in"
-					animation__nudge__in="property: position.z; to: 0; dur: 100; delay: 100; easing: easeOutElastic; startEvents: show;">
-				</a-mixin>
-				<a-mixin
-					id="animation__nudge__out"
-					animation__nudge__out="property: position.z; to: -0.04; dur: 300; delay: 700; easing: easeOutQuart; startEvents: hide;">
-				</a-mixin>
-				<a-mixin
-					id="animation__camera__focus"
-					animation__camera__position__focus="property: position; to: 1.1 0.25 -3.2; delay: 150; easing: easeInOutQuart; startEvents: focus;"
-					animation__camera__rotation__focus="property: rotation; to: -12.75 40 0; delay: 150; easing: easeInOutQuart; startEvents: focus;">
-				</a-mixin>
-				<a-mixin
-					id="animation__camera__natural"
-					animation__camera__position__blur="property: position; to: 0 0 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;"
-					animation__camera__rotation__blur="property: rotation; to: -12.75 -19.25 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;">
-				</a-mixin>
+			<a-assets>	
+				<Assets />
+				<Animations />
+				<Styles />
 			</a-assets>
 
 
