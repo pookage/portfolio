@@ -1,4 +1,3 @@
-import "aframe";
 import "Components/outline.js";
 import "Components/keyboard-controls.js";
 import React, { useContext } from "react";

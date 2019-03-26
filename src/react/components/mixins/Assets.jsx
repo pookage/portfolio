@@ -1,4 +1,3 @@
-import "aframe";
 import React from "react";
 
 export default function Assets(){

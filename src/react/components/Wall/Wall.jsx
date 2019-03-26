@@ -1,4 +1,3 @@
-import "aframe";
 import React from "react";
 import { Entity } from "aframe-react";
 

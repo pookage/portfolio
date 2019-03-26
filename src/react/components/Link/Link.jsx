@@ -1,4 +1,3 @@
-import "aframe";
 import "aframe-text-geometry-component";
 import "Primitives/chunky-link";
 import React, { useContext } from "react";

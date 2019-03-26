@@ -1,4 +1,3 @@
-import "aframe";
 import "aframe-text-geometry-component";
 import React from "react";
 import { Entity } from "aframe-react";

@@ -1,5 +1,3 @@
-import "aframe";
-
 AFRAME.registerComponent("outline", {
 	init: function(){
 

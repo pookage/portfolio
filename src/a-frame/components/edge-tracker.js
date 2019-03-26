@@ -1,5 +1,3 @@
-import "aframe";
-
 AFRAME.registerComponent("edge-tracker", {
 
 	//LIFECYCLE JAZZ

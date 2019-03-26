@@ -1,5 +1,3 @@
-import "aframe";
-
 AFRAME.registerComponent("keyboard-controls", {
 
 	//LIFECYCLE JAZZ

@@ -1,4 +1,3 @@
-import "aframe";
 import "Components/chunky-link.js";
 import "Components/hit-box.js";
 

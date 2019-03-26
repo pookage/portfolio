@@ -1,5 +1,3 @@
-import "aframe";
-
 AFRAME.registerComponent("hitbox", {
 	init: function(){
 		this.generateHitbox = this.generateHitbox.bind(this);
