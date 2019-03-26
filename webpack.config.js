@@ -8,6 +8,8 @@ const src    = path.resolve(__dirname, "src");
 const dist   = path.resolve(__dirname, "dist");
 const assets = path.resolve(__dirname, "assets");
 
+//MAYBE LOOK INTO THIS: https://www.npmjs.com/package/babel-plugin-minify-dead-code-elimination
+
 function buildConfig(env, args){
 
 	console.log(env, args);
@@ -112,8 +114,11 @@ function buildConfig(env, args){
 		resolve: {
 			alias: {
 				Assets: assets,
-				Components: `${src}/components`,
-				Contexts: `${src}/contexts`
+				ReactComponents: `${src}/react/components`,
+				Contexts: `${src}/react/contexts`,
+				"A-Frame": `${src}/a-frame`,
+				Components: `${src}/a-frame/components`,
+				Primitives: `${src}/a-frame/primitives`,
 			}
 		},
 

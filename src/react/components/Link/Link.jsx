@@ -1,6 +1,6 @@
 import "aframe";
 import "aframe-text-geometry-component";
-import "Components/AFrame/primitives/chunky-link";
+import "Primitives/chunky-link";
 import React, { useContext } from "react";
 import { Entity } from "aframe-react";
 import { Page } from "Contexts/Page.js";

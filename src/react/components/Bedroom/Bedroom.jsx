@@ -1,15 +1,15 @@
 import "aframe";
-import "Components/AFrame/components/outline.js";
-import "Components/AFrame/components/keyboard-controls.js";
+import "Components/outline.js";
+import "Components/keyboard-controls.js";
 import React, { useContext } from "react";
 import { Scene, Entity } from "aframe-react";
-import Title from "Components/AFrame/Title/Title.jsx";
-import Camera from "Components/AFrame/Camera/Camera.jsx";
-import Link from "Components/AFrame/Link/Link.jsx";
-import Wall from "Components/AFrame/Wall/Wall.jsx";
-import Animations from "Components/AFrame/mixins/Animations.jsx";
-import Styles from "Components/AFrame/mixins/Styles.jsx";
-import Assets from "Components/AFrame/mixins/Assets.jsx";
+import Title from "ReactComponents/Title/Title.jsx";
+import Camera from "ReactComponents/Camera/Camera.jsx";
+import Link from "ReactComponents/Link/Link.jsx";
+import Wall from "ReactComponents/Wall/Wall.jsx";
+import Animations from "ReactComponents/mixins/Animations.jsx";
+import Styles from "ReactComponents/mixins/Styles.jsx";
+import Assets from "ReactComponents/mixins/Assets.jsx";
 
 export default function Bedroom(){
 

@@ -1,4 +1,4 @@
-import "Components/AFrame/components/edge-tracker.js";
+import "Components/edge-tracker.js";
 import React, { useEffect, useRef } from "react";
 import { Entity } from "aframe-react";
 

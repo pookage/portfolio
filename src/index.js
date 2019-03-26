@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "Components/App/App.jsx";
+import App from "ReactComponents/App/App.jsx";
 
 window.addEventListener("DOMContentLoaded", init);
 

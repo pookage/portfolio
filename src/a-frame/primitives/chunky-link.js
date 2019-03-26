@@ -1,6 +1,6 @@
 import "aframe";
-import "Components/AFrame/components/chunky-link.js";
-import "Components/AFrame/components/hit-box.js";
+import "Components/chunky-link.js";
+import "Components/hit-box.js";
 
 AFRAME.registerPrimitive("a-chunky-link", {
 	defaultComponents: {
