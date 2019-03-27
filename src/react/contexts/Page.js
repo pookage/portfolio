@@ -15,8 +15,6 @@ function reducer(state, action){
 		value
 	} = action;
 
-	console.log("useReduce")
-
 	let change;
 	switch(type){
 		case "setPage":

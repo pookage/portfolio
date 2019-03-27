@@ -1,5 +1,7 @@
-import React from "react";
+import "Components/toggler.js";
+import React, { useContext } from "react";
 import { Entity } from "aframe-react";
+import { Page } from "Contexts/Page.js";
 
 
 export default function Wall(props){
@@ -9,6 +11,12 @@ export default function Wall(props){
 		children = [],
 		...components
 	} = props;
+
+	const {
+		activePage
+	} = useContext(Page).state;
+
+	const isActive = activePage != "hub";
 
 	return(
 		<Entity
@@ -22,11 +30,9 @@ export default function Wall(props){
 			<Entity
 				id="wall-text"
 				position="-2.25 -0.333 0">
-
 				<Entity 
-					id="wall-animation-group"
-					mixin="animation__nudge__in animation__nudge__out">
-
+					mixin="animation__nudge__in animation__nudge__out"
+					toggler={`active: ${isActive}`}>
 					{children}
 				</Entity>
 			</Entity>

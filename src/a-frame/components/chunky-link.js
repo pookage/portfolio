@@ -14,7 +14,7 @@ AFRAME.registerComponent("chunky-link", {
 		this.el.addEventListener("mouseleave", this.slideIn);
 		this.el.addEventListener("mousedown", this.press);
 		this.el.addEventListener("mouseup", this.slideOut);
-	},
+	},//init
 	remove: function(){
 
 		//remove event listeners
@@ -22,25 +22,17 @@ AFRAME.registerComponent("chunky-link", {
 		this.el.removeEventListener("mouseleave", this.slideIn);
 		this.el.removeEventListener("mousedown", this.press);
 		this.el.removeEventListener("mouseup", this.slideOut);
-	},
+	},//remove
 
 	//EVENT HANDLING
 	//-----------------------------------------
 	slideIn: function(){
 		this.el.emit("deactivate");
-	},
+	},//slideIn
 	slideOut: function(){
 		this.el.emit("activate");
-	},
+	},//slideOut
 	press: function(){
-		// const foldable = document.getElementById("foldable");
-		// const wallText = document.getElementById("wall-animation-group");
-		// const camera   = document.getElementById("camera-rig");
-
 		this.el.emit("fire");
-		// foldable.emit("hide");
-		// wallText.emit("hide");
-		// camera.emit("focus");
-
-	}
+	}//press
 });

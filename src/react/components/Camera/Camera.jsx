@@ -9,22 +9,22 @@ export default function Camera(){
 		activePage
 	} = useContext(Page).state;
 
-	const focus = activePage != "hub";
+	const active = activePage != "hub";
 
 	return(
 		<Entity
 			id="camera-rig"
-			mixin="animation__camera__focus animation__camera__blur"
+			mixin="animation__camera__focus animation__camera__natural"
 			position="-3 1.78 0.546"
+			toggler={`active: ${active}`}
 			edge-tracker={
-				`focus: ${focus};
-				rotation: ${-57.5}`
+				`rotation: ${-57.5}`
 			}>
 			<Entity
 				primitive="a-camera"
 				fov="60"
 				position="0 0 0"
-				look-controls="enabled: true; hmdEnabled: false;">
+				look-controls="enabled: false; hmdEnabled: false;">
 			</Entity>
 		</Entity>
 	);

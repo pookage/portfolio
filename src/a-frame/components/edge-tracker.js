@@ -32,26 +32,12 @@ AFRAME.registerComponent("edge-tracker", {
 		this.yAxis                 = new THREE.Vector3(0, 1, 0);            // axis along which to rotate the camera
 
 		//make sure the camera rotation is correct on load
-		setTimeout(this.updateCameraRotationFocus, 50); //TODO: tie this to something more predictable
+		// setTimeout(this.updateCameraRotationFocus, 50); //TODO: tie this to something more predictable
 		//make sure rotation is updated on resize
 		this.addListeners();
-
 	},//init
-	update: function(oldData){
-		const {
-			focus
-		} = this.data;
-
-		const {
-			focus: prevFocus
-		} = oldData;
-
-		const focusChanged = focus != prevFocus;
-
-		if(focusChanged){
-			if(focus) this.el.emit("focus");
-			else      this.el.emit("blur");
-		}
+	update: function(){
+		this.updateCameraRotationFocus();
 	},//update
 	tick: function(){
 		if(!this.rotationLocked) this.updateCameraRotationFocus();
@@ -106,14 +92,12 @@ AFRAME.registerComponent("edge-tracker", {
 		//only rotate if we actually need to rotate
 		if(Math.round(el.object3D.rotation._y * 1000) != Math.round(rotationRad * 1000)){
 
-			const inlineRotation = `property: rotation; to: 0 ${rotationDeg} 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;`
+			const inlineRotation = `property: rotation; to: 0 ${rotationDeg} 0; dur: 1000; easing: easeInOutQuart; startEvents: active;`
 
 			//apply calculated rotation
 			el.object3D.setRotationFromAxisAngle(yAxis, rotationRad);
 			//update the animation so that it restores to the correct position after
 			el.setAttribute("animation__camera__rotation__blur", inlineRotation);
-
-			console.log({ el });
 		}
 	},//updateCameraRotationFocus
 
