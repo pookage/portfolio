@@ -1,10 +1,14 @@
 import React from "react";
-import Bedroom from "ReactComponents/Bedroom/Bedroom.jsx";
+import BedroomScene from "ReactComponents/BedroomScene/BedroomScene.jsx";
+import Portfolio from "ReactComponents/Portfolio/Portfolio.jsx";
 
 export default function App(){
 
 	return(
-		<Bedroom />
+		<div>
+			<BedroomScene />
+			<Portfolio />
+		</div>
 	);
 
 }

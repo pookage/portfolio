@@ -119,6 +119,7 @@ function buildConfig(env, args){
 				"A-Frame": `${src}/a-frame`,
 				Components: `${src}/a-frame/components`,
 				Primitives: `${src}/a-frame/primitives`,
+				Data: `${src}/data`
 			}
 		},
 
