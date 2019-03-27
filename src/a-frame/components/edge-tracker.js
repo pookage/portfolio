@@ -1,5 +1,15 @@
 AFRAME.registerComponent("edge-tracker", {
 
+	schema: {
+		focus: {
+			type: "boolean",
+			default: false
+		},
+		rotation: {
+			type: "number"
+		}
+	},
+
 	//LIFECYCLE JAZZ
 	//--------------------------------
 	init: function(){
@@ -13,7 +23,7 @@ AFRAME.registerComponent("edge-tracker", {
 		this.lockRotation              = this.setRotationLock.bind(true, true);
 
 		//public var setup
-		this.originRotation        = this.el.components.rotation.data.y;    // designed rotation of the camera at 16:9
+		this.originRotation        = this.data.rotation;    // designed rotation of the camera at 16:9
 		this.originRotationRadians = this.originRotation * (Math.PI / 180); // convert to radians
 		this.rotationRange         = 2.4175;                                // range (in radians) to rotate camera
 		this.focalOffset           = -20;                                   // degrees to offset final rotation calculation
@@ -27,12 +37,28 @@ AFRAME.registerComponent("edge-tracker", {
 		this.addListeners();
 
 	},//init
-	remove: function(){
-		this.removeListeners();
-	},//remove
+	update: function(oldData){
+		const {
+			focus
+		} = this.data;
+
+		const {
+			focus: prevFocus
+		} = oldData;
+
+		const focusChanged = focus != prevFocus;
+
+		if(focusChanged){
+			if(focus) this.el.emit("focus");
+			else      this.el.emit("blur");
+		}
+	},//update
 	tick: function(){
 		if(!this.rotationLocked) this.updateCameraRotationFocus();
 	},//tick
+	remove: function(){
+		this.removeListeners();
+	},//remove
 
 
 	//UTILS
@@ -80,10 +106,14 @@ AFRAME.registerComponent("edge-tracker", {
 		//only rotate if we actually need to rotate
 		if(Math.round(el.object3D.rotation._y * 1000) != Math.round(rotationRad * 1000)){
 
+			const inlineRotation = `property: rotation; to: 0 ${rotationDeg} 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;`
+
 			//apply calculated rotation
 			el.object3D.setRotationFromAxisAngle(yAxis, rotationRad);
 			//update the animation so that it restores to the correct position after
-			el.components.animation__camera__rotation__blur.data.to = `0 ${rotationDeg} 0`;
+			el.setAttribute("animation__camera__rotation__blur", inlineRotation);
+
+			console.log({ el });
 		}
 	},//updateCameraRotationFocus
 

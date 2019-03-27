@@ -1,16 +1,25 @@
 import "Components/edge-tracker.js";
-import React, { useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import { Entity } from "aframe-react";
+import { Page } from "Contexts/Page.js";
 
 export default function Camera(){
+
+	const {
+		activePage
+	} = useContext(Page).state;
+
+	const focus = activePage != "hub";
 
 	return(
 		<Entity
 			id="camera-rig"
-			mixin="animation__camera__natural animation__camera__focus"
+			mixin="animation__camera__focus animation__camera__blur"
 			position="-3 1.78 0.546"
-			rotation="0 -57.5 0"
-			edge-tracker>
+			edge-tracker={
+				`focus: ${focus};
+				rotation: ${-57.5}`
+			}>
 			<Entity
 				primitive="a-camera"
 				fov="60"

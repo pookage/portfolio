@@ -32,8 +32,7 @@ export default function Animations() {
 		<a-mixin
 			id="animation__camera__natural"
 			key="animation__camera__natural"
-			animation__camera__position__blur="property: position; to: -3 1.78 0.546; dur: 1000; easing: easeInOutQuart; startEvents: blur;"
-			animation__camera__rotation__blur="property: rotation; to: 0 -57.5 0; dur: 1000; easing: easeInOutQuart; startEvents: blur;">
+			animation__camera__position__blur="property: position; to: -3 1.78 0.546; dur: 1000; easing: easeInOutQuart; startEvents: blur;">
 		</a-mixin>
 	];
 

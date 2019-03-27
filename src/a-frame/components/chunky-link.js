@@ -33,14 +33,14 @@ AFRAME.registerComponent("chunky-link", {
 		this.el.emit("activate");
 	},
 	press: function(){
-		const foldable = document.getElementById("foldable");
-		const wallText = document.getElementById("wall-animation-group");
-		const camera   = document.getElementById("camera-rig");
+		// const foldable = document.getElementById("foldable");
+		// const wallText = document.getElementById("wall-animation-group");
+		// const camera   = document.getElementById("camera-rig");
 
 		this.el.emit("fire");
-		foldable.emit("hide");
-		wallText.emit("hide");
-		camera.emit("focus");
+		// foldable.emit("hide");
+		// wallText.emit("hide");
+		// camera.emit("focus");
 
 	}
 });

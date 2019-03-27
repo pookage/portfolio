@@ -42,15 +42,18 @@ export default function Bedroom(){
 						id="links"
 						position="0 0.2 -0.03">
 						<Link
-							position="0 0 0">
+							position="0 0 0"
+							target="portfolio">
 							PORTFOLIO
 						</Link>
 						<Link
-							position="0 -0.19 0">
+							position="0 -0.19 0"
+							target="articles">
 							ARTICLES
 						</Link>
 						<Link
-							position="0 -0.38 0">
+							position="0 -0.38 0"
+							target="contact">
 							CONTACT
 						</Link>
 					</Entity>
