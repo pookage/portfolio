@@ -6,10 +6,26 @@ import s from "ReactComponents/Portfolio/Portfolio.css";
 
 export default function Portfolio(){
 
+	//HOOKS
+	//------------------------------
+	const {
+		state,
+		dispatch
+	} = useContext(Page)
+
 	const {
 		activePage
-	} = useContext(Page).state;
+	} = state;
 
+
+	//EVENT HANDLING
+	//----------------------------------
+	function goBack(){
+		dispatch({ type: "setPage", value: "hub" });
+	}//goBack
+
+	//RENDER LOGIC
+	//-----------------------------------
 	if(activePage == "portfolio"){
 
 		function renderProject(project){
@@ -32,7 +48,9 @@ export default function Portfolio(){
 					<nav 
 						className={s.nav} 
 						aria-label="Project navigation">
-						<button className={s.back}>
+						<button 
+							className={s.back}
+							onClick={goBack}>
 							Back
 						</button>
 						<ul className={s.links}>
@@ -105,7 +123,9 @@ export default function Portfolio(){
 						</ul>
 					</nav>
 				</header>
-				{projects.map(renderProject)}
+				<div className={s.projects}>
+					{projects.map(renderProject)}
+				</div>
 			</article>
 		);
 	} else return "";

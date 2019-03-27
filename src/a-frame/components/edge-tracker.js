@@ -58,16 +58,17 @@ AFRAME.registerComponent("edge-tracker", {
 	},//removeListeners
 	setRotationLock: function(lock){
 
-		this.rotationLocked = lock; // update the lock for use in tick();
+		if(!this.data.active){
+			this.rotationLocked = lock; // update the lock for use in tick();
 
-		//clear any outstanding timers for this function
-		clearTimeout(this.lockTimeout);
-		
-		//if the rotation is unlocked, then try to lock again after a brief pause
-		if(!this.lock) this.lockTimeout = setTimeout(this.lockRotation, 100);	
-		//otherwise de-reference the timeout completely
-		else           this.lockTimeout = null;
-
+			//clear any outstanding timers for this function
+			clearTimeout(this.lockTimeout);
+			
+			//if the rotation is unlocked, then try to lock again after a brief pause
+			if(!this.lock) this.lockTimeout = setTimeout(this.lockRotation, 100);	
+			//otherwise de-reference the timeout completely
+			else           this.lockTimeout = null;
+		}
 	},//setRotationLock
 	updateCameraRotationFocus: function(){
 		const {
