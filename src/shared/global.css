@@ -1,0 +1,43 @@
+/*NORMALISATION
+--------------------------*/
+* {
+	margin:  0;
+	padding: 0;
+	border:  0;
+	box-sizing: border-box;
+}
+
+html, body, #app {
+	height: 100%;
+	width: 100%;
+}
+
+:root {
+	--base-color: #fbfbfb;
+	--accent-color: #ef2d5e;
+}
+
+/*CORE STYLES
+-----------------------------*/
+body {
+	color: var(--base-color);
+}
+
+p, a, button {
+	font-size: 1em;
+	font-family: "Consolas", sans-serif; /* should this be 'inherit'? */
+}
+
+p, li, a {
+	line-height: 1.5em
+}
+
+a:link, 
+a:visited, 
+a:active {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}

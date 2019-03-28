@@ -1,6 +1,7 @@
 import React from "react";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
 import Composite from "ReactComponents/Composite/Composite.jsx";
+import font from "Shared/fonts.css";
 import s from "ReactComponents/Project/Project.css";
 
 export default function Project(props){
@@ -30,8 +31,8 @@ export default function Project(props){
 	}//renderTag
 
 	return(
-		<section className={s.project}>		
-			<h1 className={s.title} id={`${safeTitle}-title`}>
+		<section className={s.wrapper}>		
+			<h1 className={`${font.heading} ${font.title} ${s.title}`} id={`${safeTitle}-title`}>
 				{title}
 			</h1>
 

@@ -15,7 +15,6 @@
 				list-style-type: none;
 			}
 			.back {
-				font-size: 1.62em;
 				margin-bottom: 1.62em;
 				text-transform: uppercase;
 				appearance: none;
@@ -24,5 +23,6 @@
 			}
 	.projects {
 		flex: 1 0 auto;
-		height: 1000px
+		height: 1000px;
+		padding-top: 8.8em;
 	}

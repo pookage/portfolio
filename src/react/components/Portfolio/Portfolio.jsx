@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
 import { projects } from "Data/projects.js";
 import Project from "ReactComponents/Project/Project.jsx";
+import font from "Shared/fonts.css";
 import s from "ReactComponents/Portfolio/Portfolio.css";
 
 export default function Portfolio(){
@@ -49,7 +50,7 @@ export default function Portfolio(){
 						className={s.nav} 
 						aria-label="Project navigation">
 						<button 
-							className={s.back}
+							className={`${font.subheading} ${s.back}`}
 							onClick={goBack}>
 							Back
 						</button>

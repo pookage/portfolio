@@ -1,0 +1,21 @@
+/* FONT-RULES
+-----------------------------*/
+.title {
+	font-family: "Kandinsky";
+	color: var(--base-color);
+}
+.subtitle {
+	font-family: 	"Consolas";
+	font-weight: bold;
+	color: var(--base-color);
+}
+.body {
+	font-family: "Consolas", sans-serif;
+	font-size: 1em;
+}
+.heading {
+	font-size: 4.25em;
+}
+.subheading {
+	font-size: 1.62em;
+}

@@ -1,0 +1,16 @@
+.wrapper {}
+	.title {
+		flex: 1 0 auto;
+		display: flex;
+		align-items: center;
+	}
+		.title::after {
+			content: "";
+			flex: 1 0 auto;
+			display: inline-block;
+			height: 0.025em;
+			margin-left: 0.25em;
+			position: relative;
+			top: -0.125em; /* offset because Kandinsky font is weird */
+			background-color: var(--base-color);
+		}

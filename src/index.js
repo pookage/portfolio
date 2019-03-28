@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { PageProvider } from "Contexts/Page.js";
 import KeyboardControls from "ReactComponents/KeyboardControls/KeyboardControls.jsx";
 import App from "ReactComponents/App/App.jsx";
+import "Shared/global.css";
 
 window.addEventListener("DOMContentLoaded", init);
 
