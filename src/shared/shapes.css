@@ -1,0 +1,9 @@
+.shape {
+	height: 100px;
+	width: 100px;
+}
+.stroke {
+	fill: none;
+	stroke: var(--accent-color);
+	stroke-width: 1;
+}

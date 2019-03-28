@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
 import { projects } from "Data/projects.js";
+import { Triangle } from "Shared/shapes.jsx";
 import Project from "ReactComponents/Project/Project.jsx";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/Portfolio/Portfolio.css";
@@ -52,6 +53,7 @@ export default function Portfolio(){
 						<button 
 							className={`${font.subheading} ${s.back}`}
 							onClick={goBack}>
+							<Triangle className={s.arrow} />
 							Back
 						</button>
 						<ul className={s.links}>
