@@ -21,6 +21,13 @@
 				color: var(--base-color);
 				background-color: transparent;
 			}
+				/*arrow*/
+				.back::before {
+					content: "";
+					height: 0;
+					width: 0;
+					
+				}
 	.projects {
 		flex: 1 0 auto;
 		height: 1000px;

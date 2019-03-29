@@ -53,7 +53,7 @@ export default function Portfolio(){
 						<button 
 							className={`${font.subheading} ${s.back}`}
 							onClick={goBack}>
-							<Triangle className={s.arrow} />
+							{/*<Triangle className={s.arrow} />*/}
 							Back
 						</button>
 						<ul className={s.links}>

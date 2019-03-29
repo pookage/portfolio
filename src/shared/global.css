@@ -8,8 +8,15 @@
 }
 
 html, body, #app {
-	height: 100%;
+	/*height: 100%;*/
 	width: 100%;
+}
+
+html:global(.a-fullscreen){
+	position: relative;
+}
+html:global(.a-fullscreen) body {
+	overflow: auto;
 }
 
 :root {

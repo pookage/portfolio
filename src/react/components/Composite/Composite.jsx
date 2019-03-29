@@ -5,31 +5,34 @@ import s from "ReactComponents/Composite/Composite.css";
 export default function Composite(props){
 
 	const {
+		size,          // (string)[mobile, tablet, desktop]
 		images,        // (array) of screenshots to render in the composite
-		className = ""
 	} = props;
 
 	function renderScreenshot(screenshot){
 
 		const {
 			src,
-			description
+			description,
+			id
 		} = screenshot;
-
-		const key = description.replace(/\s+/g, '-').toLowerCase();
 
 		return(
 			<img
+				className={s.image}
 				src={src}
 				alt={description}
-				key={key}
+				id={id}
+				key={id}
 			/>
 		);
 	}//renderScreenshot
 
 	return(
-		<section className={`${s.viewer} ${className}`}>
-			{images.map(renderScreenshot)}
+		<section className={`${s.wrapper} ${s[size]}`}>
+			<div class={s.container}>
+				{images.map(renderScreenshot)}
+			</div>
 		</section>
 	);
 }//Composite

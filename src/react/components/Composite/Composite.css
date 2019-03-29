@@ -1,0 +1,23 @@
+.wrapper {
+	font-size: 20vw;
+	height: 1em;
+	overflow: hidden;
+	--scrollbar_width: 10px;
+}
+.wrapper.desktop {
+	--aspect-rato: 1.79em;
+	width: calc(var(--aspect-rato) - var(--scrollbar_width));
+}
+	.desktop .container {
+		height: 100%;
+		width: calc(var(--aspect-rato) + var(--scrollbar_width));
+		overflow-y: scroll;
+  		scroll-snap-type: y mandatory;
+		
+	}
+	.image {
+		display: block;
+		width: 100%;
+		height: auto;
+		scroll-snap-align: start;
+	}

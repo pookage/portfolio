@@ -4,45 +4,111 @@ export const projects = [
 		safeTitle: "the-handmaiden",
 		description: "A companion site for Park Chan-Wook's 2016 film of the same name.",
 		images: {
-			desktop: [],
+			desktop: [
+				{
+					src: "Assets/composites/the-handmaiden/desktop/home__01.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__landing"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/home__02.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__synopsis"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/home__03.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__gallery"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/home__04.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__characters"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/home__05.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__read_more"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/home__06.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__trailer"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/biography.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__biography"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/filmography.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__filmography"
+				}, {
+					src: "Assets/composites/the-handmaiden/desktop/novel.jpg",
+					description: "",
+					id: "#the_handmaiden__desktop__novel"
+				}
+			],
 			tablet: [],
 			mobile: []
 		},
 		pages: [
 			{
 				name: "Landing",
+				ids: {
+					desktop: "#the_handmaiden__desktop__landing",
+					tablet: "",
+					mobile: ""
+				}
+			}, {
+				name: "Synopsis",
 				positions: {
-					desktop: 100,
-					tablet: 150,
-					mobile: 200
+					desktop: "#the_handmaiden__desktop__synopsis",
+					tablet: "",
+					mobile: ""
 				}
 			}, {
 				name: "Gallery",
 				positions: {
-					desktop: 200,
-					tablet: 300,
-					mobile: 400
+					desktop: "#the_handmaiden__desktop__gallery",
+					tablet: "",
+					mobile: ""
 				}
 			}, {
 				name: "Characters",
 				positions: {
-					desktop: 300,
-					tablet: 450,
-					mobile: 600
+					desktop: "#the_handmaiden__desktop__characters",
+					tablet: "",
+					mobile: ""
+				}
+			}, {
+				name: "Further",
+				positions: {
+					desktop: "#the_handmaiden__desktop__read_more",
+					tablet: "",
+					mobile: ""
 				}
 			}, {
 				name: "Trailer",
 				positions: {
-					desktop: 400,
-					tablet: 600,
-					mobile: 800
+					desktop: "#the_handmaiden__desktop__trailer",
+					tablet: "",
+					mobile: ""
 				}
 			}, {
 				name: "Biography",
 				positions: {
-					desktop: 500,
-					tablet: 550,
-					mobile: 1000
+					desktop: "#the_handmaiden__desktop__biography",
+					tablet: "",
+					mobile: ""
+				}
+			}, {
+				name: "Filmography",
+				positions: {
+					desktop: "#the_handmaiden__desktop__filmography",
+					tablet: "",
+					mobile: ""
+				}
+			}, {
+				name: "Novel",
+				positions: {
+					desktop: "#the_handmaiden__desktop__novel",
+					tablet: "",
+					mobile: ""
 				}
 			}
 		],

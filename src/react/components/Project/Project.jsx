@@ -40,9 +40,9 @@ export default function Project(props){
 				name={title}
 				safeName={safeTitle}
 				pages={pages}>
-				<Composite className={s.desktop} images={images.desktop} />
-				<Composite className={s.tablet} images={images.tablet} />
-				<Composite className={s.mobile} images={images.mobile} />
+				<Composite size="desktop" images={images.desktop} />
+				<Composite size="tablet" images={images.tablet} />
+				<Composite size="mobile" images={images.mobile} />
 			</CompositeViewer>
 
 			<section>
