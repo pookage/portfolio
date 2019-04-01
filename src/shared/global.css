@@ -13,7 +13,7 @@ html, body, #app {
 }
 
 html:global(.a-fullscreen){
-	position: relative;
+	position: absolute;
 }
 html:global(.a-fullscreen) body {
 	overflow: auto;
