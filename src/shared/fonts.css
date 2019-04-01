@@ -5,8 +5,9 @@
 	color: var(--base-color);
 }
 .subtitle {
-	font-family: 	"Consolas";
+	font-family: "Consolas";
 	font-weight: bold;
+	text-transform: uppercase;
 	color: var(--base-color);
 }
 .body {

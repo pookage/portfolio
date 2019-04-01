@@ -25,7 +25,8 @@ export default function Project(props){
 		const key = `${safeTitle}-tag-${tag.toLowerCase()}`;
 
 		return(
-			<li key={key}>
+			<li className={s.tag} 
+				key={key}>
 				{tag}
 			</li>
 		);
@@ -47,8 +48,8 @@ export default function Project(props){
 				</CompositeViewer>
 			</CompositeScrollProvider>
 
-			<section>
-				<h1>
+			<section className={s.details}>
+				<h1 className={`${font.subheading} ${font.subtitle} ${s.subtitle}`}>
 					<abbr title="Description">
 						Desc
 					</abbr>
@@ -56,8 +57,10 @@ export default function Project(props){
 				<p>
 					{description}
 				</p>
-				<aside aria-label="Technologies used">
-					<ul>
+				<aside
+					className={s.tags} 
+					aria-label="Technologies used">
+					<ul className={s.list}>
 						{tags.map(renderTag)}
 					</ul>
 				</aside>

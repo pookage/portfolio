@@ -40,8 +40,12 @@ export default function CompositeViewer(props){
 		const key    = `${safeName}-${label}-button`;
 		const action = setActiveSection.bind(true, index);
 		return(
-			<li key={key}>
-				<button onClick={action}>
+			<li
+				className={s.item} 
+				key={key}>
+				<button
+					className={s.button} 
+					onClick={action}>
 					{label}
 				</button>
 			</li>
@@ -53,12 +57,15 @@ export default function CompositeViewer(props){
 			<div className={s.container}>
 				{composites}
 			</div>
-			<figcaption>
-				<nav aria-label={`${name} screenshot controls.`}>
-					<ul>
+			<figcaption className={s.caption}>
+				<nav 
+					aria-label={`${name} screenshot controls.`}
+					className={s.controls}>
+					<ul className={s.scrollers}>
 						{pages.map(renderButton)}
 					</ul>
-					<button 
+					<button
+						className={s.expandToggle} 
 						role="switch"
 						aria-checked={expanded.toString()}
 						onClick={toggleExpand}>

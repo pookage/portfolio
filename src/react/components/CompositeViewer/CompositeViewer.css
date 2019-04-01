@@ -1,4 +1,61 @@
 .wrapper {}
 	.container {
 		display: flex;
+		justify-content: space-between;
 	}
+	.caption {}
+		.controls {
+			display: flex;
+			margin: 1em 0;
+			justify-content: space-between;
+			align-items: center;
+		}
+			.scrollers {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				list-style-type: none;
+			}
+				.item {
+					
+				}
+					.button {
+						font-weight: bold;
+						color: var(--accent-color);
+						background-color: transparent;
+						text-transform: uppercase;
+					}
+					.button:hover,
+					.button:focus {
+						text-decoration: underline;
+					}
+					.item::after {
+						content: "/";
+						margin: 0 0.62em;
+						margin-left: 1em;
+						margin-right: 1em;
+					}
+					.item:last-child::after {
+						display: none;
+					}
+			.expandToggle {
+				color: var(--base-color);
+				background-color: transparent;
+				text-transform: lowercase;
+			}
+				.expandToggle::after {
+					display: inline-block;
+					margin-left: 0.62em;
+					color: var(--accent-color);
+				}
+				.expandToggle[aria-checked="true"]::after {
+					content: "(-)";
+				}
+				.expandToggle[aria-checked="false"]::after {
+					content: "(+)";
+				}	
+				.expandToggle:focus,
+				.expandToggle:hover {
+					text-decoration: underline;
+				}
+

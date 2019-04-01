@@ -21,15 +21,12 @@
 				color: var(--base-color);
 				background-color: transparent;
 			}
-				/*arrow*/
-				.back::before {
-					content: "";
-					height: 0;
-					width: 0;
-					
-				}
+			.back:hover,
+			.back:focus {
+				text-decoration: underline;
+			}
 	.projects {
-		flex: 1 0 auto;
+		/*flex: 1 0 auto;*/ /*removed so that title line doesn't over-extend */
 		height: 1000px;
 		padding-top: 8.8em;
 	}

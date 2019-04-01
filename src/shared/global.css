@@ -19,9 +19,23 @@ html:global(.a-fullscreen) body {
 	overflow: auto;
 }
 
+button {
+	padding: 0;
+}
+button:hover {
+	cursor: pointer;
+}
+button:focus,
+a:focus {
+	outline: none;
+}
+abbr {
+	text-decoration: none;
+}
 :root {
 	--base-color: #fbfbfb;
 	--accent-color: #ef2d5e;
+	--aside-color: #777777;
 }
 
 /*CORE STYLES
@@ -30,7 +44,7 @@ body {
 	color: var(--base-color);
 }
 
-p, a, button {
+p, a, button, li {
 	font-size: 1em;
 	font-family: "Consolas", sans-serif; /* should this be 'inherit'? */
 }
@@ -45,6 +59,7 @@ a:active {
 	color: var(--accent-color);
 	text-decoration: none;
 }
-a:hover {
+a:hover,
+a:focus {
 	text-decoration: underline;
 }

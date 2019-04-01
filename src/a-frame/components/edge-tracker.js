@@ -1,7 +1,7 @@
 AFRAME.registerComponent("edge-tracker", {
 
 	schema: {
-		focus: {
+		active: {
 			type: "boolean",
 			default: false
 		},
@@ -57,6 +57,8 @@ AFRAME.registerComponent("edge-tracker", {
 		window.removeEventListener("resize", this.unlockRotation);
 	},//removeListeners
 	setRotationLock: function(lock){
+
+		console.log("set rotation lock!", lock, this.data.active)
 
 		if(!this.data.active){
 			this.rotationLocked = lock; // update the lock for use in tick();
