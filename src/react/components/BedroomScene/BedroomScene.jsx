@@ -10,6 +10,7 @@ import Link from "ReactComponents/Link/Link.jsx";
 import Wall from "ReactComponents/Wall/Wall.jsx";
 import Room from "ReactComponents/Room/Room.jsx";
 
+
 export default function BedroomScene(){
 
 	return(

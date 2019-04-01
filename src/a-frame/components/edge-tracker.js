@@ -67,9 +67,9 @@ AFRAME.registerComponent("edge-tracker", {
 			clearTimeout(this.lockTimeout);
 			
 			//if the rotation is unlocked, then try to lock again after a brief pause
-			if(!this.lock) this.lockTimeout = setTimeout(this.lockRotation, 100);	
+			if(!this.rotationLocked) this.lockTimeout = setTimeout(this.lockRotation, 100);	
 			//otherwise de-reference the timeout completely
-			else           this.lockTimeout = null;
+			else                     this.lockTimeout = null;
 		}
 	},//setRotationLock
 	updateCameraRotationFocus: function(){

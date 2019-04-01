@@ -19,7 +19,7 @@ export default function Camera(){
 			toggler={`active: ${active}`}
 			edge-tracker={
 				`rotation: ${-57.5};
-				active: ${active}`
+				active: ${active};`
 			}>
 			<Entity
 				primitive="a-camera"
