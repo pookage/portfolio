@@ -25,6 +25,7 @@ export default function Portfolio(){
 	function goBack(){
 		dispatch({ type: "setPage", value: "hub" });
 	}//goBack
+	
 
 	//RENDER LOGIC
 	//-----------------------------------

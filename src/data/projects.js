@@ -8,108 +8,146 @@ export const projects = [
 				{
 					src: "Assets/composites/the-handmaiden/desktop/home__01.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__landing"
+					id: "the_handmaiden__desktop__landing"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__02.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__synopsis"
+					id: "the_handmaiden__desktop__synopsis"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__03.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__gallery"
+					id: "the_handmaiden__desktop__gallery"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__04.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__characters"
+					id: "the_handmaiden__desktop__characters"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__05.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__read_more"
+					id: "the_handmaiden__desktop__read_more"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__06.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__trailer"
+					id: "the_handmaiden__desktop__trailer"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/biography.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__biography"
+					id: "the_handmaiden__desktop__biography"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/filmography.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__filmography"
+					id: "the_handmaiden__desktop__filmography"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/novel.jpg",
 					description: "",
-					id: "#the_handmaiden__desktop__novel"
+					id: "the_handmaiden__desktop__novel"
 				}
 			],
-			tablet: [],
-			mobile: []
+			tablet: [
+				{
+					src: "Assets/composites/the-handmaiden/tablet/home__01.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__landing"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/home__02.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__synopsis"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/home__03.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__gallery"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/home__04.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__characters"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/home__05.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__read_more"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/home__06.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__trailer"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/biography.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__biography"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/filmography.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__filmography"
+				}, {
+					src: "Assets/composites/the-handmaiden/tablet/novel.jpg",
+					description: "",
+					id: "the_handmaiden__tablet__novel"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/the-handmaiden/mobile/home__01.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__landing"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/home__02.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__synopsis"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/home__03.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__gallery"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/home__04.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__characters"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/home__05.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__read_more"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/home__06.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__trailer"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/biography.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__biography"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/filmography.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__filmography"
+				}, {
+					src: "Assets/composites/the-handmaiden/mobile/novel.jpg",
+					description: "",
+					id: "the_handmaiden__mobile__novel"
+				}
+			],
 		},
 		pages: [
 			{
 				name: "Landing",
-				ids: {
-					desktop: "#the_handmaiden__desktop__landing",
-					tablet: "",
-					mobile: ""
-				}
 			}, {
 				name: "Synopsis",
-				positions: {
-					desktop: "#the_handmaiden__desktop__synopsis",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Gallery",
-				positions: {
-					desktop: "#the_handmaiden__desktop__gallery",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Characters",
-				positions: {
-					desktop: "#the_handmaiden__desktop__characters",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Further",
-				positions: {
-					desktop: "#the_handmaiden__desktop__read_more",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Trailer",
-				positions: {
-					desktop: "#the_handmaiden__desktop__trailer",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Biography",
-				positions: {
-					desktop: "#the_handmaiden__desktop__biography",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Filmography",
-				positions: {
-					desktop: "#the_handmaiden__desktop__filmography",
-					tablet: "",
-					mobile: ""
-				}
+				
 			}, {
 				name: "Novel",
-				positions: {
-					desktop: "#the_handmaiden__desktop__novel",
-					tablet: "",
-					mobile: ""
-				}
 			}
 		],
 		tags: [

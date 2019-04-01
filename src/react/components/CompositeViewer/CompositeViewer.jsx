@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CompositeScroll } from "Contexts/CompositeScroll.js";
 import s from "ReactComponents/CompositeViewer/CompositeViewer.css";
 
 export default function CompositeViewer(props){
@@ -6,6 +7,7 @@ export default function CompositeViewer(props){
 	//HOOKS
 	//-------------------------------
 	const [ expanded, setExpanded ] = useState(false);
+	const { dispatch } = useContext(CompositeScroll);
 
 
 	//EVENT HANDLING
@@ -13,6 +15,12 @@ export default function CompositeViewer(props){
 	function toggleExpand(){
 		setExpanded(!expanded);
 	}//toggleExpand
+	function setActiveSection(index){
+		dispatch({ 
+			type: "setSectionIndex", 
+			value: index 
+		});
+	}//setActiveSection
 
 
 	//RENDER LOGIC
@@ -24,17 +32,16 @@ export default function CompositeViewer(props){
 		children: composites // <Composite /> components to render inside the viewer
 	} = props;
 
-	function renderButton(button){
+	function renderButton(button, index){
 		const {
-			name: label,
-			positions
+			name: label
 		} = button;
 
-		const key = `${safeName}-${label}-button`;
-
+		const key    = `${safeName}-${label}-button`;
+		const action = setActiveSection.bind(true, index);
 		return(
 			<li key={key}>
-				<button>
+				<button onClick={action}>
 					{label}
 				</button>
 			</li>
@@ -42,8 +49,10 @@ export default function CompositeViewer(props){
 	}//renderButton
 
 	return(
-		<figure className={s.viewerWrapper}>
-			{composites}
+		<figure className={s.wrapper}>
+			<div className={s.container}>
+				{composites}
+			</div>
 			<figcaption>
 				<nav aria-label={`${name} screenshot controls.`}>
 					<ul>

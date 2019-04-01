@@ -1,23 +1,37 @@
 .wrapper {
+	--scrollbar_width: 9px;
 	font-size: 20vw;
 	height: 1em;
+	width: calc(var(--aspect-ratio) - var(--scrollbar_width));
 	overflow: hidden;
-	--scrollbar_width: 10px;
 }
-.wrapper.desktop {
-	--aspect-rato: 1.79em;
-	width: calc(var(--aspect-rato) - var(--scrollbar_width));
-}
-	.desktop .container {
+	.container {
 		height: 100%;
-		width: calc(var(--aspect-rato) + var(--scrollbar_width));
+		position: relative;
+		width: calc(var(--aspect-ratio) + var(--scrollbar_width));
 		overflow-y: scroll;
-  		scroll-snap-type: y mandatory;
-		
+		scroll-snap-type: y mandatory;
 	}
-	.image {
-		display: block;
-		width: 100%;
-		height: auto;
-		scroll-snap-align: start;
-	}
+		.image {
+			display: block;
+			width: 100%;
+			height: auto;
+			scroll-snap-align: start;
+			transition: opacity .3s;
+		}
+		/* REMOVED AS NEED TO SYNC QUICK-SCROLL WITH MANUAL*/
+		.image.active {
+			/*opacity: 1;*/
+		}
+		.image.inactive {
+			/*opacity: 0.2;*/
+		}
+.wrapper.desktop {
+	--aspect-ratio: 1.79em;
+}
+.wrapper.tablet {
+	--aspect-ratio: 0.77em;
+}
+.wrapper.mobile {
+	--aspect-ratio: 0.58em;
+}

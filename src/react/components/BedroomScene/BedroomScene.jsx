@@ -1,5 +1,5 @@
 import "Components/outline.js";
-import React, { useContext } from "react";
+import React from "react";
 import { Scene, Entity } from "aframe-react";
 import Animations from "ReactComponents/mixins/Animations.jsx";
 import Styles from "ReactComponents/mixins/Styles.jsx";

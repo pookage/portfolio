@@ -1,4 +1,5 @@
 import React from "react";
+import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
 import Composite from "ReactComponents/Composite/Composite.jsx";
 import font from "Shared/fonts.css";
@@ -35,15 +36,16 @@ export default function Project(props){
 			<h1 className={`${font.heading} ${font.title} ${s.title}`} id={`${safeTitle}-title`}>
 				{title}
 			</h1>
-
-			<CompositeViewer
-				name={title}
-				safeName={safeTitle}
-				pages={pages}>
-				<Composite size="desktop" images={images.desktop} />
-				<Composite size="tablet" images={images.tablet} />
-				<Composite size="mobile" images={images.mobile} />
-			</CompositeViewer>
+			<CompositeScrollProvider>
+				<CompositeViewer
+					name={title}
+					safeName={safeTitle}
+					pages={pages}>
+					<Composite size="desktop" images={images.desktop} key="ahh" />
+					<Composite size="tablet" images={images.tablet} key="oooh"/>
+					<Composite size="mobile" images={images.mobile} key="ehhh"/>
+				</CompositeViewer>
+			</CompositeScrollProvider>
 
 			<section>
 				<h1>
