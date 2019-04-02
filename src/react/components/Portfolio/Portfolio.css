@@ -31,5 +31,5 @@
 			}
 	.projects {
 		/*flex: 1 0 auto;*/ /*removed so that title line doesn't over-extend */
-		padding: 8.8em 0;
+		padding-bottom: 8.8em;
 	}

@@ -366,10 +366,10 @@ export const projects = [
 		],
 		articles: [
 			{
-				name: "Making a tasty cascading-text effect",
+				name: "Making a Tasty Cascading-Text Effect",
 				url: ""
 			},{
-				name: "Tell a story with the IntersectionObserver API",
+				name: "Tell a Story with the IntersectionObserver API",
 				url: ""
 			}
 		]

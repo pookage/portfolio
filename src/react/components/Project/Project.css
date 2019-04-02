@@ -1,4 +1,6 @@
-.wrapper {}
+.wrapper {
+	padding-top: 8.8em; /* size of the gap between top of screen and first project link */
+}
 	.title {
 		display: flex;
 		flex: 1 0 auto;
@@ -58,7 +60,3 @@
 						transform: scale(1.05);
 						font-weight: bold;
 					}
-		
-.wrapper + .wrapper {
-	margin-top: calc(var(--heading-size) * 1.62);
-}
