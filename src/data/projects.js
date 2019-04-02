@@ -1,8 +1,8 @@
 export const projects = [
 	{
 		title: "The Handmaiden",
-		date: "2016-08",
 		safeTitle: "the-handmaiden",
+		date: "2016-08",
 		description: [
 			"A companion site for Park Chan-Wook's 2016 film of the same name.",
 			"Winner of the 'Best Online Campaign of the Year' Screen Award, 2017."
@@ -145,8 +145,8 @@ export const projects = [
 		]
 	},{
 		title: "Alien Covenant",
-		date: "2017-05",
 		safeTitle: "alien-covenant",
+		date: "2017-05",
 		description: [
 			"A hub site for promotional materials related to the UK-release of Ridley Scott's Alien Covenant."
 		],
@@ -188,6 +188,110 @@ export const projects = [
 		pages: [ 
 			"Home",
 			"Synopsis"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		]
+	},{
+		title: "Blindspotting",
+		safeTitle: "blindspotting",
+		date: "2018-07",
+		description: [
+			"A media-showcase to introduce the characters and artwork from the 2017 film Blindspotting."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/blindspotting/desktop/home__01.jpg",
+					description: "",
+					id: "blindspotting__desktop__landing"
+				},{
+					src: "Assets/composites/blindspotting/desktop/home__02.jpg",
+					description: "",
+					id: "blindspotting__desktop__posters"
+				},{
+					src: "Assets/composites/blindspotting/desktop/home__03.jpg",
+					description: "",
+					id: "blindspotting__desktop__gallery"
+				},{
+					src: "Assets/composites/blindspotting/desktop/home__04.jpg",
+					description: "",
+					id: "blindspotting__desktop__cards"
+				},{
+					src: "Assets/composites/blindspotting/desktop/home__05.jpg",
+					description: "",
+					id: "blindspotting__desktop__artwork"
+				},{
+					src: "Assets/composites/blindspotting/desktop/home__06.jpg",
+					description: "",
+					id: "blindspotting__desktop__trailer"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/blindspotting/tablet/home__01.jpg",
+					description: "",
+					id: "blindspotting__tablet__landing"
+				},{
+					src: "Assets/composites/blindspotting/tablet/home__02.jpg",
+					description: "",
+					id: "blindspotting__tablet__posters"
+				},{
+					src: "Assets/composites/blindspotting/tablet/home__03.jpg",
+					description: "",
+					id: "blindspotting__tablet__gallery"
+				},{
+					src: "Assets/composites/blindspotting/tablet/home__04.jpg",
+					description: "",
+					id: "blindspotting__tablet__cards"
+				},{
+					src: "Assets/composites/blindspotting/tablet/home__05.jpg",
+					description: "",
+					id: "blindspotting__tablet__artwork"
+				},{
+					src: "Assets/composites/blindspotting/tablet/home__06.jpg",
+					description: "",
+					id: "blindspotting__tablet__trailer"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/blindspotting/mobile/home__01.jpg",
+					description: "",
+					id: "blindspotting__mobile__landing"
+				},{
+					src: "Assets/composites/blindspotting/mobile/home__02.jpg",
+					description: "",
+					id: "blindspotting__mobile__posters"
+				},{
+					src: "Assets/composites/blindspotting/mobile/home__03.jpg",
+					description: "",
+					id: "blindspotting__mobile__gallery"
+				},{
+					src: "Assets/composites/blindspotting/mobile/home__04.jpg",
+					description: "",
+					id: "blindspotting__mobile__cards"
+				},{
+					src: "Assets/composites/blindspotting/mobile/home__05.jpg",
+					description: "",
+					id: "blindspotting__mobile__artwork"
+				},{
+					src: "Assets/composites/blindspotting/mobile/home__06.jpg",
+					description: "",
+					id: "blindspotting__mobile__trailer"
+				}
+			],
+		},
+		pages: [ 
+			"Landing",
+			"Posters",
+			"Gallery",
+			"Cards",
+			"Artwork",
+			"Trailer"
 		],
 		tags: [
 			"HTML",
