@@ -4,7 +4,7 @@ export const projects = [
 		safeTitle: "the-handmaiden",
 		date: "2016-08",
 		description: [
-			"A companion site for Park Chan-Wook's 2016 film of the same name.",
+			"A companion site for Park Chan-Wook's 2016 film of the same name, with heavy emphasis placed on its artwork matching aesthetic.",
 			"Winner of the 'Best Online Campaign of the Year' Screen Award, 2017."
 		],
 		images: {
@@ -45,7 +45,7 @@ export const projects = [
 					src: "Assets/composites/the-handmaiden/desktop/novel.jpg",
 					description: "",
 					id: "the_handmaiden__desktop__novel"
-				}
+				}, 
 			],
 			tablet: [
 				{
@@ -298,6 +298,62 @@ export const projects = [
 			"CSS3",
 			"ES6",
 			"Preact"
+		]
+	},{
+		title: "Fifty Shades Darker",
+		safeTitle: "fifty-shades-darker",
+		date: "2017-02",
+		description: [
+			"A desktop-only teaser site for the 2017 film of the same name."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/fifty-shades-darker/desktop/home__01.jpg",
+					description: "",
+					id: "fifty_shades_darker__desktop__landing"
+				},{
+					src: "Assets/composites/fifty-shades-darker/desktop/home__02.jpg",
+					description: "",
+					id: "fifty_shades_darker__desktop__clip_1"
+				},{
+					src: "Assets/composites/fifty-shades-darker/desktop/home__03.jpg",
+					description: "",
+					id: "fifty_shades_darker__desktop__clip_2"
+				},{
+					src: "Assets/composites/fifty-shades-darker/desktop/home__04.jpg",
+					description: "",
+					id: "fifty_shades_darker__desktop__gallery"
+				},{
+					src: "Assets/composites/fifty-shades-darker/desktop/home__05.jpg",
+					description: "",
+					id: "fifty_shades_darker__desktop__clip_3"
+				},{
+					src: "Assets/composites/fifty-shades-darker/desktop/home__06.jpg",
+					description: "",
+					id: "fifty_shades_darker__desktop__tickets"
+				}
+			]
+		},
+		pages: [ 
+			"Landing",
+			"Clip 1",
+			"Clip 2",
+			"Gallery",
+			"Clip 3",
+			"Tickets"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		],
+		articles: [
+			{
+				name: "Making a tasty cascading-text effect",
+				url: ""
+			}
 		]
 	}
 ];

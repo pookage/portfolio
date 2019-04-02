@@ -3,6 +3,7 @@
 	font-size: 20vw;
 	height: 1em;
 	width: calc(var(--aspect-ratio) - var(--scrollbar_width));
+	background-color: var(--inactive-color);
 	overflow: hidden;
 }
 .wrapper:not(:last-child){

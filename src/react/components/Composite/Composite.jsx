@@ -9,7 +9,7 @@ export default function Composite(props){
 	//--------------------------------
 	const {
 		size,   // (string)[mobile, tablet, desktop]
-		images, // (array) of screenshots to render in the composite
+		images = [], // (array) of screenshots to render in the composite
 	} = props;
 
 	const screenshots = images.map(renderScreenshot);
@@ -27,14 +27,16 @@ export default function Composite(props){
 	//------------------------------
 	function scrollToActiveScreenshot(){
 
-		const screenshot = screenshots[activeSectionIndex].ref.current;
-		const offset     = screenshot.offsetTop;
+		const vnode      = screenshots[activeSectionIndex];
+		if(vnode){
+			const screenshot = vnode.ref.current;
+			const offset     = screenshot.offsetTop;
 
-		scroller.current.scrollTo({
-			top: screenshot.offsetTop,
-			behavior: "smooth"
-		});
-
+			scroller.current.scrollTo({
+				top: screenshot.offsetTop,
+				behavior: "smooth"
+			});
+		}
 	}//scrollToActiveScreenshot
 
 
