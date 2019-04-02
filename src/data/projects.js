@@ -806,5 +806,136 @@ export const projects = [
 				url: ""
 			}
 		]
+	},	{
+		title: "Suspiria",
+		safeTitle: "suspiria",
+		date: "2018-11",
+		description: [
+			"A media-rich promotional site for Luca Guadagnino's 2018 remake of Suspiria."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/suspiria/desktop/home__01.jpg",
+					description: "",
+					id: "suspiria__desktop__landing"
+				},{
+					src: "Assets/composites/suspiria/desktop/home__02.jpg",
+					description: "",
+					id: "suspiria__desktop__tanz"
+				},{
+					src: "Assets/composites/suspiria/desktop/home__03.jpg",
+					description: "",
+					id: "suspiria__desktop__mother"
+				},{
+					src: "Assets/composites/suspiria/desktop/home__04.jpg",
+					description: "",
+					id: "suspiria__desktop__reviews"
+				},{
+					src: "Assets/composites/suspiria/desktop/legends__landing.jpg",
+					description: "",
+					id: "suspiria__desktop__legends_closed"
+				},{
+					src: "Assets/composites/suspiria/desktop/legends__gallery.jpg",
+					description: "",
+					id: "suspiria__desktop__legends_open"
+				},{
+					src: "Assets/composites/suspiria/desktop/whispers.jpg",
+					description: "",
+					id: "suspiria__desktop__soundtrack"
+				},{
+					src: "Assets/composites/suspiria/desktop/videos.jpg",
+					description: "",
+					id: "suspiria__desktop__videos"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/suspiria/tablet/home__01.jpg",
+					description: "",
+					id: "suspiria__tablet__landing"
+				},{
+					src: "Assets/composites/suspiria/tablet/home__02.jpg",
+					description: "",
+					id: "suspiria__tablet__tanz"
+				},{
+					src: "Assets/composites/suspiria/tablet/home__03.jpg",
+					description: "",
+					id: "suspiria__tablet__mother"
+				},{
+					src: "Assets/composites/suspiria/tablet/home__04.jpg",
+					description: "",
+					id: "suspiria__tablet__reviews"
+				},{
+					src: "Assets/composites/suspiria/tablet/legends__landing.jpg",
+					description: "",
+					id: "suspiria__tablet__legends_closed"
+				},{
+					src: "Assets/composites/suspiria/tablet/legends__gallery.jpg",
+					description: "",
+					id: "suspiria__tablet__legends_open"
+				},{
+					src: "Assets/composites/suspiria/tablet/whispers.jpg",
+					description: "",
+					id: "suspiria__tablet__soundtrack"
+				},{
+					src: "Assets/composites/suspiria/tablet/videos.jpg",
+					description: "",
+					id: "suspiria__tablet__videos"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/suspiria/mobile/home__01.jpg",
+					description: "",
+					id: "suspiria__mobile__landing"
+				},{
+					src: "Assets/composites/suspiria/mobile/home__02.jpg",
+					description: "",
+					id: "suspiria__mobile__tanz"
+				},{
+					src: "Assets/composites/suspiria/mobile/home__03.jpg",
+					description: "",
+					id: "suspiria__mobile__mother"
+				},{
+					src: "Assets/composites/suspiria/mobile/home__04.jpg",
+					description: "",
+					id: "suspiria__mobile__reviews"
+				},{
+					src: "Assets/composites/suspiria/mobile/legends__landing.jpg",
+					description: "",
+					id: "suspiria__mobile__legends_closed"
+				},{
+					src: "Assets/composites/suspiria/mobile/legends__gallery.jpg",
+					description: "",
+					id: "suspiria__mobile__legends_open"
+				},{
+					src: "Assets/composites/suspiria/mobile/whispers.jpg",
+					description: "",
+					id: "suspiria__mobile__soundtrack"
+				},{
+					src: "Assets/composites/suspiria/mobile/videos.jpg",
+					description: "",
+					id: "suspiria__mobile__videos"
+				}
+			],
+		},
+		pages: [ 
+			"Landing",
+			"Summary",
+			"The Mothers",
+			"Reviews",
+			"Gallery Selection",
+			"Gallery",
+			"Soundtrack",
+			"Videos"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		],
+		articles: null
 	}
 ];
