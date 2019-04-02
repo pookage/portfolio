@@ -373,5 +373,149 @@ export const projects = [
 				url: ""
 			}
 		]
+	},{
+		title: "Get Out Artbook",
+		safeTitle: "get-out-artbook",
+		date: "2017-09",
+		description: [
+			"A site to showcase the artwork and artists commissioned for the Art Book to Jordan Peele's 2017 film 'Get Out'."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/get-out/desktop/home__01.jpg",
+					description: "",
+					id: "get_out__desktop__landing"
+				},{
+					src: "Assets/composites/get-out/desktop/home__02.jpg",
+					description: "",
+					id: "get_out__desktop__foreword"
+				},{
+					src: "Assets/composites/get-out/desktop/home__03.jpg",
+					description: "",
+					id: "get_out__desktop__gallery_1"
+				},{
+					src: "Assets/composites/get-out/desktop/home__04.jpg",
+					description: "",
+					id: "get_out__desktop__artwork__skull"
+				},{
+					src: "Assets/composites/get-out/desktop/home__05.jpg",
+					description: "",
+					id: "get_out__desktop__artwork__yellow_teacup"
+				},{
+					src: "Assets/composites/get-out/desktop/home__06.jpg",
+					description: "",
+					id: "get_out__desktop__artwork__red_waves"
+				},{
+					src: "Assets/composites/get-out/desktop/home__07.jpg",
+					description: "",
+					id: "get_out__desktop__artwork__gallery_2"
+				},{
+					src: "Assets/composites/get-out/desktop/home__08.jpg",
+					description: "",
+					id: "get_out__desktop__artwork__teacup_light"
+				},{
+					src: "Assets/composites/get-out/desktop/home__09.jpg",
+					description: "",
+					id: "get_out__desktop__artwork__thanks"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/get-out/tablet/home__01.jpg",
+					description: "",
+					id: "get_out__tablet__landing"
+				},{
+					src: "Assets/composites/get-out/tablet/home__02.jpg",
+					description: "",
+					id: "get_out__tablet__foreword"
+				},{
+					src: "Assets/composites/get-out/tablet/home__03.jpg",
+					description: "",
+					id: "get_out__tablet__gallery_1"
+				},{
+					src: "Assets/composites/get-out/tablet/home__04.jpg",
+					description: "",
+					id: "get_out__tablet__artwork__skull"
+				},{
+					src: "Assets/composites/get-out/tablet/home__05.jpg",
+					description: "",
+					id: "get_out__tablet__artwork__yellow_teacup"
+				},{
+					src: "Assets/composites/get-out/tablet/home__06.jpg",
+					description: "",
+					id: "get_out__tablet__artwork__red_waves"
+				},{
+					src: "Assets/composites/get-out/tablet/home__07.jpg",
+					description: "",
+					id: "get_out__tablet__artwork__gallery_2"
+				},{
+					src: "Assets/composites/get-out/tablet/home__08.jpg",
+					description: "",
+					id: "get_out__tablet__artwork__teacup_light"
+				},{
+					src: "Assets/composites/get-out/tablet/home__09.jpg",
+					description: "",
+					id: "get_out__tablet__artwork__thanks"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/get-out/mobile/home__01.jpg",
+					description: "",
+					id: "get_out__mobile__landing"
+				},{
+					src: "Assets/composites/get-out/mobile/home__02.jpg",
+					description: "",
+					id: "get_out__mobile__foreword"
+				},{
+					src: "Assets/composites/get-out/mobile/home__03.jpg",
+					description: "",
+					id: "get_out__mobile__gallery_1"
+				},{
+					src: "Assets/composites/get-out/mobile/home__04.jpg",
+					description: "",
+					id: "get_out__mobile__artwork__skull"
+				},{
+					src: "Assets/composites/get-out/mobile/home__05.jpg",
+					description: "",
+					id: "get_out__mobile__artwork__yellow_teacup"
+				},{
+					src: "Assets/composites/get-out/mobile/home__06.jpg",
+					description: "",
+					id: "get_out__mobile__artwork__red_waves"
+				},{
+					src: "Assets/composites/get-out/mobile/home__07.jpg",
+					description: "",
+					id: "get_out__mobile__artwork__gallery_2"
+				},{
+					src: "Assets/composites/get-out/mobile/home__08.jpg",
+					description: "",
+					id: "get_out__mobile__artwork__teacup_light"
+				},{
+					src: "Assets/composites/get-out/mobile/home__09.jpg",
+					description: "",
+					id: "get_out__mobile__artwork__thanks"
+				}
+			],
+		},
+		pages: [ 
+			"Landing",
+			"Foreword",
+			"Gallery 1",
+			"Artwork 1",
+			"Artwork 2",
+			"Artwork 3",
+			"Gallery 2",
+			"Artwork 4",
+			"Thank you"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		],
+		articles: null
 	}
 ];

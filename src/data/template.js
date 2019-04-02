@@ -37,5 +37,5 @@
 			"ES6",
 			"Preact"
 		],
-		articles: []
+		articles: null
 	}

@@ -101,9 +101,6 @@ export default function Project(props){
 				{description.map(renderParagraph)}
 			</section>
 
-			
-
-
 			{articles && (
 				<section className={s.details}>
 					<h1 className={`${font.subtitle} ${s.subtitle}`}>
