@@ -104,15 +104,13 @@ export default function Project(props){
 			{articles && (
 				<section className={s.details}>
 					<h1 className={`${font.subtitle} ${s.subtitle}`}>
-						Articles
+						Related Articles
 					</h1>
 					<ul className={s.list}>
 						{articles.map(renderArticleLink)}
 					</ul>
 				</section>
-			)}
-
-			
+			)}			
 		</section>
 	);
 }//Project

@@ -598,11 +598,12 @@ export const projects = [
 			"HTML",
 			"CSS3",
 			"ES6",
-			"Preact"
+			"Preact",
+			"Gyroscope"
 		],
 		articles: [
 			{
-				name: "Everyday Uses of the Mobile Gyroscope",
+				name: "Everyday Uses of the Mobile Gyroscope and DeviceOrientation APIs",
 				url: ""
 			}, {
 				name: "Accessible Code is Easier to Maintain: Fight me",
@@ -703,6 +704,105 @@ export const projects = [
 		articles: [
 			{
 				name: "Making Galleries More Interesting",
+				url: ""
+			}
+		]
+	},	{
+		title: "Son of Bigfoot",
+		safeTitle: "son-of-bigfoot",
+		date: "2017-06",
+		description: [
+			"A facial-recognition-powered AR quiz, in which your face (from webcam or file-upload) becomes more hairy for each question that you answer correctly."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/son-of-bigfoot/desktop/landing.jpg",
+					description: "",
+					id: "son_of_bigfoot__desktop__landing"
+				},{
+					src: "Assets/composites/son-of-bigfoot/desktop/cta.jpg",
+					description: "",
+					id: "son_of_bigfoot__desktop__cta"
+				},{
+					src: "Assets/composites/son-of-bigfoot/desktop/confirmation.jpg",
+					description: "",
+					id: "son_of_bigfoot__desktop__confirmation"
+				},{
+					src: "Assets/composites/son-of-bigfoot/desktop/question.jpg",
+					description: "",
+					id: "son_of_bigfoot__desktop__question"
+				},{
+					src: "Assets/composites/son-of-bigfoot/desktop/result.jpg",
+					description: "",
+					id: "son_of_bigfoot__desktop__result"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/son-of-bigfoot/tablet/landing.jpg",
+					description: "",
+					id: "son_of_bigfoot__tablet__landing"
+				},{
+					src: "Assets/composites/son-of-bigfoot/tablet/cta.jpg",
+					description: "",
+					id: "son_of_bigfoot__tablet__cta"
+				},{
+					src: "Assets/composites/son-of-bigfoot/tablet/confirmation.jpg",
+					description: "",
+					id: "son_of_bigfoot__tablet__confirmation"
+				},{
+					src: "Assets/composites/son-of-bigfoot/tablet/question.jpg",
+					description: "",
+					id: "son_of_bigfoot__tablet__question"
+				},{
+					src: "Assets/composites/son-of-bigfoot/tablet/result.jpg",
+					description: "",
+					id: "son_of_bigfoot__tablet__result"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/son-of-bigfoot/mobile/landing.jpg",
+					description: "",
+					id: "son_of_bigfoot__mobile__landing"
+				},{
+					src: "Assets/composites/son-of-bigfoot/mobile/cta.jpg",
+					description: "",
+					id: "son_of_bigfoot__mobile__cta"
+				},{
+					src: "Assets/composites/son-of-bigfoot/mobile/confirmation.jpg",
+					description: "",
+					id: "son_of_bigfoot__mobile__confirmation"
+				},{
+					src: "Assets/composites/son-of-bigfoot/mobile/question.jpg",
+					description: "",
+					id: "son_of_bigfoot__mobile__question"
+				},{
+					src: "Assets/composites/son-of-bigfoot/mobile/result.jpg",
+					description: "",
+					id: "son_of_bigfoot__mobile__question"
+				}
+			],
+		},
+		pages: [ 
+			"Landing",
+			"Prompt",
+			"Confirmation",
+			"Quiz",
+			"Result"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact",
+			"AR",
+			"clmtrackr"
+		],
+		articles: [
+			{
+				name: "Snapchat-Style Filters on the Web",
 				url: ""
 			}
 		]
