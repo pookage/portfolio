@@ -142,6 +142,12 @@ export const projects = [
 			"CSS3",
 			"ES6",
 			"Preact"
+		],
+		articles: [
+			{
+				name: "Give a Damn: Always Create Micro-Interactions",
+				url: ""
+			}
 		]
 	},{
 		title: "Alien Covenant",
@@ -298,6 +304,15 @@ export const projects = [
 			"CSS3",
 			"ES6",
 			"Preact"
+		],
+		articles: [
+			{
+				name: "Flipping Cards: Using Perspective in CSS",
+				url: ""
+			},{
+				name: "The Joys of Golden-Ratio in CSS",
+				url: ""
+			}
 		]
 	},{
 		title: "Fifty Shades Darker",
@@ -352,6 +367,9 @@ export const projects = [
 		articles: [
 			{
 				name: "Making a tasty cascading-text effect",
+				url: ""
+			},{
+				name: "Tell a story with the IntersectionObserver API",
 				url: ""
 			}
 		]

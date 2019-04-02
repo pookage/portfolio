@@ -17,7 +17,8 @@ export default function Project(props){
 		description, // (string) a short description of what the project was about
 		images,      // (object) containing arrays of screenshots for desktop / mobile / tablet
 		pages,       // (array) of objects containing scroll co-ordinates for each page
-		tags         // (array) of strings for each tech used on the project
+		tags,        // (array) of strings for each tech used on the project
+		articles     // (array) of objects for each medium article written about the project
 	} = props;
 	
 	function renderTag(tag){
@@ -41,6 +42,28 @@ export default function Project(props){
 			</p>
 		);
 	}//renderParagraph
+	function renderArticleLink(article, index){
+
+		const {
+			name,
+			url
+		} = article;
+
+		const safeName = name.toLowerCase().replace(/\s/g , "_");
+		const key      = `${safeTitle}__articles__${safeName}`;
+
+		return(
+			<li className={s.item}
+				key={key}>
+				<a
+					className={s.link} 
+					href={url}
+					target="_blank">
+					{name}
+				</a>
+			</li>
+		);
+	}//renderArticleLink
 
 	return(
 		<section 
@@ -61,6 +84,14 @@ export default function Project(props){
 				</CompositeViewer>
 			</CompositeScrollProvider>
 
+			<aside
+				className={s.tags} 
+				aria-label="Technologies used">
+				<ul className={s.list}>
+					{tags.map(renderTag)}
+				</ul>
+			</aside>
+
 			<section className={s.details}>
 				<h1 className={`${font.subtitle} ${s.subtitle}`}>
 					<abbr title="Description">
@@ -68,14 +99,23 @@ export default function Project(props){
 					</abbr>
 				</h1>
 				{description.map(renderParagraph)}
-				<aside
-					className={s.tags} 
-					aria-label="Technologies used">
-					<ul className={s.list}>
-						{tags.map(renderTag)}
-					</ul>
-				</aside>
 			</section>
+
+			
+
+
+			{articles && (
+				<section className={s.details}>
+					<h1 className={`${font.subtitle} ${s.subtitle}`}>
+						Articles
+					</h1>
+					<ul className={s.list}>
+						{articles.map(renderArticleLink)}
+					</ul>
+				</section>
+			)}
+
+			
 		</section>
 	);
 }//Project

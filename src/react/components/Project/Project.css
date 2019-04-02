@@ -16,6 +16,20 @@
 			top: -0.125em; /* offset because Kandinsky font is weird */
 			background-color: var(--base-color);
 		}
+		.tags {}
+			.tags .list {
+				list-style-type: none;
+			}
+				.tag {
+					display: inline-block;
+					vertical-align: top;
+					color: var(--aside-color);
+				}
+					.tag:not(:last-child)::after {
+						content: "/";
+						display: inline-block;
+						margin: 0 0.62em;
+					}
 		.details {
 			margin-top: 1.62em;
 		}
@@ -23,22 +37,28 @@
 				font-size: var(--subheading-size);
 				margin-bottom: 0.62em;
 			}
-			.tags {
-				margin-top: 1em;
+			.details .list {
+				margin-left: 2.62em;
 			}
-				.list {
-					list-style-type: none;
+				.details .list .link[href=""]{
+					color: var(--base-color);
+					cursor: not-allowed;
+					text-decoration: none;
 				}
-					.tag {
+					.details .list .link[href=""]::after{
+						content: "(coming soon)";
 						display: inline-block;
-						vertical-align: top;
-						color: var(--aside-color);
+						margin-left: 0.62em;
+						color: var(--accent-color);
+						font-style: italic;
+						transform: scale(1);
+						transition: transform .1s;
 					}
-						.tag:not(:last-child)::after {
-							content: "/";
-							display: inline-block;
-							margin: 0 0.62em;
-						}
+					.details .list .link[href=""]:hover::after {
+						transform: scale(1.05);
+						font-weight: bold;
+					}
+		
 .wrapper + .wrapper {
 	margin-top: calc(var(--heading-size) * 1.62);
 }
