@@ -517,5 +517,92 @@ export const projects = [
 			"Preact"
 		],
 		articles: null
+	},{
+		title: "Hell Fest",
+		safeTitle: "hell-fest",
+		date: "2018-09",
+		description: [
+			"A map / exploration-based teaser site to share clips and stills from the 2018 horror flick: Hell Fest."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/hell-fest/desktop/map.jpg",
+					description: "",
+					id: "hell_fest__desktop__map"
+				},{
+					src: "Assets/composites/hell-fest/desktop/gallery.jpg",
+					description: "",
+					id: "hell_fest__desktop__gallery"
+				},{
+					src: "Assets/composites/hell-fest/desktop/synopsis.jpg",
+					description: "",
+					id: "hell_fest__desktop__synopsis"
+				},{
+					src: "Assets/composites/hell-fest/desktop/cast.jpg",
+					description: "",
+					id: "hell_fest__desktop__cast"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/hell-fest/tablet/map.jpg",
+					description: "",
+					id: "hell_fest__tablet__map"
+				},{
+					src: "Assets/composites/hell-fest/tablet/gallery.jpg",
+					description: "",
+					id: "hell_fest__tablet__gallery"
+				},{
+					src: "Assets/composites/hell-fest/tablet/synopsis.jpg",
+					description: "",
+					id: "hell_fest__tablet__synopsis"
+				},{
+					src: "Assets/composites/hell-fest/tablet/cast.jpg",
+					description: "",
+					id: "hell_fest__tablet__cast"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/hell-fest/mobile/map.jpg",
+					description: "",
+					id: "hell_fest__mobile__map"
+				},{
+					src: "Assets/composites/hell-fest/mobile/gallery.jpg",
+					description: "",
+					id: "hell_fest__mobile__gallery"
+				},{
+					src: "Assets/composites/hell-fest/mobile/synopsis.jpg",
+					description: "",
+					id: "hell_fest__mobile__synopsis"
+				},{
+					src: "Assets/composites/hell-fest/mobile/cast.jpg",
+					description: "",
+					id: "hell_fest__mobile__cast"
+				}
+			],
+		},
+		pages: [ 
+			"Map",
+			"Gallery",
+			"Synopsis",
+			"Cast"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		],
+		articles: [
+			{
+				name: "Everyday Uses of the Mobile Gyroscope",
+				url: ""
+			}, {
+				name: "Accessible Code is Easier to Maintain: Fight me",
+				url: ""
+			}
+		]
 	}
 ];
