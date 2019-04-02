@@ -14,6 +14,7 @@ html, body, #app {
 
 html:global(.a-fullscreen){
 	position: absolute;
+	scroll-behavior: smooth;
 }
 html:global(.a-fullscreen) body {
 	overflow: auto;

@@ -9,12 +9,16 @@
 		height: 100%;
 		padding-top: 4.25em;
 		flex: 0 0 20em;
+		position: relative;
 	}
-		.nav {}
+		.nav {
+			position: fixed;
+		}
 			.links {
 				list-style-type: none;
 			}
 			.back {
+				font-size: var(--subheading-size);
 				margin-bottom: 1.62em;
 				text-transform: uppercase;
 				appearance: none;
@@ -27,6 +31,5 @@
 			}
 	.projects {
 		/*flex: 1 0 auto;*/ /*removed so that title line doesn't over-extend */
-		height: 1000px;
-		padding-top: 8.8em;
+		padding: 8.8em 0;
 	}

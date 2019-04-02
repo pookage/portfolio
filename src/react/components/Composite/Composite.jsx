@@ -54,11 +54,10 @@ export default function Composite(props){
 		return(
 			<img
 				className={`${s.image} ${isActive ? s.active : s.inactive}`}
-				src={src}
-				alt={description}
-				id={id}
-				key={id}
 				ref={image}
+				key={id}
+				alt={description}
+				src={src}
 			/>
 		);
 	}//renderScreenshot

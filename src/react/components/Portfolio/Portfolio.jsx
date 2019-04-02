@@ -44,6 +44,25 @@ export default function Portfolio(){
 				/>
 			);
 		}//renderProject
+		function renderProjectLink(project){
+			const {
+				title,
+				safeTitle
+			} = project
+
+			const key = `project__anchor__${safeTitle}`;
+
+			return(
+				<li 
+					className={s.item}
+					key={key}>
+					<a  className={s.link}
+						href={`#${safeTitle}`}>
+						{title}
+					</a>
+				</li>
+			);
+		}//renderProjectLink
 
 		return(
 			<article className={s.wrapper}>
@@ -52,78 +71,13 @@ export default function Portfolio(){
 						className={s.nav} 
 						aria-label="Project navigation">
 						<button 
-							className={`${font.subheading} ${s.back}`}
+							className={`${s.back}`}
 							onClick={goBack}>
 							{/*<Triangle className={s.arrow} />*/}
 							Back
 						</button>
 						<ul className={s.links}>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#alien-covenant">
-									Alien Covenant
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link} 
-									href="#blindspotting">
-									Blindspotting
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#fifty-shades-darker">
-									Fifty Shades Darker
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#get-out">
-									Get Out
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#the-handmaiden">
-									The Handmaiden
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#hell-fest">
-									Hell Fest
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#life-itself">
-									Life Itself
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#son-of-bigfoot">
-									Son of Bigfoot
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#suspiria">
-									Suspiria
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#the-secret-life-of-pets-2">
-									The Secret Life of Pets 2
-								</a>
-							</li>
-							<li className={s.item}>
-								<a  className={s.link}
-									href="#trailered-vr">
-									Trailered VR
-								</a>
-							</li>
+							{projects.map(renderProjectLink)}
 						</ul>
 					</nav>
 				</header>

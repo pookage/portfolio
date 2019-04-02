@@ -5,6 +5,9 @@
 	width: calc(var(--aspect-ratio) - var(--scrollbar_width));
 	overflow: hidden;
 }
+.wrapper:not(:last-child){
+	margin-right: 0.62rem;
+}
 	.container {
 		height: 100%;
 		position: relative;

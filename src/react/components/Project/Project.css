@@ -3,6 +3,7 @@
 		display: flex;
 		flex: 1 0 auto;
 		margin-bottom: 0.62em;
+		font-size: var(--heading-size);
 		align-items: center;
 	}
 		.title::after {
@@ -19,6 +20,7 @@
 			margin-top: 1.62em;
 		}
 			.subtitle {
+				font-size: var(--subheading-size);
 				margin-bottom: 0.62em;
 			}
 			.tags {
@@ -37,3 +39,6 @@
 							display: inline-block;
 							margin: 0 0.62em;
 						}
+.wrapper + .wrapper {
+	margin-top: calc(var(--heading-size) * 1.62);
+}

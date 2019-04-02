@@ -1,5 +1,10 @@
 /* FONT-RULES
 -----------------------------*/
+:root {
+	--body-size: 1em;
+	--heading-size: 4.25em;
+	--subheading-size: 1.62em;
+}
 .title {
 	font-family: "Kandinsky";
 	color: var(--base-color);
@@ -12,11 +17,11 @@
 }
 .body {
 	font-family: "Consolas", sans-serif;
-	font-size: 1em;
 }
+
+
+
+
 .heading {
 	font-size: 4.25em;
-}
-.subheading {
-	font-size: 1.62em;
 }

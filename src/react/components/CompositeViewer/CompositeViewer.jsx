@@ -32,10 +32,7 @@ export default function CompositeViewer(props){
 		children: composites // <Composite /> components to render inside the viewer
 	} = props;
 
-	function renderButton(button, index){
-		const {
-			name: label
-		} = button;
+	function renderButton(label, index){
 
 		const key    = `${safeName}-${label}-button`;
 		const action = setActiveSection.bind(true, index);

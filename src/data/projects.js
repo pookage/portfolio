@@ -1,8 +1,12 @@
 export const projects = [
 	{
 		title: "The Handmaiden",
+		date: "2016-08",
 		safeTitle: "the-handmaiden",
-		description: "A companion site for Park Chan-Wook's 2016 film of the same name.",
+		description: [
+			"A companion site for Park Chan-Wook's 2016 film of the same name.",
+			"Winner of the 'Best Online Campaign of the Year' Screen Award, 2017."
+		],
 		images: {
 			desktop: [
 				{
@@ -122,33 +126,68 @@ export const projects = [
 				}
 			],
 		},
-		pages: [
-			{
-				name: "Landing",
-			}, {
-				name: "Synopsis",
-				
-			}, {
-				name: "Gallery",
-				
-			}, {
-				name: "Characters",
-				
-			}, {
-				name: "Further",
-				
-			}, {
-				name: "Trailer",
-				
-			}, {
-				name: "Biography",
-				
-			}, {
-				name: "Filmography",
-				
-			}, {
-				name: "Novel",
-			}
+		pages: [ 
+			"Landing", 
+			"Synopsis", 
+			"Gallery", 
+			"Characters", 
+			"Further", 
+			"Trailer", 
+			"Biography", 
+			"Filmography", 
+			"Novel" 
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		]
+	},{
+		title: "Alien Covenant",
+		date: "2017-05",
+		safeTitle: "alien-covenant",
+		description: [
+			"A hub site for promotional materials related to the UK-release of Ridley Scott's Alien Covenant."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/alien-covenant/desktop/home.jpg",
+					description: "",
+					id: "alien_covenant__desktop__home"
+				},{
+					src: "Assets/composites/alien-covenant/desktop/synopsis.jpg",
+					description: "",
+					id: "alien_covenant__desktop__synopsis"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/alien-covenant/tablet/home.jpg",
+					description: "",
+					id: "alien_covenant__tablet__home"
+				},{
+					src: "Assets/composites/alien-covenant/tablet/synopsis.jpg",
+					description: "",
+					id: "alien_covenant__tablet__synopsis"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/alien-covenant/mobile/home.jpg",
+					description: "",
+					id: "alien_covenant__device__home"
+				},{
+					src: "Assets/composites/alien-covenant/mobile/synopsis.jpg",
+					description: "",
+					id: "alien_covenant__device__synopsis"
+				}
+			],
+		},
+		pages: [ 
+			"Home",
+			"Synopsis"
 		],
 		tags: [
 			"HTML",

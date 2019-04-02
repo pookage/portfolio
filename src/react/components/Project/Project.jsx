@@ -31,10 +31,23 @@ export default function Project(props){
 			</li>
 		);
 	}//renderTag
+	function renderParagraph(paragraph, index){
+
+		const key = `${safeTitle}__${description}__paragraph_${index}`;
+
+		return(
+			<p key={key}>
+				{paragraph}
+			</p>
+		);
+	}//renderParagraph
 
 	return(
-		<section className={s.wrapper}>		
-			<h1 className={`${font.heading} ${font.title} ${s.title}`} id={`${safeTitle}-title`}>
+		<section 
+			className={s.wrapper}
+			id={safeTitle}>		
+			<h1 className={`${font.title} ${s.title}`} 
+				id={`${safeTitle}-title`}>
 				{title}
 			</h1>
 			<CompositeScrollProvider>
@@ -42,21 +55,19 @@ export default function Project(props){
 					name={title}
 					safeName={safeTitle}
 					pages={pages}>
-					<Composite size="desktop" images={images.desktop} key="ahh" />
-					<Composite size="tablet" images={images.tablet} key="oooh"/>
-					<Composite size="mobile" images={images.mobile} key="ehhh"/>
+					<Composite size="desktop" images={images.desktop} />
+					<Composite size="tablet" images={images.tablet} />
+					<Composite size="mobile" images={images.mobile} />
 				</CompositeViewer>
 			</CompositeScrollProvider>
 
 			<section className={s.details}>
-				<h1 className={`${font.subheading} ${font.subtitle} ${s.subtitle}`}>
+				<h1 className={`${font.subtitle} ${s.subtitle}`}>
 					<abbr title="Description">
 						Desc
 					</abbr>
 				</h1>
-				<p>
-					{description}
-				</p>
+				{description.map(renderParagraph)}
 				<aside
 					className={s.tags} 
 					aria-label="Technologies used">
