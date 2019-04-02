@@ -516,13 +516,18 @@ export const projects = [
 			"ES6",
 			"Preact"
 		],
-		articles: null
+		articles: [
+			{
+				name: "The Case for Lazy-Loading Everything",
+				url: ""
+			}
+		]
 	},{
 		title: "Hell Fest",
 		safeTitle: "hell-fest",
 		date: "2018-09",
 		description: [
-			"A map / exploration-based teaser site to share clips and stills from the 2018 horror flick: Hell Fest."
+			"A map / exploration-based media site to share clips and stills from the 2018 horror flick: Hell Fest."
 		],
 		images: {
 			desktop: [
@@ -601,6 +606,103 @@ export const projects = [
 				url: ""
 			}, {
 				name: "Accessible Code is Easier to Maintain: Fight me",
+				url: ""
+			}
+		]
+	},	{
+		title: "Life Itself",
+		safeTitle: "life-itself",
+		date: "2018-09",
+		description: [
+			"A media-rich promotional site for the 2018 film: Life Itself."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/life-itself/desktop/landing.jpg",
+					description: "",
+					id: "life_itself__desktop__landing"
+				},{
+					src: "Assets/composites/life-itself/desktop/synopsis.jpg",
+					description: "",
+					id: "life_itself__desktop__synopsis"
+				},{
+					src: "Assets/composites/life-itself/desktop/characters.jpg",
+					description: "",
+					id: "life_itself__desktop__characters"
+				},{
+					src: "Assets/composites/life-itself/desktop/posters.jpg",
+					description: "",
+					id: "life_itself__desktop__posters"
+				},{
+					src: "Assets/composites/life-itself/desktop/gallery.jpg",
+					description: "",
+					id: "life_itself__desktop__gallery"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/life-itself/tablet/landing.jpg",
+					description: "",
+					id: "life_itself__tablet__landing"
+				},{
+					src: "Assets/composites/life-itself/tablet/synopsis.jpg",
+					description: "",
+					id: "life_itself__tablet__synopsis"
+				},{
+					src: "Assets/composites/life-itself/tablet/characters.jpg",
+					description: "",
+					id: "life_itself__tablet__characters"
+				},{
+					src: "Assets/composites/life-itself/tablet/posters.jpg",
+					description: "",
+					id: "life_itself__tablet__posters"
+				},{
+					src: "Assets/composites/life-itself/tablet/gallery.jpg",
+					description: "",
+					id: "life_itself__tablet__gallery"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/life-itself/mobile/landing.jpg",
+					description: "",
+					id: "life_itself__mobile__landing"
+				},{
+					src: "Assets/composites/life-itself/mobile/synopsis.jpg",
+					description: "",
+					id: "life_itself__mobile__synopsis"
+				},{
+					src: "Assets/composites/life-itself/mobile/characters.jpg",
+					description: "",
+					id: "life_itself__mobile__characters"
+				},{
+					src: "Assets/composites/life-itself/mobile/posters.jpg",
+					description: "",
+					id: "life_itself__mobile__posters"
+				},{
+					src: "Assets/composites/life-itself/mobile/gallery.jpg",
+					description: "",
+					id: "life_itself__mobile__gallery"
+				}
+			],
+		},
+		pages: [ 
+			"Landing",
+			"Synopsis",
+			"Characters",
+			"Posters",
+			"Gallery"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		],
+		articles: [
+			{
+				name: "Making Galleries More Interesting",
 				url: ""
 			}
 		]
