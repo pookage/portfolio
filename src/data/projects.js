@@ -772,7 +772,7 @@ export const projects = [
 				},{
 					src: "Assets/composites/son-of-bigfoot/mobile/result.jpg",
 					description: "",
-					id: "son_of_bigfoot__mobile__question"
+					id: "son_of_bigfoot__mobile__result"
 				}
 			],
 		},

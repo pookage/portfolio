@@ -17,8 +17,12 @@ export default function Composite(props){
 
 	//HOOKS
 	//-------------------------------
-	const { activeSectionIndex } = useContext(CompositeScroll).state;
-	const scroller               = useRef();
+	const { 
+		activeSectionIndex,
+		activeComposite 
+	} = useContext(CompositeScroll).state;
+
+	const scroller = useRef();
 	useEffect(scrollToActiveScreenshot);
 
 
@@ -38,7 +42,6 @@ export default function Composite(props){
 			});
 		}
 	}//scrollToActiveScreenshot
-
 
 	//RENDER 
 	//------------------------------
@@ -64,9 +67,11 @@ export default function Composite(props){
 		);
 	}//renderScreenshot
 
+	const isActive = size == activeComposite;
+
 	return(
 		<section 
-			className={`${s.wrapper} ${s[size]}`}>
+			className={`${s.wrapper} ${s[size]} ${isActive ? s.active : s.inactive}`}>
 			<div 
 				className={s.container}
 				ref={scroller}>

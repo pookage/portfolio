@@ -3,7 +3,8 @@ import React, { createContext, useReducer } from "react";
 //setup private vars
 const CompositeScroll = createContext();
 const initialState   = {
-	activeSectionIndex: 0
+	activeSectionIndex: 0,
+	activeComposite: "desktop"
 };
 
 //REDUCER SETUP
@@ -15,10 +16,19 @@ function reducer(state, action){
 		value
 	} = action;
 
-	let change;
+	let change = { };
 	switch(type){
 		case "setSectionIndex":
-			change = { activeSectionIndex: value };
+			change = {
+				...state, 
+				activeSectionIndex: value 
+			};
+			break;
+		case "setActiveComposite":
+			change = { 
+				...state,
+				activeComposite: value 
+			};
 			break;
 	}
 

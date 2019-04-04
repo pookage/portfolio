@@ -27,6 +27,7 @@ button:hover {
 	cursor: pointer;
 }
 button:focus,
+select:focus,
 a:focus {
 	outline: none;
 }
@@ -47,7 +48,7 @@ body {
 	color: var(--base-color);
 }
 
-p, a, button, li {
+p, a, button, li, select, option {
 	font-size: 1em;
 	font-family: "Consolas", sans-serif; /* should this be 'inherit'? */
 }

@@ -62,13 +62,23 @@
 		height: var(--aspect-ratio);
 		--scrollbar_width: 17px;
 	}
+		.container {
+			width: calc(100% + var(--scrollbar_width));
+		}
 	.wrapper:not(:last-child){
 		margin-right: 0;
 		margin-bottom: 0.62rem;
 	}
-		.container {
-			width: calc(100% + var(--scrollbar_width));
-		}
+	.wrapper.active {
+		max-height: 100vh;
+		filter: blur(0px);
+		transition: max-height .3s ease-out, filter .3s;
+	}
+	.wrapper.inactive {
+		max-height: 0;
+		filter: blur(100px);
+		transition: max-height .6s ease-out, filter .3s;
+	}
 
 	.wrapper.desktop {
 		--aspect-ratio: 0.53em;
@@ -80,4 +90,3 @@
 		--aspect-ratio: 1.73em;
 	}
 }
-@media(max-width: 767px) and (hov

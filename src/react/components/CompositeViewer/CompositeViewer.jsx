@@ -6,15 +6,22 @@ export default function CompositeViewer(props){
 
 	//HOOKS
 	//-------------------------------
-	const [ expanded, setExpanded ] = useState(false);
-	const { dispatch } = useContext(CompositeScroll);
+	const { 
+		dispatch
+	} = useContext(CompositeScroll);
 
 
 	//EVENT HANDLING
 	//-------------------------------
-	function toggleExpand(){
-		setExpanded(!expanded);
-	}//toggleExpand
+	function setActiveComposite(event){
+		const {
+			value: device
+		} = event.target;
+		dispatch({
+			type: "setActiveComposite",
+			value: device
+		});
+	}//setActiveComposite
 	function setActiveSection(index){
 		dispatch({ 
 			type: "setSectionIndex", 
@@ -61,13 +68,20 @@ export default function CompositeViewer(props){
 					<ul className={s.scrollers}>
 						{pages.map(renderButton)}
 					</ul>
-					<button
-						className={s.expandToggle} 
-						role="switch"
-						aria-checked={expanded.toString()}
-						onClick={toggleExpand}>
-						Expand
-					</button>
+					<select 
+						className={s.deviceToggle}
+						onChange={setActiveComposite}>
+						<option value="desktop">
+							desktop
+						</option>
+						<option value="tablet">
+							tablet
+						</option>
+						<option value="mobile">
+							mobile
+						</option>
+					</select>
+					
 				</nav>
 			</figcaption>
 		</figure>

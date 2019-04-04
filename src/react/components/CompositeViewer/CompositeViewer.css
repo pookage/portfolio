@@ -38,32 +38,28 @@
 					.item:last-child::after {
 						display: none;
 					}
-			.expandToggle {
+			.deviceToggle {
 				min-width: 5.75em;
 				position: relative;
 				top: 0.125em;
-				color: var(--base-color);
+				color: var(--accent-color);
 				background-color: transparent;
 				text-transform: lowercase;
-			}
-				.expandToggle::after {
-					display: inline-block;
-					margin-left: 0.62em;
-					color: var(--accent-color);
-				}
-				.expandToggle[aria-checked="true"]::after {
-					content: "(-)";
-				}
-				.expandToggle[aria-checked="false"]::after {
-					content: "(+)";
-				}	
-				.expandToggle:focus,
-				.expandToggle:hover {
+			}	
+				.deviceToggle:focus,
+				.deviceToggle:hover {
 					text-decoration: underline;
 				}
+					.deviceToggle option {
+						background-color: var(--accent-color);
+						color: var(--base-color);
+					}
 
 @media(max-width: 767px){
-	.container {
-		flex-direction: column;
+	.wrapper {
+		width: 100%;
 	}
+		.container {
+			flex-direction: column;
+		}
 }

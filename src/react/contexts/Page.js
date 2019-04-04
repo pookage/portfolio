@@ -18,7 +18,10 @@ function reducer(state, action){
 	let change;
 	switch(type){
 		case "setPage":
-			change = { activePage: value };
+			change = { 
+				...state,
+				activePage: value 
+			};
 			break;
 	}
 
