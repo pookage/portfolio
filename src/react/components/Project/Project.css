@@ -1,4 +1,5 @@
 .wrapper {
+	display: inline-block;
 	padding-top: 8.8em; /* size of the gap between top of screen and first project link */
 }
 	.title {
