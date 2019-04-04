@@ -40,3 +40,44 @@
 .wrapper.mobile {
 	--aspect-ratio: 0.58em;
 }
+
+/* TOUCHSCREEN-ONLY DEVICES
+-------------------------------------*/
+@media (hover: none) and (pointer: coarse) {
+	.wrapper {
+		--scrollbar_width: 0px;
+	}
+}
+
+@media(max-width: 1025px){
+	.wrapper {
+		font-size: 27.5vw;
+	}
+}
+
+@media(max-width: 767px){
+	.wrapper {
+		font-size: calc(100vw - (var(--side-padding) * 2));
+		width: calc(1em - var(--scrollbar_width));
+		height: var(--aspect-ratio);
+		--scrollbar_width: 17px;
+	}
+	.wrapper:not(:last-child){
+		margin-right: 0;
+		margin-bottom: 0.62rem;
+	}
+		.container {
+			width: calc(100% + var(--scrollbar_width));
+		}
+
+	.wrapper.desktop {
+		--aspect-ratio: 0.53em;
+	}
+	.wrapper.tablet {
+		--aspect-ratio: 1.29em;
+	}
+	.wrapper.mobile {
+		--aspect-ratio: 1.73em;
+	}
+}
+@media(max-width: 767px) and (hov

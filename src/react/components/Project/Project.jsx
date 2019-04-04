@@ -67,8 +67,11 @@ export default function Project(props){
 
 	return(
 		<section 
-			className={s.wrapper}
-			id={safeTitle}>		
+			className={s.wrapper}>
+			<div 
+				id={safeTitle}
+				className={s.anchor} 
+			/>
 			<h1 className={`${font.title} ${s.title}`} 
 				id={`${safeTitle}-title`}>
 				{title}

@@ -1,7 +1,7 @@
 .wrapper {}
 	.container {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 	}
 	.caption {}
 		.controls {
@@ -62,3 +62,8 @@
 					text-decoration: underline;
 				}
 
+@media(max-width: 767px){
+	.container {
+		flex-direction: column;
+	}
+}

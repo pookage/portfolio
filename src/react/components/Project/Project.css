@@ -1,7 +1,13 @@
 .wrapper {
 	display: inline-block;
-	padding-top: 8.8em; /* size of the gap between top of screen and first project link */
+	padding: 8.8em var(--side-padding) 0; /* size of the gap between top of screen and first project link */
+	position: relative;
 }
+	.anchor {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 	.title {
 		display: flex;
 		flex: 1 0 auto;
@@ -64,3 +70,17 @@
 							font-weight: bold;
 							transform: scale(1.05);	
 						}
+
+@media(max-width: 1025px){
+	.wrapper {
+		--toptailpadding: calc(var(--heading-size) * 1.62);
+		padding-top: var(--toptailpadding);
+		padding-bottom: var(--toptailpadding);
+	}
+	.wrapper:nth-child(even){
+		background-color: rgba(255,255,255,0.025);
+	}
+		.anchor {
+			top: calc(var(--heading-size) * -2.62);
+		}
+}
