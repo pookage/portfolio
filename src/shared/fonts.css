@@ -18,3 +18,9 @@
 .body {
 	font-family: "Consolas", sans-serif;
 }
+
+@media(max-width: 767px){
+	:root {
+		--heading-size: 2.62em;
+	}
+}

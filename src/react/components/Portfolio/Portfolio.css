@@ -42,7 +42,7 @@
 			padding: 0;
 		}
 		.nav {
-			padding: 2.62em var(--side-padding);
+			padding: 1.62em var(--side-padding);
 			z-index: 2;
 			background-color: var(--accent-color);
 		}
@@ -59,4 +59,10 @@
 					.links .link:visited {
 						color: var(--base-color);
 					}
+}
+
+@media(max-width: 767px){
+	.back {
+		margin-bottom: 1em;
+	}
 }

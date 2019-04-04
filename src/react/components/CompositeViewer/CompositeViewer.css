@@ -39,6 +39,7 @@
 						display: none;
 					}
 			.deviceToggle {
+				display: none;
 				min-width: 5.75em;
 				position: relative;
 				top: 0.125em;
@@ -62,4 +63,9 @@
 		.container {
 			flex-direction: column;
 		}
+		.caption {}
+			.controls {}
+				.deviceToggle {
+					display: block;
+				}
 }
