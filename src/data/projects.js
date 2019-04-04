@@ -1,3 +1,18 @@
+import {
+	alwaysCreateMicroInteractions,
+	flippingCardsPerspective,
+	goldenRatioCSS,
+	intersectionObserverStorytelling,
+	cascadingTextEffect,
+	lazyLoadEverything,
+	everydayGyroscopeUses,
+	accessibleCodeIsEasier,
+	moreInterestingGalleries,
+	webARSnapchat,
+	transparentVideosCanvas,
+	clipPathEffectsFilesize
+} from "Data/articles.js";
+
 export const projects = [
 	{
 		title: "The Handmaiden",
@@ -144,10 +159,7 @@ export const projects = [
 			"Preact"
 		],
 		articles: [
-			{
-				name: "Give a Damn: Always Create Micro-Interactions",
-				url: ""
-			}
+			alwaysCreateMicroInteractions
 		]
 	},{
 		title: "Alien Covenant",
@@ -306,13 +318,8 @@ export const projects = [
 			"Preact"
 		],
 		articles: [
-			{
-				name: "Flipping Cards: Using Perspective in CSS",
-				url: ""
-			},{
-				name: "The Joys of Golden-Ratio in CSS",
-				url: ""
-			}
+			flippingCardsPerspective,
+			goldenRatioCSS
 		]
 	},{
 		title: "Fifty Shades Darker",
@@ -365,13 +372,8 @@ export const projects = [
 			"Preact"
 		],
 		articles: [
-			{
-				name: "Making a Tasty Cascading-Text Effect",
-				url: ""
-			},{
-				name: "Tell a Story with the IntersectionObserver API",
-				url: ""
-			}
+			cascadingTextEffect,
+			intersectionObserverStorytelling
 		]
 	},{
 		title: "Get Out Artbook",
@@ -517,10 +519,7 @@ export const projects = [
 			"Preact"
 		],
 		articles: [
-			{
-				name: "The Case for Lazy-Loading Everything",
-				url: ""
-			}
+			lazyLoadEverything
 		]
 	},{
 		title: "Hell Fest",
@@ -602,13 +601,8 @@ export const projects = [
 			"Gyroscope"
 		],
 		articles: [
-			{
-				name: "Everyday Uses of the Mobile Gyroscope and DeviceOrientation APIs",
-				url: ""
-			}, {
-				name: "Accessible Code is Easier to Maintain: Fight me",
-				url: ""
-			}
+			everydayGyroscopeUses,
+			accessibleCodeIsEasier 
 		]
 	},	{
 		title: "Life Itself",
@@ -702,10 +696,7 @@ export const projects = [
 			"Preact"
 		],
 		articles: [
-			{
-				name: "Making Galleries More Interesting",
-				url: ""
-			}
+			moreInterestingGalleries
 		]
 	},	{
 		title: "Son of Bigfoot",
@@ -801,10 +792,7 @@ export const projects = [
 			"clmtrackr"
 		],
 		articles: [
-			{
-				name: "Snapchat-Style Filters on the Web",
-				url: ""
-			}
+			webARSnapchat
 		]
 	},	{
 		title: "Suspiria",
@@ -936,6 +924,145 @@ export const projects = [
 			"ES6",
 			"Preact"
 		],
-		articles: null
+		articles: [
+			transparentVideosCanvas, 
+			clipPathEffectsFilesize,
+			alwaysCreateMicroInteractions,
+			everydayGyroscopeUses,
+			accessibleCodeIsEasier,
+			moreInterestingGalleries
+		]
+	},	{
+		title: "The Secret Life of Pets 2",
+		safeTitle: "the-secret-life-of-pets-2",
+		date: "2018-11",
+		description: [
+			"A hub-site to reveal characters from SLOP2 and their associated Youtube videos over the course of several months."
+		],
+		images: {
+			desktop: [
+				{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/roof.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__roof"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/max.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__max"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/chloe.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__chloe"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/daisy.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__daisy"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/snowball.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__snowball"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/gidget.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__gidget"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/rooster.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__rooster"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/desktop/shop.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__desktop__shop"
+				}
+			],
+			tablet: [
+				{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/roof.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__roof"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/max.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__max"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/chloe.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__chloe"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/daisy.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__daisy"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/snowball.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__snowball"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/gidget.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__gidget"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/rooster.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__rooster"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/tablet/shop.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__tablet__shop"
+				}
+			],
+			mobile: [
+				{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/roof.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__roof"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/max.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__max"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/chloe.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__chloe"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/daisy.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__daisy"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/snowball.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__snowball"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/gidget.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__gidget"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/rooster.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__rooster"
+				},{
+					src: "Assets/composites/the-secret-life-of-pets-2/mobile/shop.jpg",
+					description: "",
+					id: "the_secret_life_of_pets_2__mobile__shop"
+				}
+			],
+		},
+		pages: [ 
+			"Rooftop",
+			"Max",
+			"Chloe",
+			"Daisy",
+			"snowball",
+			"Gidget",
+			"Rooster"
+		],
+		tags: [
+			"HTML",
+			"CSS3",
+			"ES6",
+			"Preact"
+		],
+		articles: [
+			everydayGyroscopeUses
+		]
 	}
 ];

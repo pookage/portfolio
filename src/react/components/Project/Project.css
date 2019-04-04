@@ -42,21 +42,24 @@
 			.details .list {
 				margin-left: 2.62em;
 			}
-				.details .list .link[href=""]{
-					color: var(--base-color);
+				.details .item:hover {
 					cursor: not-allowed;
-					text-decoration: none;
 				}
-					.details .list .link[href=""]::after{
-						content: "(coming soon)";
-						display: inline-block;
-						margin-left: 0.62em;
-						color: var(--accent-color);
-						font-style: italic;
-						transform: scale(1);
-						transition: transform .1s;
+					.details .list .link[href=""]{
+						color: var(--base-color);
+						text-decoration: none;
+						pointer-events: none;
 					}
-					.details .list .link[href=""]:hover::after {
-						transform: scale(1.05);
-						font-weight: bold;
-					}
+						.details .list .link[href=""]::after{
+							content: "(coming soon)";
+							display: inline-block;
+							margin-left: 0.62em;
+							color: var(--accent-color);
+							font-style: italic;
+							transform: scale(1);
+							transition: transform .1s;
+						}
+						.details .item:hover .link[href=""]::after {
+							font-weight: bold;
+							transform: scale(1.05);	
+						}
