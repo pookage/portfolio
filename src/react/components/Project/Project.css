@@ -49,37 +49,62 @@
 					display: inline-block;
 					margin: 0 0.62em;
 				}
-	.details {
-		margin-top: 1.62em;
+	.readMore {
+		display: none;
+		padding: 0;
+		margin-top: 1em;
+		color: var(--base-color);
+		text-transform: lowercase;
+		background-color: transparent;
 	}
-		.subtitle {
-			font-size: var(--subheading-size);
-			margin-bottom: 0.62em;
+		.readMore::after {
+			display: inline-block;
+			margin-left: 0.62em;
+			color: var(--accent-color);
 		}
-		.details .list {
-			margin-left: 2.62em;
+		.readMore[aria-checked="true"]::after {
+			content: "(-)";
 		}
-			.details .item:hover {
-				cursor: not-allowed;
+		.readMore[aria-checked="false"]::after {
+			content: "(+)";
+		}
+	.readMore:hover,
+	.readMore:focus,
+	.readMore:active {
+		text-decoration: underline
+	}
+	.more {}
+		.details {
+			margin-top: 1.62em;
+		}
+			.subtitle {
+				font-size: var(--subheading-size);
+				margin-bottom: 0.62em;
 			}
-				.details .list .link[href=""]{
-					color: var(--base-color);
-					text-decoration: none;
-					pointer-events: none;
+			.details .list {
+				margin-left: 2.62em;
+			}
+				.details .item:hover {
+					cursor: not-allowed;
 				}
-					.details .list .link[href=""]::after{
-						content: "(coming soon)";
-						display: inline-block;
-						margin-left: 0.62em;
-						color: var(--accent-color);
-						font-style: italic;
-						transform: scale(1);
-						transition: transform .1s;
+					.details .list .link[href=""]{
+						color: var(--base-color);
+						text-decoration: none;
+						pointer-events: none;
 					}
-					.details .item:hover .link[href=""]::after {
-						font-weight: bold;
-						transform: scale(1.05);	
-					}
+						.details .list .link[href=""]::after{
+							content: "(coming soon)";
+							display: inline-block;
+							margin-left: 0.62em;
+							color: var(--accent-color);
+							font-style: italic;
+							transform: scale(1);
+							transition: transform .1s;
+						}
+						.details .item:hover .link[href=""]::after {
+							font-weight: bold;
+							transform: scale(1.05);	
+						}
 
 
 
@@ -94,6 +119,22 @@
 	}
 		.anchor {
 			top: calc(var(--heading-size) * -0.38);
+		}
+		.readMore {
+			display: block;
+		}
+		.more {
+			overflow: hidden;
+			transition-property: max-height;
+			transition-timing-function: var(--ease-out)
+		}
+		.expanded .more {
+			max-height: 50vh;
+			transition-duration: 1s;
+		}
+		.collapsed .more {
+			max-height: 0;
+			transition-duration: .6s;
 		}
 }
 

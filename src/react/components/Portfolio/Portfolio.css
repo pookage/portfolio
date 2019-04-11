@@ -22,7 +22,7 @@
 		flex-direction: column;
 	}
 		.sidebar {
-			flex-basis: 0;
+			flex-basis: 1.62em;
 			padding: 0;
 		}
 }

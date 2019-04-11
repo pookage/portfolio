@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
 import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
@@ -7,7 +7,18 @@ import font from "Shared/fonts.css";
 import s from "ReactComponents/Project/Project.css";
 
 export default function Project(props){
+
+	//HOOKS
+	//--------------------------------------
+	const [ expanded, setExpanded ] = useState(false);
 	
+
+	//EVENT HANDLING
+	//--------------------------------------
+	function toggleExpand(){
+		setExpanded(!expanded);
+	}//toggleExpand
+
 
 	//RENDER LOGIC
 	//--------------------------------------
@@ -21,6 +32,8 @@ export default function Project(props){
 		articles     // (array) of objects for each medium article written about the project
 	} = props;
 	
+	const readMoreId = `button__${safeTitle}__read_more`;
+
 	function renderTag(tag){
 
 		const key = `${safeTitle}-tag-${tag.toLowerCase()}`;
@@ -67,7 +80,7 @@ export default function Project(props){
 
 	return(
 		<section 
-			className={s.wrapper}>
+			className={`${s.wrapper} ${expanded ? s.expanded : s.collapsed}`}>
 			<div 
 				id={safeTitle}
 				className={s.anchor} 
@@ -109,25 +122,38 @@ export default function Project(props){
 				</ul>
 			</aside>
 
-			<section className={s.details}>
-				<h1 className={`${font.subtitle} ${s.subtitle}`}>
-					<abbr title="Description">
-						Desc
-					</abbr>
-				</h1>
-				{description.map(renderParagraph)}
-			</section>
+			<button 
+				className={s.readMore}
+				role="switch"
+				aria-checked={expanded.toString()}
+				id={readMoreId}
+				onClick={toggleExpand}>
+				Read more
+			</button>
 
-			{articles && (
+			<div 
+				className={`${s.more}`}
+				labelled-by={readMoreId}>
 				<section className={s.details}>
 					<h1 className={`${font.subtitle} ${s.subtitle}`}>
-						Related Articles
+						<abbr title="Description">
+							Desc
+						</abbr>
 					</h1>
-					<ul className={s.list}>
-						{articles.map(renderArticleLink)}
-					</ul>
+					{description.map(renderParagraph)}
 				</section>
-			)}			
+
+				{articles && (
+					<section className={s.details}>
+						<h1 className={`${font.subtitle} ${s.subtitle}`}>
+							Related Articles
+						</h1>
+						<ul className={s.list}>
+							{articles.map(renderArticleLink)}
+						</ul>
+					</section>
+				)}			
+			</div>
 		</section>
 	);
 }//Project
