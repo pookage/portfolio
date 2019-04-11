@@ -58,8 +58,6 @@ AFRAME.registerComponent("edge-tracker", {
 	},//removeListeners
 	setRotationLock: function(lock){
 
-		console.log("set rotation lock!", lock, this.data.active)
-
 		if(!this.data.active){
 			this.rotationLocked = lock; // update the lock for use in tick();
 

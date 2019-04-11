@@ -14,7 +14,10 @@ export default function Portfolio(){
 	//HOOKS
 	//------------------------------
 	const { state, dispatch } = useContext(Page);
-	const { state: animState } = useContext(Animation);
+	const { state: animState, dispatch: animDispatch } = useContext(Animation);
+	useEffect(fireOpenAnimations, [state.activePage])
+
+	
 
 
 	//EVENT HANDLING
@@ -29,9 +32,18 @@ export default function Portfolio(){
 		}
 	}//tryToClose
 	function goBack(){
-		console.log("go back!");
 		dispatch({ type: "setPage", value: "hub" });
 	}//goBack
+	function fireOpenAnimations(){
+		if(state.activePage == "portfolio"){
+			setTimeout(() => {
+				animDispatch({
+					type: "animate",
+					value: "show"
+				});
+			}, 1000);
+		}
+	}//fireOpenAnimations
 	
 
 	//RENDER LOGIC

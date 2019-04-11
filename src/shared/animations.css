@@ -4,9 +4,10 @@
 .slide.out {
 	opacity: 0;
 	transform: translateX(-1em);
-
+	transition: opacity .3s, transform .3s;
 }
 .slide.in {
 	opacity: 1;
 	transform: translateX(0);
+	transition: opacity .3s, transform .3s;
 }
