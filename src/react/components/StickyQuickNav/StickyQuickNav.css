@@ -9,16 +9,59 @@
 
 	}
 		.back {
+			display: flex;
 			margin-bottom: 1.62em;
+			position: relative;
+			align-items: center;
 			text-transform: uppercase;
 			appearance: none;
 			color: var(--base-color);
 			background-color: transparent;
 		}
+			.arrow {
+				display: block;
+				font-size: 1.25em;
+				height: 1em;
+				width: 0.95em;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				--arrow-center: translate(calc(-100% - 0.38em), -50%);
+				transform: var(--arrow-center) scale(1);
+				pointer-events: none;
+				transition: transform .3s;
+			}
+				.arrow::before,
+				.arrow::after {
+					content: "";
+					display: block;
+					height: 100%;
+					width: 100%;
+					clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+				}
+				.arrow::before {
+					background-color: var(--accent-color);
+				}
+				.arrow::after {
+					position: absolute;
+					top: -0.00em;
+					left: 0.045em;
+					transform: scale(0.7);
+					background-color: #222;
+					transition: transform .3s;
+				}
 		.back:hover,
 		.back:focus {
 			text-decoration: underline;
 		}
+			.back:hover .arrow,
+			.back:focus .arrow {
+				transform: var(--arrow-center) scale(0.5);
+			}
+			.back:hover .arrow::after,
+			.back:focus .arrow::after {
+				transform: scale(0);
+			}
 		.toggle {
 			--button-height: 1em;
 			--button-width: 1.25em;
@@ -82,6 +125,36 @@
 			max-height: calc((1.62em * 2) + var(--subheading-size));
 		}
 		.controls {}
+			.back {}
+				.arrow {
+					position: relative;
+					transform: scale(1);
+				}
+					.arrow::before {
+						display: none;
+					}
+					.arrow::after {
+						background-color: var(--base-color);
+					}
+				
+				.back:hover .arrow,
+				.back:focus .arrow {
+					transform: scale(1);
+				}
+					.back:hover .arrow::after,
+					.back:focus .arrow::after {
+						transform: translate(0.1em, 0) scale(0.7)
+					}
+				.label {
+					display: inline-block;
+					margin-left: 0.62em;
+					transform: translateX(0);
+					transition: transform .3s;
+				}
+				.back:hover .label {
+					transform: translateX(-0.15em);
+				}
+					
 			.toggle {
 				display: inline-block;
 			}

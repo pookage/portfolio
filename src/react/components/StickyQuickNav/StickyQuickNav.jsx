@@ -65,8 +65,10 @@ export default function StickyQuickNav(props){
 				<button 
 					className={`${s.back}`}
 					onClick={goBack}>
-					{/*<Triangle className={s.arrow} />*/}
-					Back
+					<span className={s.arrow} />
+					<span className={s.label}>
+						Back
+					</span>
 				</button>
 				<button 
 					className={`${s.toggle} ${linksVisible ? s.close : s.open}`}
