@@ -38,23 +38,7 @@
 					.item:last-child::after {
 						display: none;
 					}
-			.deviceToggle {
-				display: none;
-				min-width: 5.75em;
-				position: relative;
-				top: 0.125em;
-				color: var(--accent-color);
-				background-color: transparent;
-				text-transform: lowercase;
-			}	
-				.deviceToggle:focus,
-				.deviceToggle:hover {
-					text-decoration: underline;
-				}
-					.deviceToggle option {
-						background-color: var(--accent-color);
-						color: var(--base-color);
-					}
+			
 
 @media(max-width: 767px){
 	.wrapper {
@@ -62,10 +46,5 @@
 	}
 		.container {
 			flex-direction: column;
-		}
-		.caption {}
-			.controls {}
-				.deviceToggle {
-					display: block;
-				}
+		}			
 }

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
+import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
 import Composite from "ReactComponents/Composite/Composite.jsx";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/Project/Project.css";
 
 export default function Project(props){
-
 	
 
 	//RENDER LOGIC
@@ -72,11 +72,25 @@ export default function Project(props){
 				id={safeTitle}
 				className={s.anchor} 
 			/>
-			<h1 className={`${font.title} ${s.title}`} 
-				id={`${safeTitle}-title`}>
-				{title}
-			</h1>
 			<CompositeScrollProvider>
+				<header className={s.header}>
+					<h1 className={`${font.title} ${s.title}`} 
+						id={`${safeTitle}-title`}>
+						{title}
+					</h1>
+					<DeviceSelector
+						className={s.deviceSelector}>
+						<option value="desktop">
+							desktop
+						</option>
+						<option value="tablet">
+							tablet
+						</option>
+						<option value="mobile">
+							mobile
+						</option>
+					</DeviceSelector>
+				</header>
 				<CompositeViewer
 					name={title}
 					safeName={safeTitle}

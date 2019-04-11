@@ -8,15 +8,25 @@
 		top: 0;
 		left: 0;
 	}
-	.title {
+	.header {
 		display: flex;
-		flex: 1 0 auto;
+		align-items: center;
 		margin-bottom: 0.62em;
 		font-size: var(--heading-size);
-		align-items: center;
 	}
-		.title::after {
+		.title {
+			/*flex: 1 0 auto;*/
+			order: 1;
+		}
+		.deviceSelector {
+			order: 3;
+			margin-left: 0.25em;
+			position: relative;
+			top: -0.25em; /* offset because Kandinsky font is weird */
+		}
+		.header::after {
 			content: "";
+			order: 2;
 			flex: 1 0 auto;
 			display: inline-block;
 			height: 0.025em;
@@ -25,51 +35,53 @@
 			top: -0.125em; /* offset because Kandinsky font is weird */
 			background-color: var(--base-color);
 		}
-		.tags {}
-			.tags .list {
-				list-style-type: none;
-			}
-				.tag {
-					display: inline-block;
-					vertical-align: top;
-					color: var(--aside-color);
-				}
-					.tag:not(:last-child)::after {
-						content: "/";
-						display: inline-block;
-						margin: 0 0.62em;
-					}
-		.details {
-			margin-top: 1.62em;
+	.tags {}
+		.tags .list {
+			list-style-type: none;
 		}
-			.subtitle {
-				font-size: var(--subheading-size);
-				margin-bottom: 0.62em;
+			.tag {
+				display: inline-block;
+				vertical-align: top;
+				color: var(--aside-color);
 			}
-			.details .list {
-				margin-left: 2.62em;
-			}
-				.details .item:hover {
-					cursor: not-allowed;
+				.tag:not(:last-child)::after {
+					content: "/";
+					display: inline-block;
+					margin: 0 0.62em;
 				}
-					.details .list .link[href=""]{
-						color: var(--base-color);
-						text-decoration: none;
-						pointer-events: none;
+	.details {
+		margin-top: 1.62em;
+	}
+		.subtitle {
+			font-size: var(--subheading-size);
+			margin-bottom: 0.62em;
+		}
+		.details .list {
+			margin-left: 2.62em;
+		}
+			.details .item:hover {
+				cursor: not-allowed;
+			}
+				.details .list .link[href=""]{
+					color: var(--base-color);
+					text-decoration: none;
+					pointer-events: none;
+				}
+					.details .list .link[href=""]::after{
+						content: "(coming soon)";
+						display: inline-block;
+						margin-left: 0.62em;
+						color: var(--accent-color);
+						font-style: italic;
+						transform: scale(1);
+						transition: transform .1s;
 					}
-						.details .list .link[href=""]::after{
-							content: "(coming soon)";
-							display: inline-block;
-							margin-left: 0.62em;
-							color: var(--accent-color);
-							font-style: italic;
-							transform: scale(1);
-							transition: transform .1s;
-						}
-						.details .item:hover .link[href=""]::after {
-							font-weight: bold;
-							transform: scale(1.05);	
-						}
+					.details .item:hover .link[href=""]::after {
+						font-weight: bold;
+						transform: scale(1.05);	
+					}
+
+
 
 @media(max-width: 1025px){
 	.wrapper {

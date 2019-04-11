@@ -13,15 +13,7 @@ export default function CompositeViewer(props){
 
 	//EVENT HANDLING
 	//-------------------------------
-	function setActiveComposite(event){
-		const {
-			value: device
-		} = event.target;
-		dispatch({
-			type: "setActiveComposite",
-			value: device
-		});
-	}//setActiveComposite
+
 	function setActiveSection(index){
 		dispatch({ 
 			type: "setSectionIndex", 
@@ -68,19 +60,7 @@ export default function CompositeViewer(props){
 					<ul className={s.scrollers}>
 						{pages.map(renderButton)}
 					</ul>
-					<select 
-						className={s.deviceToggle}
-						onChange={setActiveComposite}>
-						<option value="desktop">
-							desktop
-						</option>
-						<option value="tablet">
-							tablet
-						</option>
-						<option value="mobile">
-							mobile
-						</option>
-					</select>
+					
 					
 				</nav>
 			</figcaption>

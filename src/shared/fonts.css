@@ -1,9 +1,9 @@
 /* FONT-RULES
 -----------------------------*/
 :root {
-	--body-size: 1em;
-	--heading-size: 4.25em;
-	--subheading-size: 1.62em;
+	--body-size: 1rem;
+	--heading-size: 4.25rem;
+	--subheading-size: 1.62rem;
 }
 .title {
 	font-family: "Kandinsky";
@@ -21,6 +21,6 @@
 
 @media(max-width: 767px){
 	:root {
-		--heading-size: 2.62em;
+		--heading-size: 2.62rem;
 	}
 }

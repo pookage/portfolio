@@ -1,0 +1,24 @@
+.wrapper {
+	display: none;
+	font-size: var(--body-size);
+	min-width: 5.75em;
+	position: relative;
+	top: 0.125em;
+	color: var(--accent-color);
+	background-color: transparent;
+	text-transform: lowercase;
+}	
+	.wrapper:focus,
+	.wrapper:hover {
+		text-decoration: underline;
+	}
+		.wrapper option {
+			background-color: var(--accent-color);
+			color: var(--base-color);
+		}
+
+@media(max-width: 767px){
+	.wrapper {
+		display: block;
+	}
+}
