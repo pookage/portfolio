@@ -8,6 +8,8 @@
 		font-size: var(--subheading-size);
 
 	}
+		/*BACK BUTTON
+		//////////////////////////////////*/
 		.back {
 			display: flex;
 			margin-bottom: 1.62em;
@@ -62,6 +64,9 @@
 			.back:focus .arrow::after {
 				transform: scale(0);
 			}
+
+		/*TOGGLE BUTTON
+		//////////////////////////*/
 		.toggle {
 			--button-height: 1em;
 			--button-width: 1.25em;
@@ -107,6 +112,17 @@
 			
 	.links {
 		list-style-type: none;
+	}
+
+	/*REVEAL ANIMATIONS
+	/////////////////////////////*/
+	.wrapper.hidden .back{
+		
+
+	}
+
+	.wrapper.visible .back {
+		
 	}
 
 

@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
 import { ProjectScroll } from "Contexts/ProjectScroll.js";
+import { Animation } from "Contexts/Animation.js";
 import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
 import Composite from "ReactComponents/Composite/Composite.jsx";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/Project/Project.css";
+import animations from "Shared/animations.css";
 
 export default function Project(props){
 
@@ -18,12 +20,14 @@ export default function Project(props){
 		images,      // (object) containing arrays of screenshots for desktop / mobile / tablet
 		pages,       // (array) of objects containing scroll co-ordinates for each page
 		tags,        // (array) of strings for each tech used on the project
-		articles     // (array) of objects for each medium article written about the project
+		articles,    // (array) of objects for each medium article written about the project
+		style        // (object) any inline styles to be applied to the parent element
 	} = props;
 
 	//HOOKS
 	//--------------------------------------
-	const { state, dispatch }       = useContext(ProjectScroll)
+	const { state, dispatch }       = useContext(ProjectScroll);
+	const { animation }             = useContext(Animation).state;
 	const [ expanded, setExpanded ] = useState(false);
 	const project                   = useRef();
 	useEffect(setupObserver)
@@ -117,11 +121,16 @@ export default function Project(props){
 		);
 	}//renderArticleLink
 
+
+
+	const hide       = animation == "hide";
 	const readMoreId = `button__${safeTitle}__read_more`;
+
 	return(
 		<section 
-			className={`${s.wrapper} ${expanded ? s.expanded : s.collapsed}`}
-			ref={project}>
+			className={`${s.wrapper} ${animations.slide} ${hide ? animations.out : animations.in} ${expanded ? s.expanded : s.collapsed}`}
+			ref={project}
+			style={style}>
 			<div 
 				id={safeTitle}
 				className={s.anchor} 

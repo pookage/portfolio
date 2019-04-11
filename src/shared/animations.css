@@ -1,0 +1,12 @@
+.slide {
+	transition: opacity .3s, transform .3s;
+}
+.slide.out {
+	opacity: 0;
+	transform: translateX(-1em);
+
+}
+.slide.in {
+	opacity: 1;
+	transform: translateX(0);
+}

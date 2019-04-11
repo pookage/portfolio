@@ -1,9 +1,8 @@
 import React, { createContext, useReducer } from "react";
 
 //setup private vars
-const Page         = createContext();
+const Animation         = createContext();
 const initialState = {
-	activePage: "portfolio",
 	animation: ""
 };
 
@@ -18,12 +17,6 @@ function reducer(state, action){
 
 	let change;
 	switch(type){
-		case "setPage":
-			change = { 
-				...state,
-				activePage: value 
-			};
-			break;
 		case "animate":
 			change = {
 				...state,
@@ -38,7 +31,7 @@ function reducer(state, action){
 
 //PROVIDER SETUP
 //------------------------------
-function PageProvider(props){
+function AnimationProvider(props){
 	const {
 		children = []
 	} = props;
@@ -49,14 +42,14 @@ function PageProvider(props){
 	] = useReducer(reducer, initialState);
 
 	return(
-		<Page.Provider 
+		<Animation.Provider 
 			value={{ state, dispatch }}>
 			{children}
-		</Page.Provider>
+		</Animation.Provider>
 	);
-}//PageProvider
+}//AnimationProvider
 
 export { 
-	Page,
-	PageProvider
+	Animation,
+	AnimationProvider
 };
