@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
+import { ProjectScrollProvider } from "Contexts/ProjectScroll.js";
 import { projects } from "Data/projects.js";
 import { Triangle } from "Shared/shapes.jsx";
 import Project from "ReactComponents/Project/Project.jsx";
@@ -24,7 +25,10 @@ export default function Portfolio(){
 	//EVENT HANDLING
 	//----------------------------------
 	function goBack(){
-		dispatch({ type: "setPage", value: "hub" });
+		dispatch({ 
+			type: "setPage", 
+			value: "hub" 
+		});
 	}//goBack
 	
 
@@ -39,10 +43,9 @@ export default function Portfolio(){
 			} = project;
 
 			return(
-				<Project 
-					{...project} 
-					key={`${safeTitle}-project`}
-				/>
+				<ProjectScrollProvider key={`${safeTitle}-project`}>
+					<Project {...project} />
+				</ProjectScrollProvider>
 			);
 		}//renderProject
 		

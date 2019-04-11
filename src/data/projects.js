@@ -26,39 +26,48 @@ export const projects = [
 			desktop: [
 				{
 					src: "Assets/composites/the-handmaiden/desktop/home__01.jpg",
+					page: "home",
 					description: "",
 					id: "the_handmaiden__desktop__landing"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__02.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__desktop__synopsis"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__03.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__desktop__gallery"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__04.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__desktop__characters"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__05.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__desktop__read_more"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/home__06.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__desktop__trailer"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/biography.jpg",
 					description: "",
+					page: "biography",
 					id: "the_handmaiden__desktop__biography"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/filmography.jpg",
 					description: "",
+					page: "filmography",
 					id: "the_handmaiden__desktop__filmography"
 				}, {
 					src: "Assets/composites/the-handmaiden/desktop/novel.jpg",
 					description: "",
+					page: "novel",
 					id: "the_handmaiden__desktop__novel"
 				}, 
 			],
@@ -66,38 +75,47 @@ export const projects = [
 				{
 					src: "Assets/composites/the-handmaiden/tablet/home__01.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__tablet__landing"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/home__02.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__tablet__synopsis"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/home__03.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__tablet__gallery"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/home__04.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__tablet__characters"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/home__05.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__tablet__read_more"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/home__06.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__tablet__trailer"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/biography.jpg",
 					description: "",
+					page: "biography",
 					id: "the_handmaiden__tablet__biography"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/filmography.jpg",
 					description: "",
+					page: "filmography",
 					id: "the_handmaiden__tablet__filmography"
 				}, {
 					src: "Assets/composites/the-handmaiden/tablet/novel.jpg",
 					description: "",
+					page: "novel",
 					id: "the_handmaiden__tablet__novel"
 				}
 			],
@@ -105,38 +123,47 @@ export const projects = [
 				{
 					src: "Assets/composites/the-handmaiden/mobile/home__01.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__mobile__landing"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/home__02.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__mobile__synopsis"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/home__03.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__mobile__gallery"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/home__04.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__mobile__characters"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/home__05.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__mobile__read_more"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/home__06.jpg",
 					description: "",
+					page: "home",
 					id: "the_handmaiden__mobile__trailer"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/biography.jpg",
 					description: "",
+					page: "biography",
 					id: "the_handmaiden__mobile__biography"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/filmography.jpg",
 					description: "",
+					page: "filmography",
 					id: "the_handmaiden__mobile__filmography"
 				}, {
 					src: "Assets/composites/the-handmaiden/mobile/novel.jpg",
 					description: "",
+					page: "novel",
 					id: "the_handmaiden__mobile__novel"
 				}
 			],
@@ -173,10 +200,12 @@ export const projects = [
 				{
 					src: "Assets/composites/alien-covenant/desktop/home.jpg",
 					description: "",
+					page: "home",
 					id: "alien_covenant__desktop__home"
 				},{
 					src: "Assets/composites/alien-covenant/desktop/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "alien_covenant__desktop__synopsis"
 				}
 			],
@@ -184,10 +213,12 @@ export const projects = [
 				{
 					src: "Assets/composites/alien-covenant/tablet/home.jpg",
 					description: "",
+					page: "home",
 					id: "alien_covenant__tablet__home"
 				},{
 					src: "Assets/composites/alien-covenant/tablet/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "alien_covenant__tablet__synopsis"
 				}
 			],
@@ -195,10 +226,12 @@ export const projects = [
 				{
 					src: "Assets/composites/alien-covenant/mobile/home.jpg",
 					description: "",
+					page: "home",
 					id: "alien_covenant__device__home"
 				},{
 					src: "Assets/composites/alien-covenant/mobile/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "alien_covenant__device__synopsis"
 				}
 			],
@@ -533,18 +566,22 @@ export const projects = [
 				{
 					src: "Assets/composites/hell-fest/desktop/map.jpg",
 					description: "",
+					page: "map",
 					id: "hell_fest__desktop__map"
 				},{
 					src: "Assets/composites/hell-fest/desktop/gallery.jpg",
 					description: "",
+					page: "gallery",
 					id: "hell_fest__desktop__gallery"
 				},{
 					src: "Assets/composites/hell-fest/desktop/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "hell_fest__desktop__synopsis"
 				},{
 					src: "Assets/composites/hell-fest/desktop/cast.jpg",
 					description: "",
+					page: "cast",
 					id: "hell_fest__desktop__cast"
 				}
 			],
@@ -552,18 +589,22 @@ export const projects = [
 				{
 					src: "Assets/composites/hell-fest/tablet/map.jpg",
 					description: "",
+					page: "map",
 					id: "hell_fest__tablet__map"
 				},{
 					src: "Assets/composites/hell-fest/tablet/gallery.jpg",
 					description: "",
+					page: "gallery",
 					id: "hell_fest__tablet__gallery"
 				},{
 					src: "Assets/composites/hell-fest/tablet/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "hell_fest__tablet__synopsis"
 				},{
 					src: "Assets/composites/hell-fest/tablet/cast.jpg",
 					description: "",
+					page: "cast",
 					id: "hell_fest__tablet__cast"
 				}
 			],
@@ -571,18 +612,22 @@ export const projects = [
 				{
 					src: "Assets/composites/hell-fest/mobile/map.jpg",
 					description: "",
+					page: "map",
 					id: "hell_fest__mobile__map"
 				},{
 					src: "Assets/composites/hell-fest/mobile/gallery.jpg",
 					description: "",
+					page: "gallery",
 					id: "hell_fest__mobile__gallery"
 				},{
 					src: "Assets/composites/hell-fest/mobile/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "hell_fest__mobile__synopsis"
 				},{
 					src: "Assets/composites/hell-fest/mobile/cast.jpg",
 					description: "",
+					page: "cast",
 					id: "hell_fest__mobile__cast"
 				}
 			],
@@ -616,22 +661,27 @@ export const projects = [
 				{
 					src: "Assets/composites/life-itself/desktop/landing.jpg",
 					description: "",
+					page: "landing",
 					id: "life_itself__desktop__landing"
 				},{
 					src: "Assets/composites/life-itself/desktop/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "life_itself__desktop__synopsis"
 				},{
 					src: "Assets/composites/life-itself/desktop/characters.jpg",
 					description: "",
+					page: "characters",
 					id: "life_itself__desktop__characters"
 				},{
 					src: "Assets/composites/life-itself/desktop/posters.jpg",
 					description: "",
+					page: "posters",
 					id: "life_itself__desktop__posters"
 				},{
 					src: "Assets/composites/life-itself/desktop/gallery.jpg",
 					description: "",
+					page: "gallery",
 					id: "life_itself__desktop__gallery"
 				}
 			],
@@ -639,22 +689,27 @@ export const projects = [
 				{
 					src: "Assets/composites/life-itself/tablet/landing.jpg",
 					description: "",
+					page: "landing",
 					id: "life_itself__tablet__landing"
 				},{
 					src: "Assets/composites/life-itself/tablet/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "life_itself__tablet__synopsis"
 				},{
 					src: "Assets/composites/life-itself/tablet/characters.jpg",
 					description: "",
+					page: "characters",
 					id: "life_itself__tablet__characters"
 				},{
 					src: "Assets/composites/life-itself/tablet/posters.jpg",
 					description: "",
+					page: "posters",
 					id: "life_itself__tablet__posters"
 				},{
 					src: "Assets/composites/life-itself/tablet/gallery.jpg",
 					description: "",
+					page: "gallery",
 					id: "life_itself__tablet__gallery"
 				}
 			],
@@ -662,22 +717,27 @@ export const projects = [
 				{
 					src: "Assets/composites/life-itself/mobile/landing.jpg",
 					description: "",
+					page: "landing",
 					id: "life_itself__mobile__landing"
 				},{
 					src: "Assets/composites/life-itself/mobile/synopsis.jpg",
 					description: "",
+					page: "synopsis",
 					id: "life_itself__mobile__synopsis"
 				},{
 					src: "Assets/composites/life-itself/mobile/characters.jpg",
 					description: "",
+					page: "characters",
 					id: "life_itself__mobile__characters"
 				},{
 					src: "Assets/composites/life-itself/mobile/posters.jpg",
 					description: "",
+					page: "posters",
 					id: "life_itself__mobile__posters"
 				},{
 					src: "Assets/composites/life-itself/mobile/gallery.jpg",
 					description: "",
+					page: "gallery",
 					id: "life_itself__mobile__gallery"
 				}
 			],
@@ -710,22 +770,27 @@ export const projects = [
 				{
 					src: "Assets/composites/son-of-bigfoot/desktop/landing.jpg",
 					description: "",
+					page: "landing",
 					id: "son_of_bigfoot__desktop__landing"
 				},{
 					src: "Assets/composites/son-of-bigfoot/desktop/cta.jpg",
 					description: "",
+					page: "cta",
 					id: "son_of_bigfoot__desktop__cta"
 				},{
 					src: "Assets/composites/son-of-bigfoot/desktop/confirmation.jpg",
 					description: "",
+					page: "confirmation",
 					id: "son_of_bigfoot__desktop__confirmation"
 				},{
 					src: "Assets/composites/son-of-bigfoot/desktop/question.jpg",
 					description: "",
+					page: "question",
 					id: "son_of_bigfoot__desktop__question"
 				},{
 					src: "Assets/composites/son-of-bigfoot/desktop/result.jpg",
 					description: "",
+					page: "result",
 					id: "son_of_bigfoot__desktop__result"
 				}
 			],
@@ -733,22 +798,27 @@ export const projects = [
 				{
 					src: "Assets/composites/son-of-bigfoot/tablet/landing.jpg",
 					description: "",
+					page: "landing",
 					id: "son_of_bigfoot__tablet__landing"
 				},{
 					src: "Assets/composites/son-of-bigfoot/tablet/cta.jpg",
 					description: "",
+					page: "cta",
 					id: "son_of_bigfoot__tablet__cta"
 				},{
 					src: "Assets/composites/son-of-bigfoot/tablet/confirmation.jpg",
 					description: "",
+					page: "confirmation",
 					id: "son_of_bigfoot__tablet__confirmation"
 				},{
 					src: "Assets/composites/son-of-bigfoot/tablet/question.jpg",
 					description: "",
+					page: "question",
 					id: "son_of_bigfoot__tablet__question"
 				},{
 					src: "Assets/composites/son-of-bigfoot/tablet/result.jpg",
 					description: "",
+					page: "result",
 					id: "son_of_bigfoot__tablet__result"
 				}
 			],
@@ -756,22 +826,27 @@ export const projects = [
 				{
 					src: "Assets/composites/son-of-bigfoot/mobile/landing.jpg",
 					description: "",
+					page: "landing",
 					id: "son_of_bigfoot__mobile__landing"
 				},{
 					src: "Assets/composites/son-of-bigfoot/mobile/cta.jpg",
 					description: "",
+					page: "cta",
 					id: "son_of_bigfoot__mobile__cta"
 				},{
 					src: "Assets/composites/son-of-bigfoot/mobile/confirmation.jpg",
 					description: "",
+					page: "confirmation",
 					id: "son_of_bigfoot__mobile__confirmation"
 				},{
 					src: "Assets/composites/son-of-bigfoot/mobile/question.jpg",
 					description: "",
+					page: "question",
 					id: "son_of_bigfoot__mobile__question"
 				},{
 					src: "Assets/composites/son-of-bigfoot/mobile/result.jpg",
 					description: "",
+					page: "result",
 					id: "son_of_bigfoot__mobile__result"
 				}
 			],
@@ -794,7 +869,7 @@ export const projects = [
 		articles: [
 			webARSnapchat
 		]
-	},	{
+	},{
 		title: "Suspiria",
 		safeTitle: "suspiria",
 		date: "2018-11",
@@ -806,34 +881,42 @@ export const projects = [
 				{
 					src: "Assets/composites/suspiria/desktop/home__01.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__desktop__landing"
 				},{
 					src: "Assets/composites/suspiria/desktop/home__02.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__desktop__tanz"
 				},{
 					src: "Assets/composites/suspiria/desktop/home__03.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__desktop__mother"
 				},{
 					src: "Assets/composites/suspiria/desktop/home__04.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__desktop__reviews"
 				},{
 					src: "Assets/composites/suspiria/desktop/legends__landing.jpg",
 					description: "",
+					page: "legends__landing",
 					id: "suspiria__desktop__legends_closed"
 				},{
 					src: "Assets/composites/suspiria/desktop/legends__gallery.jpg",
 					description: "",
+					page: "legends__gallery",
 					id: "suspiria__desktop__legends_open"
 				},{
 					src: "Assets/composites/suspiria/desktop/whispers.jpg",
 					description: "",
+					page: "whispers",
 					id: "suspiria__desktop__soundtrack"
 				},{
 					src: "Assets/composites/suspiria/desktop/videos.jpg",
 					description: "",
+					page: "videos",
 					id: "suspiria__desktop__videos"
 				}
 			],
@@ -841,34 +924,42 @@ export const projects = [
 				{
 					src: "Assets/composites/suspiria/tablet/home__01.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__tablet__landing"
 				},{
 					src: "Assets/composites/suspiria/tablet/home__02.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__tablet__tanz"
 				},{
 					src: "Assets/composites/suspiria/tablet/home__03.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__tablet__mother"
 				},{
 					src: "Assets/composites/suspiria/tablet/home__04.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__tablet__reviews"
 				},{
 					src: "Assets/composites/suspiria/tablet/legends__landing.jpg",
 					description: "",
+					page: "legends__landing",
 					id: "suspiria__tablet__legends_closed"
 				},{
 					src: "Assets/composites/suspiria/tablet/legends__gallery.jpg",
 					description: "",
+					page: "legends__gallery",
 					id: "suspiria__tablet__legends_open"
 				},{
 					src: "Assets/composites/suspiria/tablet/whispers.jpg",
 					description: "",
+					page: "whispers",
 					id: "suspiria__tablet__soundtrack"
 				},{
 					src: "Assets/composites/suspiria/tablet/videos.jpg",
 					description: "",
+					page: "videos",
 					id: "suspiria__tablet__videos"
 				}
 			],
@@ -876,34 +967,42 @@ export const projects = [
 				{
 					src: "Assets/composites/suspiria/mobile/home__01.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__mobile__landing"
 				},{
 					src: "Assets/composites/suspiria/mobile/home__02.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__mobile__tanz"
 				},{
 					src: "Assets/composites/suspiria/mobile/home__03.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__mobile__mother"
 				},{
 					src: "Assets/composites/suspiria/mobile/home__04.jpg",
 					description: "",
+					page: "home",
 					id: "suspiria__mobile__reviews"
 				},{
 					src: "Assets/composites/suspiria/mobile/legends__landing.jpg",
 					description: "",
+					page: "legends__landing",
 					id: "suspiria__mobile__legends_closed"
 				},{
 					src: "Assets/composites/suspiria/mobile/legends__gallery.jpg",
 					description: "",
+					page: "legends__gallery",
 					id: "suspiria__mobile__legends_open"
 				},{
 					src: "Assets/composites/suspiria/mobile/whispers.jpg",
 					description: "",
+					page: "whispers",
 					id: "suspiria__mobile__soundtrack"
 				},{
 					src: "Assets/composites/suspiria/mobile/videos.jpg",
 					description: "",
+					page: "videos",
 					id: "suspiria__mobile__videos"
 				}
 			],

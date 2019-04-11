@@ -71,6 +71,8 @@ export default function StickyQuickNav(props){
 				<button 
 					className={`${s.toggle} ${linksVisible ? s.close : s.open}`}
 					aria-label="Toggle links."
+					role="switch"
+					aria-checked={linksVisible.toString()}
 					onClick={toggleLinks} 
 				/>
 			</div>

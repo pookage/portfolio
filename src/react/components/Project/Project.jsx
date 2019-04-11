@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
+import { ProjectScroll } from "Contexts/ProjectScroll.js";
 import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
 import Composite from "ReactComponents/Composite/Composite.jsx";
@@ -8,19 +9,7 @@ import s from "ReactComponents/Project/Project.css";
 
 export default function Project(props){
 
-	//HOOKS
-	//--------------------------------------
-	const [ expanded, setExpanded ] = useState(false);
-	
-
-	//EVENT HANDLING
-	//--------------------------------------
-	function toggleExpand(){
-		setExpanded(!expanded);
-	}//toggleExpand
-
-
-	//RENDER LOGIC
+	//PROPS
 	//--------------------------------------
 	const {
 		title,       // (string) name of the project
@@ -31,9 +20,59 @@ export default function Project(props){
 		tags,        // (array) of strings for each tech used on the project
 		articles     // (array) of objects for each medium article written about the project
 	} = props;
-	
-	const readMoreId = `button__${safeTitle}__read_more`;
 
+	//HOOKS
+	//--------------------------------------
+	const { state, dispatch }       = useContext(ProjectScroll)
+	const [ expanded, setExpanded ] = useState(false);
+	const project                   = useRef();
+	useEffect(setupObserver)
+	
+
+	//UTILS
+	//--------------------------------------
+	function setupObserver(){
+		//update the hash whenever a project is fully-scrolled into view
+		const hashObserver       = new IntersectionObserver(updateHash, { threshold: 0.95 });
+		//fire off an activation the first time that the project scrolls into view
+		const activationObserver = new IntersectionObserver(activate, { threshold: 0});
+
+		//observe the project wrapper
+		hashObserver.observe(project.current);
+		if(!state.active) activationObserver.observe(project.current);
+
+		//stop watching whenever the component is unmounted
+		return () => {
+			hashObserver.disconnect();
+			activationObserver.disconnect();
+		};
+	}//setupObserver
+
+
+	//EVENT HANDLING
+	//--------------------------------------
+	function toggleExpand(){
+		setExpanded(!expanded);
+	}//toggleExpand
+	function updateHash(entries){
+		if(entries[0].intersectionRatio > 0.95){
+			
+			const historyURL = `${document.location.pathname}#${safeTitle}`;
+			history.replaceState(null, null, historyURL);
+		}
+	}//updateHash
+	function activate(entries){
+		if(entries[0].intersectionRatio > 0){
+			dispatch({
+				type: "setActive",
+				value: "true"
+			});
+		}
+	}//activate
+
+
+	//RENDER LOGIC
+	//--------------------------------------
 	function renderTag(tag){
 
 		const key = `${safeTitle}-tag-${tag.toLowerCase()}`;
@@ -78,9 +117,11 @@ export default function Project(props){
 		);
 	}//renderArticleLink
 
+	const readMoreId = `button__${safeTitle}__read_more`;
 	return(
 		<section 
-			className={`${s.wrapper} ${expanded ? s.expanded : s.collapsed}`}>
+			className={`${s.wrapper} ${expanded ? s.expanded : s.collapsed}`}
+			ref={project}>
 			<div 
 				id={safeTitle}
 				className={s.anchor} 

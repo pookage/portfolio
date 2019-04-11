@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { CompositeScroll } from "Contexts/CompositeScroll";
+import LazyImage from "ReactComponents/LazyImage/LazyImage.jsx";
 import s from "ReactComponents/Composite/Composite.css";
 
 
@@ -45,25 +46,32 @@ export default function Composite(props){
 
 	//RENDER 
 	//------------------------------
+	let prevPage;
 	function renderScreenshot(screenshot, index){
 
 		const {
 			src,
 			description,
-			id
+			id,
+			page
 		} = screenshot;
 
 		const image    = useRef();
 		const isActive = index == activeSectionIndex;
+		const newPage  = page != prevPage;
 
+		prevPage = page;
 		return(
-			<img
-				className={`${s.image} ${isActive ? s.active : s.inactive}`}
+			<div
+				className={`${newPage ? s.newPage : ""}`} 
 				ref={image}
-				key={id}
-				alt={description}
-				src={src}
-			/>
+				key={id}>
+				<LazyImage
+					className={`${s.image} ${isActive ? s.active : s.inactive}`}	
+					alt={description}
+					src={src}
+				/>
+			</div>
 		);
 	}//renderScreenshot
 

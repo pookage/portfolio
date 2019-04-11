@@ -16,21 +16,25 @@
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 	}
-		.image {
-			display: block;
-			width: 100%;
-			height: auto;
-			scroll-snap-align: start;
-			pointer-events: none;
-			transition: opacity .3s;
+		.newPage:not(:first-child) {
+			border-top: 0.25rem dashed var(--accent-color);
 		}
-		/* REMOVED AS NEED TO SYNC QUICK-SCROLL WITH MANUAL*/
-		.image.active {
-			/*opacity: 1;*/
-		}
-		.image.inactive {
-			/*opacity: 0.2;*/
-		}
+			.image {
+				display: block;
+				width: 100%;
+				height: auto;
+				scroll-snap-align: start;
+				pointer-events: none;
+				transition: opacity .3s;
+			}
+			/* REMOVED AS NEED TO SYNC QUICK-SCROLL WITH MANUAL*/
+			.image.active {
+				/*opacity: 1;*/
+			}
+			.image.inactive {
+				/*opacity: 0.2;*/
+			}
+		
 .wrapper.desktop {
 	--aspect-ratio: 1.79em;
 }
