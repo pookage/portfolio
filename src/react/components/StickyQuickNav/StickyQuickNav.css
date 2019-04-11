@@ -60,6 +60,10 @@
 			.back:focus .arrow {
 				transform: var(--arrow-center) scale(0.5);
 			}
+			.back:active .arrow {
+				transform: var(--arrow-center) scale(0.4);
+				transition: transform .1s;
+			}
 			.back:hover .arrow::after,
 			.back:focus .arrow::after {
 				transform: scale(0);
@@ -154,7 +158,8 @@
 					}
 				
 				.back:hover .arrow,
-				.back:focus .arrow {
+				.back:focus .arrow,
+				.back:active .arrow {
 					transform: scale(1);
 				}
 					.back:hover .arrow::after,

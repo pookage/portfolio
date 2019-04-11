@@ -3,7 +3,7 @@ import React, { createContext, useReducer } from "react";
 //setup private vars
 const Animation         = createContext();
 const initialState = {
-	animation: ""
+	animation: "hide"
 };
 
 //REDUCER SETUP

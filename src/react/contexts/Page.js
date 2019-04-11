@@ -3,8 +3,7 @@ import React, { createContext, useReducer } from "react";
 //setup private vars
 const Page         = createContext();
 const initialState = {
-	activePage: "portfolio",
-	animation: ""
+	activePage: "hub"
 };
 
 //REDUCER SETUP
@@ -22,12 +21,6 @@ function reducer(state, action){
 			change = { 
 				...state,
 				activePage: value 
-			};
-			break;
-		case "animate":
-			change = {
-				...state,
-				animation: value
 			};
 			break;
 	}
