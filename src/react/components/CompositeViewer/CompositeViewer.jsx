@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { CompositeScroll } from "Contexts/CompositeScroll.js";
 import s from "ReactComponents/CompositeViewer/CompositeViewer.css";
 
@@ -59,9 +59,7 @@ export default function CompositeViewer(props){
 					className={s.controls}>
 					<ul className={s.scrollers}>
 						{pages.map(renderButton)}
-					</ul>
-					
-					
+					</ul>	
 				</nav>
 			</figcaption>
 		</figure>

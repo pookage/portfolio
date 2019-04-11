@@ -39,6 +39,7 @@ abbr {
 	--accent-color: #ef2d5e;
 	--aside-color: #777777;
 	--inactive-color: #222222;
+	--ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 
