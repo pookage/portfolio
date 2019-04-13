@@ -1,20 +1,10 @@
 .wrapper {
 	display: flex;
 	width: 100%;
-	position: relative;
-	z-index: 2;
-	--side-padding: 5.47vw;
 }
-	.sidebar {
-		height: 100%;
-		padding: 4.25em var(--side-padding) 0;
-		flex: 0 0 calc(10em + 9vw);
-		position: relative;
-	}
-		.links {
-			list-style-type: none;
-		}
-		
+	.links {
+		list-style-type: none;
+	}		
 	.projects {
 		/*flex: 1 0 auto;*/ /*removed so that title line doesn't over-extend */
 		padding-bottom: 8.8em;
@@ -23,29 +13,18 @@
 @media(max-width: 1025px){
 	.wrapper {
 		flex-direction: column;
-	}
-		.sidebar {
-			flex-basis: 1.62em;
-			padding: 0;
+	}	
+		.links {
+			display: flex;
+			flex-wrap: wrap;
 		}
-			.links {
-				display: flex;
-				flex-wrap: wrap;
+			.links .item:not(:last-child)::after {
+				content: "∙";
+				display: inline-block;
+				margin: 0 1em;
 			}
-				.links .item:not(:last-child)::after {
-					content: "∙";
-					display: inline-block;
-					margin: 0 1em;
+				.links .link:link,
+				.links .link:visited {
+					color: var(--base-color);
 				}
-					.links .link:link,
-					.links .link:visited {
-						color: var(--base-color);
-					}
-}
-
-@media(max-width: 768px){
-	.wrapper {}
-		.sidebar {
-			flex-basis: 2.62em;
-		}
 }

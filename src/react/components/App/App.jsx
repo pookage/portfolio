@@ -1,8 +1,9 @@
 import React from "react";
 import { AnimationProvider } from "Contexts/Animation.js";
-import { Page } from "Contexts/Page.js";
 import BedroomScene from "ReactComponents/BedroomScene/BedroomScene.jsx";
+import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import Portfolio from "ReactComponents/Portfolio/Portfolio.jsx";
+import Contact from "ReactComponents/Contact/Contact.jsx";
 import s from "ReactComponents/App/App.css"
 
 export default function App(){
@@ -11,7 +12,10 @@ export default function App(){
 		<div>
 			<BedroomScene />
 			<AnimationProvider>
-				<Portfolio />
+				<PageSwapper>
+					<Portfolio />
+					<Contact />
+				</PageSwapper>
 			</AnimationProvider>
 		</div>
 	);

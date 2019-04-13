@@ -9,46 +9,16 @@ import font from "Shared/fonts.css";
 import animations from "Shared/animations.css";
 import s from "ReactComponents/Portfolio/Portfolio.css";
 
-
-
 export default function Portfolio(){
 
 	//HOOKS
 	//------------------------------
-	const { state, dispatch } = useContext(Page);
-	const { state: animState, dispatch: animDispatch } = useContext(Animation);
-	useEffect(fireOpenAnimations, [state.activePage])
-
-
-	//EVENT HANDLING
-	//-----------------------------------
-	let closeTimeout;
-	function tryToClose(event){
-		const isHiding        = animState.animation == "hide";
-		const emittedByHiding = event.nativeEvent.target.className.indexOf("animations") > -1;
-		if(isHiding && emittedByHiding){
-			clearTimeout(closeTimeout);
-			closeTimeout = setTimeout(goBack, 10);
-		}
-	}//tryToClose
-	function goBack(){
-		dispatch({ type: "setPage", value: "hub" });
-	}//goBack
-	function fireOpenAnimations(){
-		if(state.activePage == "portfolio"){
-			setTimeout(() => {
-				animDispatch({
-					type: "animate",
-					value: "show"
-				});
-			}, 1000);
-		}
-	}//fireOpenAnimations
-	
+	const { state: pageState } = useContext(Page);
+	const { state: animState } = useContext(Animation);
 
 	//RENDER LOGIC
 	//-----------------------------------
-	if(state.activePage == "portfolio"){
+	if(pageState.activePage == "portfolio"){
 
 		const {
 			animation
@@ -97,15 +67,12 @@ export default function Portfolio(){
 
 		return(
 			<article 
-				className={s.wrapper}
-				onTransitionEnd={tryToClose}>
-				<header className={s.sidebar}>
-					<StickyQuickNav>
-						<ul className={`${s.links}`}>
-							{projects.map(renderLink)}
-						</ul>
-					</StickyQuickNav>
-				</header>
+				className={s.wrapper}>
+				<StickyQuickNav>
+					<ul className={`${s.links}`}>
+						{projects.map(renderLink)}
+					</ul>
+				</StickyQuickNav>
 				<div className={s.projects}>
 					{projects.map(renderProject)}
 				</div>

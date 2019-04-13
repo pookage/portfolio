@@ -3,7 +3,7 @@ import React, { createContext, useReducer } from "react";
 //setup private vars
 const Page         = createContext();
 const initialState = {
-	activePage: "hub"
+	activePage: "contact"
 };
 
 //REDUCER SETUP

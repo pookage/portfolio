@@ -1,0 +1,8 @@
+.wrapper {
+	display: flex;
+	width: 100%;
+	--side-padding: 5.47vw;
+	position: relative;
+	z-index: 2;
+	
+}

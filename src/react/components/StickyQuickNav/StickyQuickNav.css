@@ -1,193 +1,207 @@
 .wrapper {
-	position: fixed;
+	height: 100%;
+	padding: 4.25em var(--side-padding) 0;
+	flex: 0 0 calc(10em + 9vw);
+	position: relative;
 }
-	.controls {
-		display: flex;
-		width: 100%;
-		justify-content: space-between;
-		font-size: var(--subheading-size);
-
+	.container {
+		position: fixed;
 	}
-		/*BACK BUTTON
-		//////////////////////////////////*/
-		.back {
+		.controls {
 			display: flex;
-			margin-bottom: 1.62em;
-			position: relative;
-			align-items: center;
-			text-transform: uppercase;
-			appearance: none;
-			color: var(--base-color);
-			background-color: transparent;
+			width: 100%;
+			justify-content: space-between;
+			font-size: var(--subheading-size);
+
 		}
-			.arrow {
-				display: block;
-				font-size: 1.25em;
-				height: 1em;
-				width: 0.95em;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				--arrow-center: translate(calc(-100% - 0.38em), -50%);
-				transform: var(--arrow-center) scale(1);
-				pointer-events: none;
-				transition: transform .3s;
+			/*BACK BUTTON
+			//////////////////////////////////*/
+			.back {
+				display: flex;
+				margin-bottom: 1.62em;
+				position: relative;
+				align-items: center;
+				text-transform: uppercase;
+				appearance: none;
+				color: var(--base-color);
+				background-color: transparent;
 			}
-				.arrow::before,
-				.arrow::after {
-					content: "";
+				.arrow {
 					display: block;
-					height: 100%;
-					width: 100%;
-					clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-				}
-				.arrow::before {
-					background-color: var(--accent-color);
-				}
-				.arrow::after {
+					font-size: 1.25em;
+					height: 1em;
+					width: 0.95em;
 					position: absolute;
-					top: -0.00em;
-					left: 0.045em;
-					transform: scale(0.7);
-					background-color: #222;
+					top: 50%;
+					left: 0;
+					--arrow-center: translate(calc(-100% - 0.38em), -50%);
+					transform: var(--arrow-center) scale(1);
+					pointer-events: none;
 					transition: transform .3s;
 				}
-		.back:hover,
-		.back:focus {
-			text-decoration: underline;
-		}
-			.back:hover .arrow,
-			.back:focus .arrow {
-				transform: var(--arrow-center) scale(0.5);
+					.arrow::before,
+					.arrow::after {
+						content: "";
+						display: block;
+						height: 100%;
+						width: 100%;
+						clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+					}
+					.arrow::before {
+						background-color: var(--accent-color);
+					}
+					.arrow::after {
+						position: absolute;
+						top: -0.00em;
+						left: 0.045em;
+						transform: scale(0.7);
+						background-color: #222;
+						transition: transform .3s;
+					}
+			.back:hover,
+			.back:focus {
+				text-decoration: underline;
 			}
-			.back:active .arrow {
-				transform: var(--arrow-center) scale(0.4);
-				transition: transform .1s;
-			}
-			.back:hover .arrow::after,
-			.back:focus .arrow::after {
-				transform: scale(0);
-			}
+				.back:hover .arrow,
+				.back:focus .arrow {
+					transform: var(--arrow-center) scale(0.5);
+				}
+				.back:active .arrow {
+					transform: var(--arrow-center) scale(0.4);
+					transition: transform .1s;
+				}
+				.back:hover .arrow::after,
+				.back:focus .arrow::after {
+					transform: scale(0);
+				}
 
-		/*TOGGLE BUTTON
-		//////////////////////////*/
-		.toggle {
-			--button-height: 1em;
-			--button-width: 1.25em;
-			--line-height: 0.1em;
-			--button-center: calc((var(--button-height) / 2) - (var(--line-height) / 2));
-			display: none;
-			height: var(--button-height);
-			width: var(--button-width);
-			border-bottom-width: var(--line-height);
-			border-bottom-style: solid;
-			position: relative;
-			background-color: transparent;
-		}
-			.toggle::before,
-			.toggle::after {
-				content: "";
+			/*TOGGLE BUTTON
+			//////////////////////////*/
+			.toggle {
+				--button-height: 1em;
+				--button-width: 1.25em;
+				--line-height: 0.1em;
+				--button-center: calc((var(--button-height) / 2) - (var(--line-height) / 2));
+				display: none;
+				height: var(--button-height);
 				width: var(--button-width);
-				height: var(--line-height);
-				position: absolute;
-				top: 0;
-				left: 0;
-				background-color: var(--base-color);
-				transition: transform .3s;
+				border-bottom-width: var(--line-height);
+				border-bottom-style: solid;
+				position: relative;
+				background-color: transparent;
 			}
-		.toggle.open {
-			border-bottom-color: var(--base-color);
-		}
-			.toggle.open::before {
-				transform: translate(0, 0);
+				.toggle::before,
+				.toggle::after {
+					content: "";
+					width: var(--button-width);
+					height: var(--line-height);
+					position: absolute;
+					top: 0;
+					left: 0;
+					background-color: var(--base-color);
+					transition: transform .3s;
+				}
+			.toggle.open {
+				border-bottom-color: var(--base-color);
 			}
-			.toggle.open::after {
-				transform: translate(0, var(--button-center));
+				.toggle.open::before {
+					transform: translate(0, 0);
+				}
+				.toggle.open::after {
+					transform: translate(0, var(--button-center));
+				}
+			.toggle.close {
+				border-bottom-color: transparent;
 			}
-		.toggle.close {
-			border-bottom-color: transparent;
-		}
-			.toggle.close::before {
-				transform: translate(0, var(--button-center)) rotate(45deg);
-			}
-			.toggle.close::after {
-				transform: translate(0, var(--button-center)) rotate(-45deg);
-			}
+				.toggle.close::before {
+					transform: translate(0, var(--button-center)) rotate(45deg);
+				}
+				.toggle.close::after {
+					transform: translate(0, var(--button-center)) rotate(-45deg);
+				}
+				
+		
+
+		/*REVEAL ANIMATIONS
+		/////////////////////////////*/
+		.container.hidden .back{
 			
-	
 
-	/*REVEAL ANIMATIONS
-	/////////////////////////////*/
-	.wrapper.hidden .back{
-		
+		}
 
-	}
-
-	.wrapper.visible .back {
-		
-	}
+		.container.visible .back {
+			
+		}
 
 
 @media(max-width: 1025px){
 	.wrapper {
-		padding: 1.62em var(--side-padding);
-		z-index: 2;
-		overflow: hidden;
-		transition: max-height .6s var(--ease-out), background-color .3s;
+		flex-basis: 1.62em;
+		padding: 0;
 	}
-		.wrapper.open {
-			max-height: 12.5rem;
+		.container {
+			width: 100%;
+			padding: 1.62em var(--side-padding);
+			z-index: 2;
+			overflow: hidden;
+			transition: max-height .6s var(--ease-out), background-color .3s;
 		}
-		.wrapper.closed {
-			max-height: calc((1.62em * 2) + var(--subheading-size));
-		}
-		.wrapper.hidden {
-			background-color: transparent;
-		}
-		.wrapper.visible {
-			background-color: var(--accent-color);
-		}
-		.controls {}
-			.back {}
-				.arrow {
-					position: relative;
-					transform: scale(1);
-				}
-					.arrow::before {
-						display: none;
-					}
-					.arrow::after {
-						background-color: var(--base-color);
-					}
-				
-				.back:hover .arrow,
-				.back:focus .arrow,
-				.back:active .arrow {
-					transform: scale(1);
-				}
-					.back:hover .arrow::after,
-					.back:focus .arrow::after {
-						transform: translate(0.1em, 0) scale(0.7)
-					}
-				.label {
-					display: inline-block;
-					margin-left: 0.62em;
-					transform: translateX(0);
-					transition: transform .3s;
-				}
-				.back:hover .label {
-					transform: translateX(-0.15em);
-				}
-					
-			.toggle {
-				display: inline-block;
+			.container.open {
+				max-height: 12.5rem;
 			}
+			.container.closed {
+				max-height: calc((1.62em * 2) + var(--subheading-size));
+			}
+			.container.hidden {
+				background-color: transparent;
+			}
+			.container.visible {
+				background-color: var(--accent-color);
+			}
+			.controls {}
+				.back {}
+					.arrow {
+						position: relative;
+						transform: scale(1);
+					}
+						.arrow::before {
+							display: none;
+						}
+						.arrow::after {
+							background-color: var(--base-color);
+						}
+					
+					.back:hover .arrow,
+					.back:focus .arrow,
+					.back:active .arrow {
+						transform: scale(1);
+					}
+						.back:hover .arrow::after,
+						.back:focus .arrow::after {
+							transform: translate(0.1em, 0) scale(0.7)
+						}
+					.label {
+						display: inline-block;
+						margin-left: 0.62em;
+						transform: translateX(0);
+						transition: transform .3s;
+					}
+					.back:hover .label {
+						transform: translateX(-0.15em);
+					}
+						
+				.toggle {
+					display: inline-block;
+				}
 }
 @media(max-width: 767px){
-	.wrapper.open {
-		max-height: 15rem;
+	.wrapper {
+		flex-basis: 2.62em;
 	}
-	.back {
-		margin-bottom: 1em;
-	}
+		.container.open {
+			max-height: 15rem;
+		}
+		.back {
+			margin-bottom: 1em;
+		}
 }

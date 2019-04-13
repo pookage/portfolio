@@ -26,7 +26,7 @@ AFRAME.registerComponent("edge-tracker", {
 		this.originRotation        = this.data.rotation;    // designed rotation of the camera at 16:9
 		this.originRotationRadians = this.originRotation * (Math.PI / 180); // convert to radians
 		this.rotationRange         = 2.4175;                                // range (in radians) to rotate camera
-		this.focalOffset           = -20;                                   // degrees to offset final rotation calculation
+		this.focalOffset           = -20; //-23.5devices                    // degrees to offset final rotation calculation
 		this.lockTimeout           = null;                                  // ref for a timeout so that we're not applying rotation all the time
 		this.rotationLocked        = true;                                  // whether or not rotations are allowed to be applied
 		this.yAxis                 = new THREE.Vector3(0, 1, 0);            // axis along which to rotate the camera
