@@ -1,0 +1,22 @@
+.wrapper {
+	position: relative;
+}
+	.wrapper > *:not(:focus)::placeholder,
+	.wrapper > .wrapper select[data-value=select__option_0]:not(:focus) {
+		color: transparent;
+	}
+	.wrapper > *:focus ~ label,
+	.wrapper > *:not(:placeholder-shown) ~ .label,
+	.wrapper select:not([data-value=select__option_0]) ~ .label{
+		transform: translate(0, -168%);
+	}
+
+	.label,
+	.wrapper select[data-value=select__option_0]:not(:focus) ~ .label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(var(--input-padding), var(--input-padding));
+		pointer-events: none;
+		transition: transform .3s;
+	}

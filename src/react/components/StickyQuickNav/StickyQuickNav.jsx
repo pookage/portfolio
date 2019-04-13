@@ -37,6 +37,7 @@ export default function StickyQuickNav(props){
 	const {
 		toggle,
 		HTMLTag = "header",
+		className,
 		children
 	} = props;
 	const {
@@ -46,7 +47,7 @@ export default function StickyQuickNav(props){
 	const hide = animation == "hide";
 
 	return(
-		<HTMLTag className={s.wrapper}>
+		<HTMLTag className={`${s.wrapper} ${className}`}>
 			<nav 
 				className={`${s.container} ${linksVisible ? s.open : s.closed} ${hide ? s.hidden : s.visible}`} 
 				aria-label="Project navigation">
