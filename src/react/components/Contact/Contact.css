@@ -96,16 +96,27 @@
 						width: 125%;
 						height: 4px;
 						position: absolute;
-						top: 50%;
 						left: 50%;
-						transform: translate(-50%, -50%) scaleX(0);
+						top: 50%;
 						background-color: var(--accent-color);
+						transition: transform .3s;
 					}
 			.submit:disabled {
-				pointer-events: none
+				transform: scale(1);
+				pointer-events: none;
+				transition: transform 3s;
 			}
 				.submit:disabled .label::after{
 					transform: translate(-50%, -50%) scaleX(1);
+				}
+				.submit:not(:disabled) .label::after {
+					transform: translate(-50%, -50%) scaleX(0);
+				}
+				.submit:not(:disabled):hover .label {
+					text-decoration: underline;
+				}
+				.submit:not(:disabled):active {
+					transform: scale(0.75);
 				}
 
 @media(max-height: 60rem){

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Page } from "Contexts/Page.js";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LabelledInput from "ReactComponents/LabelledInput/LabelledInput.jsx";
@@ -10,8 +10,35 @@ import s from "ReactComponents/Contact/Contact.css";
 
 export default function Contact(){
 
+	//HOOKS
+	//------------------------------------------------
 	const { state: pageState } = useContext(Page);
+	const [ valid, setValid ]  = useState(false);
 
+	const name    = useRef();
+	const email   = useRef();
+	const message = useRef();
+
+	const securityPhrase = "the badger!";
+
+
+	//EVENT HANDLING
+	//-----------------------------------------------
+	function validate(){
+		const inputs       = [ name, email, message ];
+		const isValid      = inputs.every(input => input.current.validity.valid);
+		const hasKeyPhrase = message.current.value.toLowerCase().indexOf(securityPhrase) > -1;
+		setValid(isValid && hasKeyPhrase);
+	}//validate
+	function sendEmail(event){
+		event.preventDefault();
+
+		console.log("send the fucker!")
+	}//sendEmail
+
+
+	//RENDER
+	//----------------------------------------------
 	if(pageState.activePage == "contact"){
 		return(
 			<article className={s.wrapper}>
@@ -37,7 +64,7 @@ export default function Contact(){
 								Bot-proof precaution!
 							</h1>
 							<p>
-								If you'd like to use the contact form, make sure to use the phrase <q>that's the badger!</q> somewhere in your message to prove you're not a bot.
+								If you'd like to use the contact form, make sure to use the phrase <q>that's {securityPhrase}</q> somewhere in your message to prove you're not a bot.
 							</p>
 							<p>	
 								Bonus points if you can do it seamlessly.
@@ -49,10 +76,12 @@ export default function Contact(){
 							name="Name"
 							className={s.inputWrapper}>
 							<input
+								ref={name}
 								className={s.input}
 								id="contact__name" 
 								type="text" 
-								placeholder="Steven Universe"
+								placeholder="eg. Steven Universe"
+								onKeyUp={validate}
 								required 
 							/>
 						</LabelledInput>
@@ -60,10 +89,12 @@ export default function Contact(){
 							name="Email"
 							className={s.inputWrapper}>	
 							<input
+								ref={email}
 								className={s.input}
 								id="contact__email" 
 								type="email" 
-								placeholder="steven@beachtown.com"
+								placeholder="eg. steven@thecrystalgems.com"
+								onKeyUp={validate}
 								required
 							/>
 						</LabelledInput>
@@ -71,8 +102,10 @@ export default function Contact(){
 							name="Subject"
 							className={s.inputWrapper}>
 							<Select
+								
 								className={s.input} 
 								id="contact__subject"
+								onChange={validate}
 								required>
 								<option></option>
 								<option>I'm looking for a developer.</option>
@@ -87,14 +120,17 @@ export default function Contact(){
 							<textarea
 								className={`${s.input} ${s.message}`}
 								id="contact__message" 
-								placeholder="I'm impressed by your work and I'd like to bring you onto a project I'm working on..."
+								onKeyUp={validate}
+								ref={message}
+								placeholder="eg. I'd like to bring you onto a project I'm working on..."
 								required>
 							</textarea>
 						</LabelledInput>
 						<button
 							className={s.submit}
-							disabled>
-							<span class={`${s.label} ${font.subtitle}`}>
+							disabled={!valid}
+							onClick={sendEmail}>
+							<span className={`${s.label} ${font.subtitle}`}>
 								Send
 							</span>
 						</button>
