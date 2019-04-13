@@ -113,7 +113,7 @@ export default function Contact(){
 								id="contact__subject"
 								onChange={validate}
 								required>
-								<option></option>
+								<option value="">I'm looking for...</option>
 								<option>I'm looking for a developer.</option>
 								<option>I'm looking for a consultant.</option>
 								<option>I'm looking for a mentor.</option>

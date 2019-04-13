@@ -2,7 +2,7 @@
 	position: relative;
 }
 	.wrapper > *:not(:focus)::placeholder,
-	.wrapper > .wrapper select[data-value=select__option_0]:not(:focus) {
+	.wrapper > select[data-value=select__option_0]:not(:focus) {
 		color: transparent;
 	}
 	.wrapper > *:focus ~ label,
@@ -19,4 +19,8 @@
 		transform: translate(var(--input-padding), var(--input-padding));
 		pointer-events: none;
 		transition: transform .3s;
+	}
+
+	.wrapper select[data-value=select__option_0]:focus option {
+		color: var(--base-color);
 	}

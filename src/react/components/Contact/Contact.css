@@ -69,7 +69,9 @@
 				outline: 0;
 				background-color: var(--accent-color);
 			}
-				.input::placeholder {
+				.input::placeholder,
+				select[data-value=select__option_0]:focus,
+				select[data-value=select__option_0]:focus option:first-child {
 					color: var(--inactive-color);
 				}
 				.input option {
@@ -82,7 +84,9 @@
 				width: 100%;
 				padding: 1em ;
 				margin-top: 1.62em;
+				transform: scale(1);
 				background-color: transparent;
+				transition: transform .1s;
 			}
 				.label {
 					position: relative;
@@ -102,9 +106,7 @@
 						transition: transform .3s;
 					}
 			.submit:disabled {
-				transform: scale(1);
 				pointer-events: none;
-				transition: transform 3s;
 			}
 				.submit:disabled .label::after{
 					transform: translate(-50%, -50%) scaleX(1);
@@ -116,7 +118,7 @@
 					text-decoration: underline;
 				}
 				.submit:not(:disabled):active {
-					transform: scale(0.75);
+					transform: scale(0.9);
 				}
 
 @media(max-height: 60rem){
