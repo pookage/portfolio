@@ -1,5 +1,6 @@
 import React, { useContext, useState, useRef } from "react";
 import { Page } from "Contexts/Page.js";
+import { Animation } from "Contexts/Animation.js";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LabelledInput from "ReactComponents/LabelledInput/LabelledInput.jsx";
 import Select from "ReactComponents/Select/Select.jsx";
@@ -13,13 +14,14 @@ export default function Contact(){
 	//HOOKS
 	//------------------------------------------------
 	const { state: pageState } = useContext(Page);
+	const { state: animState } = useContext(Animation);
 	const [ valid, setValid ]  = useState(false);
 
 	const name    = useRef();
 	const email   = useRef();
 	const message = useRef();
 
-	const securityPhrase = "the badger!";
+	const securityPhrase = "may the force be with you";
 
 
 	//EVENT HANDLING
@@ -40,13 +42,15 @@ export default function Contact(){
 	//RENDER
 	//----------------------------------------------
 	if(pageState.activePage == "contact"){
+
+		const hide = animState.animation == "hide";
 		return(
-			<article className={s.wrapper}>
+			<article className={`${s.wrapper}`}>
 				<StickyQuickNav 
 					HTMLTag="div"
 					className={s.back}
 				/>
-				<div className={s.container}>
+				<div className={`${s.container} ${animations.slide} ${hide ? animations.out : animations.in}`}>
 					<header className={s.intro}>
 						<h1 className={`${font.subtitle} ${s.title}`}>
 							My DM's are Open
@@ -64,14 +68,16 @@ export default function Contact(){
 								Bot-proof precaution!
 							</h1>
 							<p>
-								If you'd like to use the contact form, make sure to use the phrase <q>that's {securityPhrase}</q> somewhere in your message to prove you're not a bot.
+								If you'd like to use the contact form, make sure to use the phrase <q>{securityPhrase}</q> somewhere in your message to prove you're not a bot.
 							</p>
 							<p>	
 								Bonus points if you can do it seamlessly.
 							</p>	
 						</aside>
 					</header>
-					<form className={s.form}>
+					<form 
+						className={`${s.form} ${animations.slide} ${hide ? animations.out : animations.in}`}
+						style={{ transitionDelay: "0.1s" }}>
 						<LabelledInput 
 							name="Name"
 							className={s.inputWrapper}>
