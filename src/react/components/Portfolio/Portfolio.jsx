@@ -6,7 +6,9 @@ import { projects } from "Data/projects.js";
 import Project from "ReactComponents/Project/Project.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import font from "Shared/fonts.css";
+import animations from "Shared/animations.css";
 import s from "ReactComponents/Portfolio/Portfolio.css";
+
 
 
 export default function Portfolio(){
@@ -16,8 +18,6 @@ export default function Portfolio(){
 	const { state, dispatch } = useContext(Page);
 	const { state: animState, dispatch: animDispatch } = useContext(Animation);
 	useEffect(fireOpenAnimations, [state.activePage])
-
-	
 
 
 	//EVENT HANDLING
@@ -50,6 +50,32 @@ export default function Portfolio(){
 	//-----------------------------------
 	if(state.activePage == "portfolio"){
 
+		const {
+			animation
+		} = animState;		
+
+		function renderLink(project, index){
+			const {
+				title,
+				safeTitle
+			} = project
+
+			const key   = `sticky__anchor__${safeTitle}`;
+			const delay = Math.min(index * 0.025, 0.3);
+			const hide  = animation == "hide";
+
+			return(
+				<li 
+					className={`${s.item} ${animations.slide} ${hide ? animations.out : animations.in}`}
+					style={{ transitionDelay: `${delay}s`}}
+					key={key}>
+					<a  className={s.link}
+						href={`#${safeTitle}`}>
+						{title}
+					</a>
+				</li>
+			);
+		}//renderLink
 		function renderProject(project, index){
 
 			const {
@@ -74,7 +100,11 @@ export default function Portfolio(){
 				className={s.wrapper}
 				onTransitionEnd={tryToClose}>
 				<header className={s.sidebar}>
-					<StickyQuickNav items={projects} />
+					<StickyQuickNav>
+						<ul className={`${s.links}`}>
+							{projects.map(renderLink)}
+						</ul>
+					</StickyQuickNav>
 				</header>
 				<div className={s.projects}>
 					{projects.map(renderProject)}

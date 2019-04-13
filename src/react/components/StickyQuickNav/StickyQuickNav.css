@@ -114,9 +114,7 @@
 				transform: translate(0, var(--button-center)) rotate(-45deg);
 			}
 			
-	.links {
-		list-style-type: none;
-	}
+	
 
 	/*REVEAL ANIMATIONS
 	/////////////////////////////*/
@@ -135,14 +133,19 @@
 		padding: 1.62em var(--side-padding);
 		z-index: 2;
 		overflow: hidden;
-		background-color: var(--accent-color);
-		transition: max-height .6s var(--ease-out);
+		transition: max-height .6s var(--ease-out), background-color .3s;
 	}
 		.wrapper.open {
 			max-height: 12.5rem;
 		}
 		.wrapper.closed {
 			max-height: calc((1.62em * 2) + var(--subheading-size));
+		}
+		.wrapper.hidden {
+			background-color: transparent;
+		}
+		.wrapper.visible {
+			background-color: var(--accent-color);
 		}
 		.controls {}
 			.back {}
@@ -179,19 +182,6 @@
 			.toggle {
 				display: inline-block;
 			}
-		.links {
-			display: flex;
-			flex-wrap: wrap;
-		}
-			.links .item:not(:last-child)::after {
-				content: "∙";
-				display: inline-block;
-				margin: 0 1em;
-			}
-				.links .link:link,
-				.links .link:visited {
-					color: var(--base-color);
-				}
 }
 @media(max-width: 767px){
 	.wrapper.open {

@@ -1,21 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Animation } from "Contexts/Animation.js";
-import s from "ReactComponents/StickyQuickNav/StickyQuickNav.css";
 import animations from "Shared/animations.css";
+import s from "ReactComponents/StickyQuickNav/StickyQuickNav.css";
+
 
 export default function StickyQuickNav(props){
 
 	//HOOKS
 	//------------------------------
 	const [ linksVisible, setLinksVisible ] = useState(false);
-	const {
-		state: animationState,
-		dispatch
-	} = useContext(Animation)
+	const { state, dispatch } = useContext(Animation);
+	useEffect(maintainCollapsedNav);
 
 
 	//EVENT HANDLING
 	//----------------------------------
+	function maintainCollapsedNav(){
+		window.addEventListener("hashchange", closeLinks);
+		return() => window.removeEventListener("hashchange", closeLinks);
+	}//maintainCollapsedNav
 	function startCloseAnimations(){
 		dispatch({ 
 			type: "animate",
@@ -32,40 +35,17 @@ export default function StickyQuickNav(props){
 	//RENDER
 	//----------------------------
 	const {
-		items
+		children
 	} = props;
 	const {
 		animation
-	} = animationState;
+	} = state;
 
 	const hide = animation == "hide";
 
-	function renderLink(project, index){
-		const {
-			title,
-			safeTitle
-		} = project
-
-		const key   = `sticky__anchor__${safeTitle}`;
-		const delay = Math.min(index * 0.025, 0.3);
-
-		return(
-			<li 
-				className={`${s.item} ${animations.slide} ${hide ? animations.out : animations.in}`}
-				style={{ transitionDelay: `${delay}s`}}
-				key={key}>
-				<a  className={s.link}
-					href={`#${safeTitle}`}
-					onClick={closeLinks}>
-					{title}
-				</a>
-			</li>
-		);
-	}//renderLink
-
 	return(
 		<nav 
-			className={`${s.wrapper} ${linksVisible ? s.open : s.closed}`} 
+			className={`${s.wrapper} ${linksVisible ? s.open : s.closed} ${hide ? s.hidden : s.visible}`} 
 			aria-label="Project navigation">
 			<div className={s.controls}>
 				<button 
@@ -77,16 +57,14 @@ export default function StickyQuickNav(props){
 					</span>
 				</button>
 				<button 
-					className={`${s.toggle} ${linksVisible ? s.close : s.open}`}
+					className={`${s.toggle} ${linksVisible ? s.close : s.open} ${animations.fade} ${hide ? animations.out : animations.in}`}
 					aria-label="Toggle links."
 					role="switch"
 					aria-checked={linksVisible.toString()}
 					onClick={toggleLinks} 
 				/>
 			</div>
-			<ul className={`${s.links}`}>
-				{items.map(renderLink)}
-			</ul>
+			{children}
 		</nav>
 	);
 }//StickyQuickNav

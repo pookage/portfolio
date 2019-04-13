@@ -11,3 +11,13 @@
 	transform: translateX(0);
 	transition: opacity .3s, transform .3s;
 }
+
+.fade {
+	transition: opacity .3s;
+}
+.fade.in {
+	opacity: 1;
+}
+.fade.out {
+	opacity: 0;
+}
