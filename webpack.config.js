@@ -93,7 +93,8 @@ function buildConfig(env, args){
 							loader: "css-loader",
 							options: {
 								modules: true,
-								localIdentName: "[name]__[local]"
+								localIdentName: "[name]__[local]",
+								url: false
 							}
 						}
 					]	
