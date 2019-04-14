@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
-import { ProjectScroll } from "Contexts/ProjectScroll.js";
 import { Animation } from "Contexts/Animation.js";
 import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
@@ -26,7 +25,6 @@ export default function Project(props){
 
 	//HOOKS
 	//--------------------------------------
-	const { state, dispatch }       = useContext(ProjectScroll);
 	const { animation }             = useContext(Animation).state;
 	const [ expanded, setExpanded ] = useState(false);
 	const project                   = useRef();
@@ -38,18 +36,10 @@ export default function Project(props){
 	function setupObserver(){
 		//update the hash whenever a project is fully-scrolled into view
 		const hashObserver       = new IntersectionObserver(updateHash, { threshold: 0.95 });
-		//fire off an activation the first time that the project scrolls into view
-		const activationObserver = new IntersectionObserver(activate, { threshold: 0});
-
 		//observe the project wrapper
 		hashObserver.observe(project.current);
-		if(!state.active) activationObserver.observe(project.current);
-
 		//stop watching whenever the component is unmounted
-		return () => {
-			hashObserver.disconnect();
-			activationObserver.disconnect();
-		};
+		return () => { hashObserver.disconnect(); };
 	}//setupObserver
 
 
@@ -60,19 +50,10 @@ export default function Project(props){
 	}//toggleExpand
 	function updateHash(entries){
 		if(entries[0].intersectionRatio > 0.95){
-			
 			const historyURL = `${document.location.pathname}#${safeTitle}`;
 			history.replaceState(null, null, historyURL);
 		}
 	}//updateHash
-	function activate(entries){
-		if(entries[0].intersectionRatio > 0){
-			dispatch({
-				type: "setActive",
-				value: "true"
-			});
-		}
-	}//activate
 
 
 	//RENDER LOGIC

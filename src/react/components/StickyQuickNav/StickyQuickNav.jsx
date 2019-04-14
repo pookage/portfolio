@@ -16,8 +16,8 @@ export default function StickyQuickNav(props){
 	//EVENT HANDLING
 	//----------------------------------
 	function maintainCollapsedNav(){
-		window.addEventListener("hashchange", closeLinks);
-		return() => window.removeEventListener("hashchange", closeLinks);
+		window.addEventListener("hashchange", handleHashChange);
+		return() => window.removeEventListener("hashchange", handleHashChange);
 	}//maintainCollapsedNav
 	function startCloseAnimations(){
 		dispatch({ 
@@ -28,9 +28,20 @@ export default function StickyQuickNav(props){
 	function toggleLinks(){
 		setLinksVisible(!linksVisible);
 	}//toggleLinks
-	function closeLinks(){
-		setLinksVisible(false);
-	}//closeLinks
+	function handleHashChange(event){
+		event.preventDefault();
+		scrollToHash(window.location.hash);
+		setLinksVisible(false)
+	}//handleHashChange
+	function scrollToHash(hash){
+		const target = document.querySelector(hash);
+		const distance = target.getBoundingClientRect().top;
+		window.scrollBy({
+			top: distance,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}//scrollToHash
 
 	//RENDER
 	//----------------------------

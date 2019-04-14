@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Page } from "Contexts/Page.js";
 import { Animation } from "Contexts/Animation.js";
-import { ProjectScrollProvider } from "Contexts/ProjectScroll.js";
 import { projects } from "Data/projects.js";
 import Project from "ReactComponents/Project/Project.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
@@ -55,12 +54,11 @@ export default function Portfolio(){
 			const animationDelay = Math.min(index * 0.1, 0.3);
 
 			return(
-				<ProjectScrollProvider key={`${safeTitle}-project`}>
-					<Project
-						style={{ transitionDelay: `${animationDelay}s `}}
-						{...project} 
-					/>
-				</ProjectScrollProvider>
+				<Project
+					key={`${safeTitle}-project`}
+					style={{ transitionDelay: `${animationDelay}s `}}
+					{...project} 
+				/>
 			);
 		}//renderProject
 		

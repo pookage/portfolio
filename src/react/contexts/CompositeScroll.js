@@ -3,6 +3,7 @@ import React, { createContext, useReducer } from "react";
 //setup private vars
 const CompositeScroll = createContext();
 const initialState   = {
+	activated: false,
 	activeSectionIndex: 0,
 	activeComposite: "desktop"
 };
@@ -28,6 +29,12 @@ function reducer(state, action){
 			change = { 
 				...state,
 				activeComposite: value 
+			};
+			break;
+		case "setActive":
+			change = {
+				...state, 
+				activated: value 
 			};
 			break;
 	}

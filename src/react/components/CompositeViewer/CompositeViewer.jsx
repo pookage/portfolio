@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { CompositeScroll } from "Contexts/CompositeScroll.js";
 import s from "ReactComponents/CompositeViewer/CompositeViewer.css";
 
@@ -6,20 +6,45 @@ export default function CompositeViewer(props){
 
 	//HOOKS
 	//-------------------------------
-	const { 
-		dispatch
-	} = useContext(CompositeScroll);
+	const { dispatch, state } = useContext(CompositeScroll);
+	const viewer              = useRef();
+	useEffect(setupObserver)
+
+
+	//UTILS
+	//--------------------------------------
+	function setupObserver(){
+
+		//fire off an activation the first time that the viewer scrolls into view
+		const activationObserver = new IntersectionObserver(activate, { threshold: 0});
+
+		if(!state.activated) activationObserver.observe(viewer.current);
+
+		//stop watching whenever the component is unmounted
+		return () => { activationObserver.disconnect(); };
+	}//setupObserver
 
 
 	//EVENT HANDLING
 	//-------------------------------
-
 	function setActiveSection(index){
 		dispatch({ 
 			type: "setSectionIndex", 
 			value: index 
 		});
 	}//setActiveSection
+
+	function activate(entries){
+		if(!state.activated){
+			if(entries[0].intersectionRatio > 0){
+				dispatch({
+					type: "setActive",
+					value: "true"
+				});
+			}
+
+		}
+	}//activate
 
 
 	//RENDER LOGIC
@@ -49,7 +74,7 @@ export default function CompositeViewer(props){
 	}//renderButton
 
 	return(
-		<figure className={s.wrapper}>
+		<figure className={s.wrapper} ref={viewer}>
 			<div className={s.container}>
 				{composites}
 			</div>
