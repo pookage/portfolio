@@ -10,15 +10,15 @@ export default function StickyQuickNav(props){
 	//------------------------------
 	const [ linksVisible, setLinksVisible ] = useState(false);
 	const { state, dispatch } = useContext(Animation);
-	useEffect(maintainCollapsedNav);
+	useEffect(syncWithLocationHash);
 
 
 	//EVENT HANDLING
 	//----------------------------------
-	function maintainCollapsedNav(){
+	function syncWithLocationHash(){
 		window.addEventListener("hashchange", handleHashChange);
 		return() => window.removeEventListener("hashchange", handleHashChange);
-	}//maintainCollapsedNav
+	}//syncWithLocationHash
 	function startCloseAnimations(){
 		dispatch({ 
 			type: "animate",
@@ -29,12 +29,15 @@ export default function StickyQuickNav(props){
 		setLinksVisible(!linksVisible);
 	}//toggleLinks
 	function handleHashChange(event){
+		//stop native functionality because react has broken it
 		event.preventDefault();
+		//manually calculate scroll distance
 		scrollToHash(window.location.hash);
-		setLinksVisible(false)
+		//collapse the header on mobile
+		setLinksVisible(false);
 	}//handleHashChange
 	function scrollToHash(hash){
-		const target = document.querySelector(hash);
+		const target   = document.querySelector(hash);
 		const distance = target.getBoundingClientRect().top;
 		window.scrollBy({
 			top: distance,
