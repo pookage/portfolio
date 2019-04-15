@@ -32,10 +32,10 @@
 					font-weight: bold;
 				}
 				.intro p + p {
-					margin-top: 0.62em;
+					margin-top: 1em;
 				}
 			.human {
-				padding: 0.62em 0 0.62em 1.62em;
+				padding: 0.62em 0 0.62em 2.62em;
 				margin-top: 1.62em;
 				border-left: 0.62em solid var(--accent-color);
 
