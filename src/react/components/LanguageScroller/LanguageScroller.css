@@ -7,11 +7,11 @@
 }
 	.container {
 		display: block;
-		height: calc(100% + (2 * var(--language-width)));
-		width: var(--language-width);
-		flex: 0 0 var(--language-width);
+		height: calc(100% + (2 * var(--language-size)));
+		width: var(--language-size);
+		flex: 0 0 var(--language-size);
 		position: relative;
-		top: calc(var(--language-width) * -1);
+		top: calc(var(--language-size) * -1);
 		overflow-x: hidden;
 		transform-origin: 100% 50%;
 		--scrollbar_width: 18px;
@@ -41,7 +41,7 @@
 			display: flex;
 			height: 100%;
 			width: calc(100% + var(--scrollbar_width));
-			padding: calc(var(--language-width) * 1.125) 0;
+			padding: calc(var(--language-size) * 1.125) 0;
 			flex-wrap: nowrap;
 			flex-direction: column;
 			overflow-y: scroll;
@@ -64,6 +64,7 @@
 					right: 0;
 					transform: translate(0%,-50%);
 					opacity: 0;
+					pointer-events: none;
 					transition: transform .3s, opacity .2s;
 				}
 				.language:hover .popout {
@@ -78,6 +79,63 @@
 						background-color: var(--accent-color);
 					}
 
+/* TOUCHSCREEN-ONLY DEVICES
+-------------------------------------*/
+@media (hover: none) and (pointer: coarse) {
+	.container {
+		--scrollbar_width: 0px;
+	}
+}
+
+/* RESPONSIVE JAZZ
+------------------------------------*/
+@media(max-width: 1025px){
+	.container.topArrow::before {
+		top: 28em;
+	}
+}
+@media(max-width: 900px){
+	.wrapper {
+		width: 100%;
+		height: auto;
+		padding: 1.62em var(--side-padding);
+		position: relative;
+		right: 0;
+		order: 4;
+	}
+		.container {
+			width: 100%;
+			height: 10em;
+			top: 0;
+			/*overflow-x: hidden;*/
+			overflow-y: hidden;
+		}
+			.list {
+				width: 100%;
+				height: calc(100% );
+				padding: 0 0 1.62em;
+				flex-direction: row;
+				overflow-y: hidden;
+				overflow-x: scroll;
+			}
+				.language {
+					text-align: center;
+				}
+				.language + .language {
+					margin-top: 0;
+					margin-left: 4.25vw;
+				}
+					.popout {
+						display: none;
+					}
+					.logo {
+						width: auto;
+						height: 100%;
+					}
+}
+
+/* ANIMATIONS
+-------------------------------------*/
 @keyframes bounce {
 	0%, 100% {
 		transform: translate(-50%, 0);

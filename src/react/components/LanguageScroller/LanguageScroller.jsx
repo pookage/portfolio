@@ -24,9 +24,18 @@ export default function LanguageScroller(){
 	//EVENT HANDLING
 	//------------------------------------
 	function updateLanguageRotation(){
-		const scalar      = 11.768554;
-		const aspectRatio = Math.min(window.innerWidth / window.innerHeight, 2);
-		const newAngle    = scalar * aspectRatio;
+
+		const {
+			innerWidth,
+			innerHeight
+		} = window;
+
+		let newAngle;
+		if(innerWidth > 900){
+			const scalar      = 11.768554;
+			const aspectRatio = Math.min(innerWidth / innerHeight, 2);
+			newAngle          = scalar * aspectRatio;
+		} else newAngle       = 0;
 
 		setAngle(newAngle);
 	}//updateLanguageRotation

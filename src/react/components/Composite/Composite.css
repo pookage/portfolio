@@ -53,6 +53,8 @@
 	}
 }
 
+/* RESPONSIVE JAZZ
+---------------------------------------*/
 @media(max-width: 1025px){
 	.wrapper {
 		font-size: 27.5vw;

@@ -3,6 +3,7 @@
 	padding: 4.25em var(--side-padding) 0;
 	flex: 0 0 calc(10em + 9vw);
 	position: relative;
+	z-index: 3;
 }
 	.container {
 		position: fixed;

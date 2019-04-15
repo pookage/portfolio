@@ -3,7 +3,7 @@
 	width: 100%;
 	min-height: 100vh;
 	--portrait-width: 33vw;
-	--language-width: 20em;
+	--language-size: 20em;
 }
 	.back {
 		position: absolute;
@@ -15,7 +15,7 @@
 		margin-right: 6vw;
 		margin-left: 10vw;
 		padding: 8.8em var(--side-padding);
-		width: calc(100% - var(--portrait-width) - calc(var(--language-width) / 2));
+		width: calc(100% - var(--portrait-width) - calc(var(--language-size) / 2));
 		position: relative;
 		z-index: 1;
 		flex-direction: column;
@@ -54,9 +54,8 @@
 				.item + .item {
 					margin-top: 0.62em;
 				}
-	
+
 	.portrait {
-		display: flex;
 		height: 100vh;
 		width: var(--portrait-width);
 		max-width: 66vh; /* otherwise we see the edge of the image */
@@ -76,3 +75,32 @@
 			transform: translate(calc(50% + 15vh), -50%);
 			
 		}
+
+@media(max-width: 900px){
+	.wrapper {
+		flex-direction: column;
+	}
+		.container {
+			width: 100%;
+			padding-top: calc(var(--side-padding) * 1.62);
+			padding-bottom: 1.62em;
+			margin: 0;
+			order: 3;
+		}
+		.portrait {
+			width: 100%;
+			max-width: none;
+			height: auto;
+			position: relative;
+			order: 1;
+			clip-path: none;
+		}
+			.image {
+				width: 100%;
+				height: auto;
+				position: relative;
+				right: 0;
+				top: 0;
+				transform: none;
+			}
+}

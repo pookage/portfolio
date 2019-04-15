@@ -41,10 +41,10 @@ abbr {
 	--inactive-color: #222222;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
 	background-color: var(--inactive-color);
 }
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	background-color: var(--accent-color);
 }
 
