@@ -46,8 +46,8 @@ export default function BedroomScene(){
 						</Link>
 						<Link
 							position="0 -0.19 0"
-							target="articles">
-							ARTICLES
+							target="about">
+							ABOUT
 						</Link>
 						<Link
 							position="0 -0.38 0"
