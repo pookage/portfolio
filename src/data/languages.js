@@ -2,7 +2,7 @@ export const languages = [
 	{
 		name: "HTML5",
 		type: "Language",
-		icon: "Assests/icons/html5.svg"
+		icon: "Assets/icons/html5.svg"
 	}, {
 		name: "CSS3",
 		type: "Language",
@@ -10,7 +10,7 @@ export const languages = [
 	}, {
 		name: "ES6",
 		type: "Language",
-		icon: "Assets/icons/css.svg"
+		icon: "Assets/icons/es6.svg"
 	}, {
 		name: "React",
 		type: "Framework",

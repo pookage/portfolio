@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Page } from "Contexts/Page.js";
 import { Animation } from "Contexts/Animation.js";
 import { languages } from "Data/languages.js";
@@ -9,13 +9,33 @@ import s from "ReactComponents/About/About.css";
 
 export default function About(){
 
-	const { state: pageState }        = useContext(Page);
-	const { state: animState }        = useContext(Animation);
+	//HOOKS
+	//------------------------------------
+	const { state: pageState } = useContext(Page);
+	const { state: animState } = useContext(Animation);
+	const [ angle, setAngle ]  = useState(22.5);
+	useEffect(syncLanguageRotation);
 
+
+	//EVENT HANDLING
+	//------------------------------------
+	function syncLanguageRotation(){
+		updateLanguageRotation();
+		window.addEventListener("resize", updateLanguageRotation);
+		return () => { window.removeEventListener("resize", updateLanguageRotation)}
+	}//syncLanguageRotation
+	function updateLanguageRotation(){
+		const scalar      = 11.768554;
+		const aspectRatio = Math.min(window.innerWidth / window.innerHeight, 2);
+		const testAngle = scalar * aspectRatio;
+
+		setAngle(testAngle);
+	}//updateLanguageRotation
+
+
+	//RENDER
+	//---------------------------------------------
 	if(pageState.activePage == "about"){
-
-		//RENDER FUNCTIONS
-		//---------------------------------------------
 		function renderLanguage(language){
 
 			const {
@@ -88,20 +108,24 @@ export default function About(){
 							Sound up your street? <a href="#contact">Get in touch</a>.
 						</p>
 					</section>
+					
+				</div>
+				<div className={s.languageWrapper}>
 					<figure
 						className={s.languages} 
-						aria-label="Known languages and frameworks.">
+						aria-label="Known languages and frameworks."
+						style={{ transform: `rotate(${angle}deg)`}}>
 						<ul className={s.list}>
 							{languages.map(renderLanguage)}
 						</ul>
 					</figure>
-					<div className={s.portrait}>
-						<img 
-							className={s.image}
-							src="Assets/photos/portrait.jpg"
-							alt="Portrait of Pookage Hayes, smiling with his elbows on the desk."
-						/>
-					</div>
+				</div>
+				<div className={s.portrait}>
+					<img 
+						className={s.image}
+						src="Assets/photos/portrait.jpg"
+						alt="Portrait of Pookage Hayes, smiling with his elbows on the desk."
+					/>
 				</div>
 			</article>
 		);
