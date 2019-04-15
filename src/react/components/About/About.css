@@ -104,3 +104,13 @@
 				transform: none;
 			}
 }
+
+@media(max-width: 767px){
+	.ahoy .subtitle {
+		font-size: var(--body-size);
+		text-transform: uppercase;
+	}
+	.portrait {
+		margin-top: 3em;
+	}
+}
