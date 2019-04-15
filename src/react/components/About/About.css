@@ -3,21 +3,23 @@
 	width: 100%;
 	min-height: 100vh;
 	--portrait-width: 33vw;
+	--language-width: 20em;
 }
 	.back {
-		/*position: absolute;
+		position: absolute;
 		top: 0;
-		left: 0;*/
+		left: 0;
 	}
 	.container {
 		display: flex;
-		margin-right: auto;
+		margin-right: 6vw;
+		margin-left: 10vw;
 		padding: 8.8em var(--side-padding);
-		padding-left: ;
+		width: calc(100% - var(--portrait-width) - calc(var(--language-width) / 2));
 		position: relative;
 		z-index: 1;
 		flex-direction: column;
-		/*justify-content: center;*/
+		justify-content: center;
 	}
 		.ahoy, .mentoring {
 			max-width: 60rem;
@@ -52,44 +54,15 @@
 				.item + .item {
 					margin-top: 0.62em;
 				}
-	.languageWrapper {
-		height: 100vh;
-		position: relative;
-		right: calc(calc(11vw - 1.62em) * -1);
-		--language-width: 10em;
-	}
-		.languages {
-			display: block;
-			height: calc(100% + (2 * var(--language-width)));
-			width: var(--language-width);
-			flex: 0 0 var(--language-width);
-			position: relative;
-			top: calc(var(--language-width) * -1);
-			overflow-x: hidden;
-			transform-origin: 100% 50%;
-			--scrollbar_width: 18px;
-		}
-			.list {
-				display: flex;
-				height: 100%;
-				width: calc(100% + var(--scrollbar_width));
-				padding: calc(var(--language-width) * 1.125) 0;
-				flex-wrap: nowrap;
-				flex-direction: column;
-				overflow-y: scroll;
-				overflow-x: hidden;
-				list-style-type: none;
-			}
-				.language {}
-					.logo {}
-					.label {}
+	
 	.portrait {
 		display: flex;
 		height: 100vh;
 		width: var(--portrait-width);
 		max-width: 66vh; /* otherwise we see the edge of the image */
-		flex: 0 0 var(--portrait-width);
-		position: relative;
+		position: fixed;
+		top: 0;
+		right: 0;
 		overflow: hidden;
 		clip-path: polygon(66% 0%, 100% 0%, 100% 100%, 0% 100%);
 	}

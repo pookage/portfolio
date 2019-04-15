@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Page } from "Contexts/Page.js";
 import { Animation } from "Contexts/Animation.js";
-import { languages } from "Data/languages.js";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
+import LanguageScroller from "ReactComponents/LanguageScroller/LanguageScroller.jsx";
 import animations from "Shared/animations.css";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/About/About.css";
@@ -13,55 +13,10 @@ export default function About(){
 	//------------------------------------
 	const { state: pageState } = useContext(Page);
 	const { state: animState } = useContext(Animation);
-	const [ angle, setAngle ]  = useState(22.5);
-	useEffect(syncLanguageRotation);
-
-
-	//EVENT HANDLING
-	//------------------------------------
-	function syncLanguageRotation(){
-		updateLanguageRotation();
-		window.addEventListener("resize", updateLanguageRotation);
-		return () => { window.removeEventListener("resize", updateLanguageRotation)}
-	}//syncLanguageRotation
-	function updateLanguageRotation(){
-		const scalar      = 11.768554;
-		const aspectRatio = Math.min(window.innerWidth / window.innerHeight, 2);
-		const testAngle = scalar * aspectRatio;
-
-		setAngle(testAngle);
-	}//updateLanguageRotation
-
 
 	//RENDER
 	//---------------------------------------------
 	if(pageState.activePage == "about"){
-		function renderLanguage(language){
-
-			const {
-				name,
-				icon,
-				type
-			} = language;
-
-			const description = `Logo for the ${name} ${type}.`;
-			const key         = `skill__language__${name.toLowerCase()}`;
-			return(
-				<li 
-					className={s.language}
-					key={key}>
-					<img
-						className={s.logo} 
-						src={icon} 
-						alt={description} 
-					/>
-					<span className={s.label}>
-						{name}
-					</span>
-				</li>
-			);
-		}//renderLanguage
-
 
 		return(
 			<article className={s.wrapper}>
@@ -110,16 +65,7 @@ export default function About(){
 					</section>
 					
 				</div>
-				<div className={s.languageWrapper}>
-					<figure
-						className={s.languages} 
-						aria-label="Known languages and frameworks."
-						style={{ transform: `rotate(${angle}deg)`}}>
-						<ul className={s.list}>
-							{languages.map(renderLanguage)}
-						</ul>
-					</figure>
-				</div>
+				<LanguageScroller />
 				<div className={s.portrait}>
 					<img 
 						className={s.image}

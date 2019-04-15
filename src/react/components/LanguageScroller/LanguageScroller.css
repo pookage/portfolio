@@ -1,0 +1,88 @@
+.wrapper {
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 24vw;
+	z-index: 2;
+}
+	.container {
+		display: block;
+		height: calc(100% + (2 * var(--language-width)));
+		width: var(--language-width);
+		flex: 0 0 var(--language-width);
+		position: relative;
+		top: calc(var(--language-width) * -1);
+		overflow-x: hidden;
+		transform-origin: 100% 50%;
+		--scrollbar_width: 18px;
+	}
+		.container::before, .container::after {
+			content: "";
+			display: block;
+			height: 0;
+			width: 0;
+			border-left: 0.62em solid transparent;
+			border-right: 0.62em solid transparent;
+			position: absolute;
+			right: 9.5%;
+			z-index: 2;
+			pointer-events: none;
+			animation: bounce 1s infinite;
+		}
+		.container.topArrow::before {
+			top: 21em;
+			border-bottom: 1em solid var(--accent-color);
+		}
+		.container.bottomArrow::after {
+			bottom: 19em;
+			border-top: 1em solid var(--accent-color);
+		}
+		.list {
+			display: flex;
+			height: 100%;
+			width: calc(100% + var(--scrollbar_width));
+			padding: calc(var(--language-width) * 1.125) 0;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			list-style-type: none;
+		}
+			.language {
+				position: relative;
+				text-align: right;
+			}
+				.language + .language {
+					margin-top: 1em;
+				}
+				.logo {
+					width: 40%;
+				}
+				.popout {
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translate(0%,-50%);
+					opacity: 0;
+					transition: transform .3s, opacity .2s;
+				}
+				.language:hover .popout {
+					transform: translate(-50%,0%);	
+					opacity: 1;
+				}
+					.label {
+						display: inline-block;
+						padding: 0.62em 1.62em;	
+						transform: rotate(-22.5deg);
+						font-size: var(--subheading-size);
+						background-color: var(--accent-color);
+					}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translate(-50%, 0);
+	}
+	50% {
+		transform: translate(-50%, -1em);	
+	}
+}
