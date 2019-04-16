@@ -1,5 +1,6 @@
 import React, { useContext, useState, useRef } from "react";
 import { Page } from "Contexts/Page.js";
+import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LabelledInput from "ReactComponents/LabelledInput/LabelledInput.jsx";
 import Select from "ReactComponents/Select/Select.jsx";
@@ -125,10 +126,14 @@ export default function Contact(){
 	//RENDER
 	//----------------------------------------------
 	return(
-		<article className={`${s.wrapper}`}>
+		<PageSwapper
+			HTMLTag="article"
+			page="contact" 
+			className={`${s.wrapper}`}>
 			<StickyQuickNav 
 				HTMLTag="div"
 				className={s.back}
+				visible={visible}
 			/>
 			<div className={`${s.container} ${animations.slide} ${visible ? animations.in : animations.out}`}>
 				<header className={s.intro}>
@@ -234,6 +239,6 @@ export default function Contact(){
 					</output>
 				</form>
 			</div>
-		</article>
+		</PageSwapper>
 	);
 }//Contact

@@ -19,6 +19,7 @@ export default function PageSwapper(props){
 	//----------------------------------------
 	const {
 		HTMLTag = "div",
+		className = "",
 		children,
 		...attributes
 	} = props;
@@ -110,9 +111,10 @@ export default function PageSwapper(props){
 	//----------------------------------------
 	if(rendered){
 		return(
-			<HTMLTag 
-				{...attributes}
-				onTransitionEnd={tryToRemove}>
+			<HTMLTag
+				className={`${className} ${s.wrapper}`} 
+				onTransitionEnd={tryToRemove}
+				{...attributes}>
 				{children}
 			</HTMLTag>
 		);

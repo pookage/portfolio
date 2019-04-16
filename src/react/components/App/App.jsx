@@ -12,7 +12,9 @@ export default function App(){
 	return(
 		<div>
 			<BedroomScene />
+			<Portfolio />
 			<About />
+			<Contact />
 		</div>
 	);
 

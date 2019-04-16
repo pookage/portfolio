@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { projects } from "Data/projects.js";
 import { Page } from "Contexts/Page.js";
+import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import Project from "ReactComponents/Project/Project.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import font from "Shared/fonts.css";
@@ -17,6 +18,7 @@ export default function Portfolio(props){
 	//PRIVATE VARS
 	//-----------------------------------
 	const { visible } = state.portfolio;
+	const baseDelay   = visible ? 1 : 0; // wait 1 second on the transition in, but not out
 
 
 	//RENDER LOGIC
@@ -28,7 +30,8 @@ export default function Portfolio(props){
 		} = project
 
 		const key   = `sticky__anchor__${safeTitle}`;
-		const delay = Math.min(index * 0.025, 0.3);
+		const itemDelay = Math.min(index * 0.025, 0.3);
+		const delay = baseDelay + itemDelay;
 
 		return(
 			<li 
@@ -48,7 +51,8 @@ export default function Portfolio(props){
 			safeTitle
 		} = project;
 
-		const animationDelay = Math.min(index * 0.1, 0.3);
+		const itemDelay = Math.min(index * 0.1, 0.3)
+		const animationDelay = baseDelay + itemDelay;
 
 		return(
 			<Project
@@ -61,7 +65,9 @@ export default function Portfolio(props){
 	
 
 	return(
-		<article 
+		<PageSwapper
+			HTMLTag="article"
+			page="portfolio"
 			className={s.wrapper}>
 			<StickyQuickNav visible={visible}>
 				<ul className={`${s.links}`}>
@@ -71,6 +77,6 @@ export default function Portfolio(props){
 			<div className={s.projects}>
 				{projects.map(renderProject)}
 			</div>
-		</article>
+		</PageSwapper>
 	);
 }//Portfolio
