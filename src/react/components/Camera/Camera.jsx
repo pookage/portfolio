@@ -15,7 +15,6 @@ export default function Camera(){
 		<Entity
 			id="camera-rig"
 			mixin="animation__camera__focus animation__camera__natural"
-			position="-3 1.78 0.546"
 			toggler={`active: ${active}`}
 			edge-tracker={
 				`rotation: ${-57.5};
