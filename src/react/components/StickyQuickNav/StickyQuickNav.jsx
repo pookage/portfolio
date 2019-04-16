@@ -52,9 +52,7 @@ export default function StickyQuickNav(props){
 		visible,
 		children
 	} = props;
-	const {
-		animation
-	} = state;
+
 
 	return(
 		<HTMLTag className={`${s.wrapper} ${className}`}>
@@ -63,7 +61,7 @@ export default function StickyQuickNav(props){
 				aria-label="Project navigation">
 				<div className={s.controls}>
 					<Link
-						href="/" 
+						href="/home" 
 						className={`${s.back} ${animations.slide} ${visible ? animations.in : animations.out}`}>
 						<span className={s.arrow} />
 						<span className={s.label}>

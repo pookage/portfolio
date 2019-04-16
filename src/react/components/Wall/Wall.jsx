@@ -16,7 +16,7 @@ export default function Wall(props){
 		activePage
 	} = useContext(Page).state;
 
-	const isActive = activePage != "";
+	const isActive = activePage != "home";
 
 	return(
 		<Entity

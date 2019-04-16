@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Page } from "Contexts/Page.js";
+import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LanguageScroller from "ReactComponents/LanguageScroller/LanguageScroller.jsx";
 import LazyImage from "ReactComponents/LazyImage/LazyImage.jsx";
@@ -22,10 +23,14 @@ export default function About(){
 	//RENDER
 	//---------------------------------------------
 	return(
-		<article className={s.wrapper}>
+		<PageSwapper
+			HTMLTag="article" 
+			page="about"
+			className={s.wrapper}>
 			<StickyQuickNav
 				className={s.back} 
 				HTMLTag="div"
+				visible={visible}
 			/>
 			<div className={`${s.container} ${animations.slide} ${visible ? animations.in : animations.out}`}>
 				<section className={s.ahoy}>
@@ -69,8 +74,7 @@ export default function About(){
 				
 			</div>
 			<LanguageScroller
-				className={`${animations.slide} ${visible ? animations.in : animations.out}`}
-				style={{ transitionDelay: `${0.1}s`}}
+				className={`${animations.slide} ${visible ? animations.in : animations.up}`}
 			/>
 			<div className={`${s.portrait} ${animations.slide} ${visible ? animations.in : animations.right}`}>
 				<LazyImage
@@ -80,7 +84,7 @@ export default function About(){
 					alt="Portrait of Pookage Hayes, smiling with his elbows on the desk."
 				/>
 			</div>
-		</article>
+		</PageSwapper>
 	);
 
 }//About

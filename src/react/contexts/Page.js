@@ -56,7 +56,6 @@ function PageProvider(props){
 		return () => { window.removeEventListener("popstate", handleHistoryChange) }
 	}//syncBrowserNavigation
 	function updateBrowserHistory(){
-
 		const url = activePage == "home" ? "" : activePage;
 		window.history.pushState({ page: activePage }, "", `/${url}`);
 	}//updateBrowserHistory
@@ -92,6 +91,7 @@ function PageProvider(props){
 		let change = { ...state };
 		switch(type){
 			case "setActivePage":
+				console.log({ page });
 				change.activePage = page;
 				break;
 
@@ -105,6 +105,8 @@ function PageProvider(props){
 				change[page].visible  = visible;
 				break;
 		}
+
+		console.log(change);
 
 		return change;
 
