@@ -12,7 +12,7 @@ export default function UnderConstruction(){
 	const isHome = activePage == "home";
 
 	return(
-		<aside className={`${s.wrapper} ${animations.slide} ${isHome ? animations.in : animations.out}`}>
+		<aside className={`${s.wrapper} ${animations.slide} ${isHome ? animations.in : animations.up}`}>
 			<h1 className={`${font.subtitle} ${s.title}`}>
 				This site is still under construction!
 			</h1>

@@ -95,7 +95,8 @@ export default function LanguageScroller(props){
 						className={`${font.subtitle} ${s.link}`}
 						style={{ transform: `rotate(-${angle}deg)`}}
 						href={website} 
-						target="_blank">
+						target="_blank"
+						title={`View the official documentation on ${name}`}>
 						<span className={s.label}>
 							{name}
 						</span>

@@ -1,10 +1,12 @@
 .wrapper {
 	display: block;
-	padding: 2.62em 2.62em;
+	padding: 3.62em 2.62em 2.62em;
 	position: fixed;
-	top: 1em;
+	top: 0.62em;
 	right: 1em;
 	z-index: 3;
+	/*clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 90% 90%, 85% 100%, 80% 90%, 0% 90%);*/
+	clip-path: polygon(0% 10%, 80% 10%, 85% 0%, 90% 10%, 100% 10%, 100% 100%, 0% 100%);
 	background-color: rgba(255, 255, 255, 0.1);
 }
 	.title {
