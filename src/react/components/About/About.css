@@ -54,6 +54,37 @@
 				.item + .item {
 					margin-top: 0.62em;
 				}
+		.socialMedia {
+			margin-top: 1.62em;
+		}
+			.networks {
+				list-style-type: none;
+			}
+				.network {
+					display: inline-block;
+					vertical-align: top;
+				}
+				.network + .network {
+					margin-left: 1em;
+				}
+					.link {
+						display: inline-block;
+						font-size: 1.62em;
+						height: 1em;
+						width: 1em;
+					}
+						.logo {
+							display: block;
+							height: 100%;
+							width: 100%;
+							transform: scale(1);
+							fill: var(--accent-color);
+							transition: fill .3s, transform .3s;
+						}
+						.link:hover .logo {
+							transform: scale(1.1);
+							fill: var(--base-color);
+						}
 
 	.portrait {
 		height: 100vh;

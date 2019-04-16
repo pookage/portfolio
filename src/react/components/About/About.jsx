@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Page } from "Contexts/Page.js";
+import { Twitter, LinkedIn } from "Shared/shapes.jsx";
 import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LanguageScroller from "ReactComponents/LanguageScroller/LanguageScroller.jsx";
@@ -19,6 +20,7 @@ export default function About(){
 	//PRIVATE VARS
 	//---------------------------------------------
 	const { visible } = state.about;
+	const baseDelay   = visible ? 1 : 0;
 
 	//RENDER
 	//---------------------------------------------
@@ -32,8 +34,10 @@ export default function About(){
 				HTMLTag="div"
 				visible={visible}
 			/>
-			<div className={`${s.container} ${animations.slide} ${visible ? animations.in : animations.out}`}>
-				<section className={s.ahoy}>
+			<div className={`${s.container}`}>
+				<section 
+					className={`${s.ahoy} ${animations.slide} ${visible ? animations.in : animations.out}`}
+					style={{ transitionDelay: `${baseDelay + 0.1}s`}}>
 					<header>
 						<h1 className={`${font.title} ${s.title}`}>
 							Ahoy
@@ -49,7 +53,9 @@ export default function About(){
 						If you're need a bit of extra muscle on a tight project, an injection of energy in this week's sprint, or just a bit of expertise to get your project off the ground, then get in touch! I'm open to all short / medium-term contracts of up to 6-months.
 					</p>
 				</section>
-				<section className={s.mentoring}>
+				<section 
+					className={`${s.mentoring} ${animations.slide} ${visible ? animations.in : animations.out}`}
+					style={{ transitionDelay: `${baseDelay + 0.2}s`}}>
 					<h1 className={`${font.subtitle} ${s.subtitle}`}>
 						Let's Make WebDev Better
 					</h1>
@@ -71,7 +77,37 @@ export default function About(){
 						Sound up your street? <Link href="/contact">Get in touch</Link>.
 					</p>
 				</section>
-				
+				<footer 
+					className={`${s.socialMedia} ${animations.slide} ${visible ? animations.in : animations.out}`}
+					style={{ transitionDelay: `${baseDelay + 0.3}s`}}>
+					<ul className={s.networks}>
+						<li className={s.network}>
+							<a 
+								className={`${s.link} ${s.linkedin}`}
+								href="https://www.linkedin.com/in/pookagehayes/"
+								target="_blank"
+								aria-label="LinkedIn"
+								title="View my history on LinkedIn">
+								<LinkedIn 
+									className={s.logo}
+								/>
+							</a>
+						</li>
+						<li className={s.network}>
+							<a
+								className={`${s.link}`} 
+								href="https://twitter.com/pookagehayes"
+								target="_blank"
+								aria-label="Twitter"
+								title="Follow me on Twitter">
+								<Twitter 
+									className={`${s.logo}`}
+								/>
+							</a>
+						</li>
+						
+					</ul>
+				</footer>
 			</div>
 			<LanguageScroller />
 			<div className={`${s.portrait} ${animations.slide} ${visible ? animations.in : animations.right}`}>
