@@ -73,9 +73,7 @@ export default function About(){
 				</section>
 				
 			</div>
-			<LanguageScroller
-				className={`${animations.slide} ${visible ? animations.in : animations.up}`}
-			/>
+			<LanguageScroller />
 			<div className={`${s.portrait} ${animations.slide} ${visible ? animations.in : animations.right}`}>
 				<LazyImage
 					active={true} 

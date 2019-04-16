@@ -53,7 +53,6 @@ export default function StickyQuickNav(props){
 		children
 	} = props;
 
-
 	return(
 		<HTMLTag className={`${s.wrapper} ${className}`}>
 			<nav 

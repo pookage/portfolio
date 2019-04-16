@@ -35,8 +35,8 @@ function PageProvider(props){
 	//----------------------------------
 	const [ state, dispatch ] = useReducer(reducer, initialState);
 	useEffect(syncBrowserNavigation);
-	useEffect(updateBrowserHistory);
-	useEffect(updatePageTitle);
+	useEffect(updateBrowserHistory, [ state.activePage ]);
+	useEffect(updatePageTitle, [ state.activePage ]);
 
 
 	//PRIVATE VARS
@@ -91,22 +91,17 @@ function PageProvider(props){
 		let change = { ...state };
 		switch(type){
 			case "setActivePage":
-				console.log({ page });
 				change.activePage = page;
 				break;
 
+			case "setPageRender":
+				change[page].rendered = value.rendered;
+				break;
+
 			case "setPageVisibility":
-				const {
-					rendered = state[page].rendered, // (boolean) whether or not the page should be rendered
-					visible  = state[page].visible   // (boolean) whether or not to display show/hide css styles & animations
-				} = value
-				
-				change[page].rendered = rendered;
-				change[page].visible  = visible;
+				change[page].visible  = value.visible;
 				break;
 		}
-
-		console.log(change);
 
 		return change;
 

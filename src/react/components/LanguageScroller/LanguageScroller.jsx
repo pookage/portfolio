@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Page } from "Contexts/Page.js"
 import { languages } from "Data/languages.js";
+import animations from "Shared/animations.css";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/LanguageScroller/LanguageScroller.css";
 
@@ -7,6 +9,7 @@ export default function LanguageScroller(props){
 
 	//HOOKS
 	//------------------------------------
+	const { visible }           = useContext(Page).state.about;
 	const [ angle, setAngle ]   = useState(22.5);
 	const [ arrows, setArrows ] = useState({ top: false, bottom: true });
 	useEffect(syncLanguageRotation);
@@ -14,10 +17,6 @@ export default function LanguageScroller(props){
 
 	//PRIVATE VARS
 	//-------------------------------------
-	const {
-		className,
-		...animationProps
-	} = props;
 	const {
 		top: atTop,
 		bottom: atBottom
@@ -103,13 +102,12 @@ export default function LanguageScroller(props){
 	return(
 		<div className={`${s.wrapper}`}>
 			<figure
-				className={`${s.container} ${atTop ? s.topArrow : ""} ${atBottom ? s.bottomArrow : ""}`} 
+				className={`${s.container} ${atTop ? s.topArrow : ""} ${atBottom ? s.bottomArrow : ""} ${animations.fade} ${visible ? animations.in : animations.out}`} 
 				aria-label="Known languages and frameworks."
 				style={{ transform: `rotate(${angle}deg)`}}
 				onScroll={updateScrollPrompts}>
 				<ul 
-					className={`${s.list} ${className}`}
-					{...animationProps}>
+					className={`${s.list} ${animations.slide} ${visible ? animations.in : animations.up}`}>
 					{languages.map(renderLanguage)}
 				</ul>
 			</figure>

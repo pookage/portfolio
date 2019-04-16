@@ -10,9 +10,9 @@ export default function PageSwapper(props){
 	const { state, dispatch } = useContext(Page);
 	const { page }            = props;
 	const { activePage }      = state;
-	
-	useEffect(updateRendered, [ state.activePage ]);
-	useEffect(updateVisibility, [ state[page].rendered ]);
+
+	useEffect(updateRendered, [ activePage ]);
+	useEffect(updateVisibility, [ state[page].rendered, activePage ]);
 
 
 	//PRIVATE VARS
@@ -37,20 +37,30 @@ export default function PageSwapper(props){
 	function updateRendered(){
 
 		//only change rendered if it's enabled (we need to wait for animations before unmounting)
-		let action = {};
-		if(isActive) action.rendered = true;
-		else         action.visible  = false;
-			
-		dispatch({
-			type: "setPageVisibility",
-			value: {
-				page,
-				...action
+		let action;
+		if(isActive) {
+			action = {
+				type: "setPageRender",
+				value: { 
+					page,
+					rendered: true 
+				}
 			}
-		});
+		} else {
+			action = {
+				type: "setPageVisibility",
+				value: {
+					page,
+					visible: false
+				}
+			}
+		}
+			
+		dispatch(action);
 	}//updateRendered
 	function updateVisibility(){
-		//if the page has become active and 
+		//if the page has become active and active, then add fade-in animations
+		//if this behaves erratically then change this to (isActive && (rendered & !visible))
 		if(isActive){
 			//need to wait until after the component is in the DOM otherwise the CSS transitions won't work
 			setTimeout(() => {
@@ -58,10 +68,10 @@ export default function PageSwapper(props){
 					type: "setPageVisibility",
 					value: {
 						page,
-						visible: rendered
+						visible: true
 					}
 				});	
-			}, 10);
+			}, 100);
 		}
 	}//updateVisibility
 
@@ -69,11 +79,16 @@ export default function PageSwapper(props){
 	//EVENT HANDLING
 	//---------------------------------------
 	function tryToRemove(event){
-		const leaving = event.target.classList.contains(animations.out);
-		
-		if(leaving){
-			clearTimeout(animationTimer);
-			animationTimer = setTimeout(removePage, 100);
+
+		//if we're animating out...
+		if(!visible){
+			//and the element that fired the transitionend wasn't animating in...
+			const leaving = !event.target.classList.contains(animations.in);
+			if(leaving){
+				//then try wait another few ms before trying to leave in case any other animations are finishing...
+				clearTimeout(animationTimer);
+				animationTimer = setTimeout(removePage, 100);
+			}
 		}
 	}//tryToRemove
 
@@ -82,7 +97,7 @@ export default function PageSwapper(props){
 	//---------------------------------------
 	function removePage(){
 		dispatch({
-			type: "setPageVisibility",
+			type: "setPageRender",
 			value: {
 				page,
 				rendered: false
