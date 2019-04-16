@@ -7,30 +7,28 @@ export default function PageSwapper(props){
 
 	//HOOKS
 	//----------------------------------------
-	const { state, dispatch } = useContext(Page);
-	const { page }            = props;
-	const { activePage }      = state;
+	const { state, dispatch }       = useContext(Page);
+	const [ rendered, setRendered ] = useState(false);
+	const { page }                  = props;
+	const { activePage }            = state;
 
 	useEffect(updateRendered, [ activePage ]);
-	useEffect(updateVisibility, [ state[page].rendered, activePage ]);
+	useEffect(updateVisibility, [ activePage ]);
 
 
 	//PRIVATE VARS
 	//----------------------------------------
 	const {
-		HTMLTag = "div",
+		HTMLTag   = "div",
 		className = "",
 		children,
 		...attributes
 	} = props;
 
-	const { 
-		rendered, 
-		visible 
-	} = state[page];
 
 	let animationTimer; 
-	const isActive = page == activePage;
+	const { visible } = state[page];
+	const isActive    = page == activePage;
 	
 
 	//EFFECT HANDLING
@@ -39,30 +37,23 @@ export default function PageSwapper(props){
 
 		//only change rendered if it's enabled (we need to wait for animations before unmounting)
 		let action;
-		if(isActive) {
-			action = {
-				type: "setPageRender",
-				value: { 
-					page,
-					rendered: true 
-				}
-			}
-		} else {
-			action = {
+		if(isActive) setRendered(true);
+		else {
+			dispatch({
 				type: "setPageVisibility",
 				value: {
 					page,
 					visible: false
 				}
-			}
+			});
 		}
-			
-		dispatch(action);
 	}//updateRendered
 	function updateVisibility(){
+
 		//if the page has become active and active, then add fade-in animations
 		//if this behaves erratically then change this to (isActive && (rendered & !visible))
 		if(isActive){
+			console.log("update updateVisibility")
 			//need to wait until after the component is in the DOM otherwise the CSS transitions won't work
 			setTimeout(() => {
 				dispatch({
@@ -97,13 +88,7 @@ export default function PageSwapper(props){
 	//UTILS
 	//---------------------------------------
 	function removePage(){
-		dispatch({
-			type: "setPageRender",
-			value: {
-				page,
-				rendered: false
-			}
-		});
+		setRendered(false);
 	}//removePage
 
 

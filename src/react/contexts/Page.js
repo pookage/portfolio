@@ -7,24 +7,19 @@ const landingPage  = new URL(window.location.href).pathname.split("/")[1] || "ho
 const initialState = {
 	activePage: landingPage,
 	home: { //do you need to fine rendered/visible for home?
-		visible: true,
-		rendered: true
+		visible: true
 	},
 	portfolio: {
-		visible: false,
-		rendered: false
+		visible: false
 	},
 	about: {
-		visible: false,
-		rendered: false
+		visible: false
 	},
 	contact: {
-		visible: false,
-		rendered: false
+		visible: false
 	},
 };
 
-initialState[landingPage].rendered = true;
 
 //PROVIDER SETUP
 //------------------------------
@@ -92,10 +87,6 @@ function PageProvider(props){
 		switch(type){
 			case "setActivePage":
 				change.activePage = page;
-				break;
-
-			case "setPageRender":
-				change[page].rendered = value.rendered;
 				break;
 
 			case "setPageVisibility":
