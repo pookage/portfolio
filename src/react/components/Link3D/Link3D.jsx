@@ -9,7 +9,7 @@ export default function Link(props){
 	//STATE STUFF
 	//---------------------------
 	const {
-		target         = "",
+		target: page   = "",
 		children: text = "",
 		...components
 	} = props;
@@ -21,7 +21,10 @@ export default function Link(props){
 	//EVENT HANDLING
 	//------------------------
 	function action(){
-		dispatch({ type: "setPage", value: target });
+		dispatch({ 
+			type: "setActivePage", 
+			value: { page }
+		});
 	}//action
 
 

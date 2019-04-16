@@ -22,11 +22,10 @@ export default function Link(props){
 		if(href[0] == "/"){
 			event.preventDefault();
 			
-			const page = href.split("/")[1] || "";
-
+			const page  = href.split("/")[1] || "";
 			dispatch({
-				type: "setPage",
-				value: page
+				type: "setActivePage",
+				value: { page }
 			});
 		}
 	}//handleLinkClick

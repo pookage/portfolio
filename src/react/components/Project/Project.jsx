@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
+import { Page } from "Contexts/Page.js";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
-import { Animation } from "Contexts/Animation.js";
 import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";
 import CompositeViewer from "ReactComponents/CompositeViewer/CompositeViewer.jsx";
 import Composite from "ReactComponents/Composite/Composite.jsx";
@@ -10,8 +10,16 @@ import animations from "Shared/animations.css";
 
 export default function Project(props){
 
-	//PROPS
+	//HOOKS
 	//--------------------------------------
+	const { state }                 = useContext(Page);
+	const [ expanded, setExpanded ] = useState(false);
+	const project                   = useRef();
+	useEffect(setupObserver)
+	
+
+	//PRIVATE VARS
+	//---------------------------------------
 	const {
 		title,       // (string) name of the project
 		safeTitle,   // (string) a url-safe name for the project
@@ -23,19 +31,15 @@ export default function Project(props){
 		style        // (object) any inline styles to be applied to the parent element
 	} = props;
 
-	//HOOKS
-	//--------------------------------------
-	const { animation }             = useContext(Animation).state;
-	const [ expanded, setExpanded ] = useState(false);
-	const project                   = useRef();
-	useEffect(setupObserver)
-	
+	const { visible } = state.portfolio;
+	const readMoreId  = `button__${safeTitle}__read_more`;
 
-	//UTILS
+
+	//EFFECT HANDLING
 	//--------------------------------------
 	function setupObserver(){
 		//update the hash whenever a project is fully-scrolled into view
-		const hashObserver       = new IntersectionObserver(updateHash, { threshold: 0.95 });
+		const hashObserver = new IntersectionObserver(updateHash, { threshold: 0.95 });
 		//observe the project wrapper
 		hashObserver.observe(project.current);
 		//stop watching whenever the component is unmounted
@@ -102,14 +106,9 @@ export default function Project(props){
 		);
 	}//renderArticleLink
 
-
-
-	const hide       = animation == "hide";
-	const readMoreId = `button__${safeTitle}__read_more`;
-
 	return(
 		<section 
-			className={`${s.wrapper} ${animations.slide} ${hide ? animations.out : animations.in} ${expanded ? s.expanded : s.collapsed}`}
+			className={`${s.wrapper} ${animations.slide} ${visible ? animations.in : animations.out} ${expanded ? s.expanded : s.collapsed}`}
 			ref={project}
 			style={style}>
 			<div 

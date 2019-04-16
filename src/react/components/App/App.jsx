@@ -1,5 +1,5 @@
-import React from "react";
-import { AnimationProvider } from "Contexts/Animation.js";
+import React, { useContext } from "react";
+import { Page } from "Contexts/Page.js";
 import BedroomScene from "ReactComponents/BedroomScene/BedroomScene.jsx";
 import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import Portfolio from "ReactComponents/Portfolio/Portfolio.jsx";
@@ -9,16 +9,22 @@ import s from "ReactComponents/App/App.css"
 
 export default function App(){
 
+	const {
+		portfolio,
+		about,
+		contact
+	} = useContext(Page).state;
+
+
+
 	return(
 		<div>
 			<BedroomScene />
-			<AnimationProvider>
-				<PageSwapper>
-					<Portfolio />
-					<About />
-					<Contact />
-				</PageSwapper>
-			</AnimationProvider>
+			<PageSwapper>
+				{portfolio.rendered && <Portfolio/>}
+				{about.rendered && <About />}
+				{contact.rendered && <Contact />}
+			</PageSwapper>
 		</div>
 	);
 

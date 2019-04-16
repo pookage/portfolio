@@ -3,8 +3,28 @@ import React, { createContext, useReducer, useEffect } from "react";
 //PUBLIC VARS
 //-----------------------------
 const Page         = createContext();
-const landingPage  = new URL(window.location.href).pathname.split("/")[1] || "";
-const initialState = { activePage: landingPage };
+const landingPage  = new URL(window.location.href).pathname.split("/")[1] || "home";
+const initialState = {
+	activePage: landingPage,
+	home: { //do you need to fine rendered/visible for home?
+		visible: true,
+		rendered: true
+	},
+	portfolio: {
+		visible: false,
+		rendered: false
+	},
+	about: {
+		visible: false,
+		rendered: false
+	},
+	contact: {
+		visible: false,
+		rendered: false
+	},
+};
+
+initialState[landingPage].rendered = true;
 
 //PROVIDER SETUP
 //------------------------------
@@ -36,7 +56,9 @@ function PageProvider(props){
 		return () => { window.removeEventListener("popstate", handleHistoryChange) }
 	}//syncBrowserNavigation
 	function updateBrowserHistory(){
-		window.history.pushState({ page: activePage }, "", `/${activePage}`);
+
+		const url = activePage == "home" ? "" : activePage;
+		window.history.pushState({ page: activePage }, "", `/${url}`);
 	}//updateBrowserHistory
 	function updatePageTitle(){
 		document.title = `POOKAGE.dev | ${activePage}`;
@@ -50,8 +72,8 @@ function PageProvider(props){
 			page = ""
 		} = event.state;
 		dispatch({
-			type: "setPage",
-			value: page
+			type: "setActivePage",
+			value: { page }
 		});
 	}//handleHistoryChange
 
@@ -65,13 +87,22 @@ function PageProvider(props){
 			value
 		} = action;
 
-		let change;
+		const { page } = value;
+
+		let change = { ...state };
 		switch(type){
-			case "setPage":
-				change = { 
-					...state,
-					activePage: value 
-				};
+			case "setActivePage":
+				change.activePage = page;
+				break;
+
+			case "setPageVisibility":
+				const {
+					rendered = state[page].rendered, // (boolean) whether or not the page should be rendered
+					visible  = state[page].visible   // (boolean) whether or not to display show/hide css styles & animations
+				} = value
+				
+				change[page].rendered = rendered;
+				change[page].visible  = visible;
 				break;
 		}
 

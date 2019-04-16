@@ -1,6 +1,5 @@
 import React, { useContext, useState, useRef } from "react";
 import { Page } from "Contexts/Page.js";
-import { Animation } from "Contexts/Animation.js";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LabelledInput from "ReactComponents/LabelledInput/LabelledInput.jsx";
 import Select from "ReactComponents/Select/Select.jsx";
@@ -13,8 +12,7 @@ export default function Contact(){
 
 	//HOOKS
 	//------------------------------------------------
-	const { state: pageState }        = useContext(Page);
-	const { state: animState }        = useContext(Animation);
+	const { state, dispatch }         = useContext(Page);
 	const [ valid, setValid ]         = useState(false);
 	const [ status, setStatus ]       = useState({ code: 0, error: false, message: ""});
 	const [ countdown, setCountdown ] = useState(6);
@@ -27,8 +25,8 @@ export default function Contact(){
 	//PRIVATE VARS
 	//------------------------------------------------
 	const securityPhrase = "may the force be with you";
-	const hide           = animState.animation == "hide";
 	const sending        = status.code != 0;
+	const { visible }    = state.contact;
 
 
 	//EVENT HANDLING
@@ -126,119 +124,116 @@ export default function Contact(){
 
 	//RENDER
 	//----------------------------------------------
-	if(pageState.activePage == "contact"){
-
-		return(
-			<article className={`${s.wrapper}`}>
-				<StickyQuickNav 
-					HTMLTag="div"
-					className={s.back}
-				/>
-				<div className={`${s.container} ${animations.slide} ${hide ? animations.out : animations.in}`}>
-					<header className={s.intro}>
-						<h1 className={`${font.subtitle} ${s.title}`}>
-							My DM's are Open
+	return(
+		<article className={`${s.wrapper}`}>
+			<StickyQuickNav 
+				HTMLTag="div"
+				className={s.back}
+			/>
+			<div className={`${s.container} ${animations.slide} ${visible ? animations.in : animations.out}`}>
+				<header className={s.intro}>
+					<h1 className={`${font.subtitle} ${s.title}`}>
+						My DM's are Open
+					</h1>
+					<div className={s.body}>
+						<p>
+							I'm always happy to get messages over on <a href="https://twitter.com/pookagehayes" target="_blank">Twitter</a> and <a href="https://www.linkedin.com/in/pookagehayes/" target="_blank">LinkedIn</a> - come say hello!
+						</p>
+						<p>
+							If you'd like to stick to old-school methods; feel free to <a href="mailto:ahoy@pookage.dev" target="_blank">email</a> me directly, or use the contact form here.
+						</p>
+					</div>
+					<aside className={s.human}>
+						<h1 className={`${font.subtitle} ${s.subtitle}`}>
+							Bot-proof precaution!
 						</h1>
-						<div className={s.body}>
-							<p>
-								I'm always happy to get messages over on <a href="https://twitter.com/pookagehayes" target="_blank">Twitter</a> and <a href="https://www.linkedin.com/in/pookagehayes/" target="_blank">LinkedIn</a> - come say hello!
-							</p>
-							<p>
-								If you'd like to stick to old-school methods; feel free to <a href="mailto:ahoy@pookage.dev" target="_blank">email</a> me directly, or use the contact form here.
-							</p>
-						</div>
-						<aside className={s.human}>
-							<h1 className={`${font.subtitle} ${s.subtitle}`}>
-								Bot-proof precaution!
-							</h1>
-							<p>
-								If you'd like to use the contact form, make sure to use the phrase <q>{securityPhrase}</q> somewhere in your message to prove you're not a bot.
-							</p>
-							<p>	
-								Bonus points if you can do it seamlessly.
-							</p>	
-						</aside>
-					</header>
-					<form 
-						className={`${s.form}`}
-						style={{ transitionDelay: "0.1s" }}
-						onSubmit={sendEmail}>
-						<div className={`${s.inputs} ${animations.slide} ${(hide || sending) ? animations.out : animations.in}`}>
-							<LabelledInput 
-								name="Name"
-								className={s.inputWrapper}>
-								<input
-									ref={name}
-									name="name"
-									className={s.input}
-									id="contact__name" 
-									type="text" 
-									placeholder="eg. Steven Universe"
-									onKeyUp={validate}
-									required 
-								/>
-							</LabelledInput>
-							<LabelledInput 
-								name="Email"
-								className={s.inputWrapper}>	
-								<input
-									ref={email}
-									name="email"
-									className={s.input}
-									id="contact__email" 
-									type="email" 
-									placeholder="eg. steven@thecrystalgems.com"
-									onKeyUp={validate}
-									required
-								/>
-							</LabelledInput>
-							<LabelledInput 
-								name="Subject"
-								className={s.inputWrapper}>
-								<Select		
-									className={s.input} 
-									name="subject"
-									id="contact__subject"
-									onChange={validate}
-									required>
-									<option value="">I'm looking for...</option>
-									<option>I'm looking for a developer.</option>
-									<option>I'm looking for a consultant.</option>
-									<option>I'm looking for a mentor.</option>
-									<option>I've found a bug on your site!</option>
-								</Select>
-							</LabelledInput>
-							<LabelledInput 
-								name="Message"
-								className={s.inputWrapper}>
-								<textarea
-									className={`${s.input} ${s.message}`}
-									name="message"
-									id="contact__message" 
-									onKeyUp={validate}
-									ref={message}
-									placeholder="eg. I'd like to bring you onto a project I'm working on..."
-									required>
-								</textarea>
-							</LabelledInput>
-							<button
-								className={s.submit}
-								disabled={!valid}
-								title={!valid && `Don't forget to include the passphrase - "${securityPhrase}"!`}>
-								<span className={`${s.label} ${font.subtitle}`}>
-									Send
-								</span>
-							</button>
-						</div>
-						<output 
-							className={`${s.response} ${font.subtitle} ${animations.slide} ${sending ? animations.in : animations.out} ${s[`status_${status.code}`]}`}>
-							<span className={s.text}>
-								{status.message} {status.error && `(${countdown})`}
+						<p>
+							If you'd like to use the contact form, make sure to use the phrase <q>{securityPhrase}</q> somewhere in your message to prove you're not a bot.
+						</p>
+						<p>	
+							Bonus points if you can do it seamlessly.
+						</p>	
+					</aside>
+				</header>
+				<form 
+					className={`${s.form}`}
+					style={{ transitionDelay: "0.1s" }}
+					onSubmit={sendEmail}>
+					<div className={`${s.inputs} ${animations.slide} ${(!visible || sending) ? animations.out : animations.in}`}>
+						<LabelledInput 
+							name="Name"
+							className={s.inputWrapper}>
+							<input
+								ref={name}
+								name="name"
+								className={s.input}
+								id="contact__name" 
+								type="text" 
+								placeholder="eg. Steven Universe"
+								onKeyUp={validate}
+								required 
+							/>
+						</LabelledInput>
+						<LabelledInput 
+							name="Email"
+							className={s.inputWrapper}>	
+							<input
+								ref={email}
+								name="email"
+								className={s.input}
+								id="contact__email" 
+								type="email" 
+								placeholder="eg. steven@thecrystalgems.com"
+								onKeyUp={validate}
+								required
+							/>
+						</LabelledInput>
+						<LabelledInput 
+							name="Subject"
+							className={s.inputWrapper}>
+							<Select		
+								className={s.input} 
+								name="subject"
+								id="contact__subject"
+								onChange={validate}
+								required>
+								<option value="">I'm looking for...</option>
+								<option>I'm looking for a developer.</option>
+								<option>I'm looking for a consultant.</option>
+								<option>I'm looking for a mentor.</option>
+								<option>I've found a bug on your site!</option>
+							</Select>
+						</LabelledInput>
+						<LabelledInput 
+							name="Message"
+							className={s.inputWrapper}>
+							<textarea
+								className={`${s.input} ${s.message}`}
+								name="message"
+								id="contact__message" 
+								onKeyUp={validate}
+								ref={message}
+								placeholder="eg. I'd like to bring you onto a project I'm working on..."
+								required>
+							</textarea>
+						</LabelledInput>
+						<button
+							className={s.submit}
+							disabled={!valid}
+							title={!valid && `Don't forget to include the passphrase - "${securityPhrase}"!`}>
+							<span className={`${s.label} ${font.subtitle}`}>
+								Send
 							</span>
-						</output>
-					</form>
-				</div>
-			</article>
-		);
-	} else return "";
+						</button>
+					</div>
+					<output 
+						className={`${s.response} ${font.subtitle} ${animations.slide} ${sending ? animations.in : animations.out} ${s[`status_${status.code}`]}`}>
+						<span className={s.text}>
+							{status.message} {status.error && `(${countdown})`}
+						</span>
+					</output>
+				</form>
+			</div>
+		</article>
+	);
 }//Contact

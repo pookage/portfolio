@@ -19,12 +19,13 @@ export default function KeyboardControls(props){
 	function parseInput(event){
 
 		let action;
-
 		switch(event.key){
 			case "Escape":
 				action = { 
-					type: "setPage",
-					value: ""
+					type: "setActivePage",
+					value: {
+						page: "home"
+					}
 				};
 				break;
 		}
