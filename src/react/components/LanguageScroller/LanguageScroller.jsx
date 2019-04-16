@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Page } from "Contexts/Page.js"
 import { languages } from "Data/languages.js";
+import Link from "ReactComponents/Link/Link.jsx";
 import animations from "Shared/animations.css";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/LanguageScroller/LanguageScroller.css";
@@ -74,7 +75,8 @@ export default function LanguageScroller(props){
 		const {
 			name,
 			icon,
-			type
+			type,
+			website
 		} = language;
 
 		const description = `Logo for the ${name} ${type}.`;
@@ -89,11 +91,13 @@ export default function LanguageScroller(props){
 					alt={description} 
 				/>
 				<span className={s.popout}>
-					<span 
+					<Link
 						className={`${font.subtitle} ${s.label}`}
-						style={{ transform: `rotate(-${angle}deg)`}}>
+						style={{ transform: `rotate(-${angle}deg)`}}
+						href={website} 
+						target="_blank">
 						{name}
-					</span>
+					</Link>
 				</span>
 			</li>
 		);

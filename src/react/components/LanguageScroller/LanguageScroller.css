@@ -57,7 +57,13 @@
 				}
 				.logo {
 					width: 40%;
+					transform: scale(0.925);
+					transition: transform .3s;
 				}
+				.language:hover .logo {
+					transform: scale(1);
+				}
+
 				.popout {
 					position: absolute;
 					top: 50%;
@@ -71,12 +77,17 @@
 					transform: translate(-50%,0%);	
 					opacity: 1;
 				}
-					.label {
+					.popout .label {
 						display: inline-block;
 						padding: 0.62em 1.62em;	
 						transform: rotate(-22.5deg);
 						font-size: var(--subheading-size);
+						color: var(--base-color);
 						background-color: var(--accent-color);
+						pointer-events: all;
+					}
+					.popout .label:hover {
+						text-decoration: none;
 					}
 
 /* TOUCHSCREEN-ONLY DEVICES
