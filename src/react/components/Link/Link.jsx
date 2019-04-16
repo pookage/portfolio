@@ -1,41 +1,46 @@
-import "aframe-text-geometry-component";
-import "Primitives/chunky-link";
 import React, { useContext } from "react";
-import { Entity } from "aframe-react";
 import { Page } from "Contexts/Page.js";
 
 export default function Link(props){
 
-	//STATE STUFF
-	//---------------------------
+	//HOOKS
+	//--------------------------------
+	const { state, dispatch } = useContext(Page);
+
+	//PRIVATE VARS
+	//--------------------------------
 	const {
-		target         = "",
-		children: text = "",
-		...components
+		href,
+		children,
+		...attributes
 	} = props;
 
-	const {
-		dispatch
-	} = useContext(Page);
 
 	//EVENT HANDLING
-	//------------------------
-	function action(){
-		dispatch({ type: "setPage", value: target });
-	}//action
+	//--------------------------------
+	function handleLinkClick(event){
+		if(href[0] == "/"){
+			event.preventDefault();
+			
+			const page = href.split("/")[1] || "";
+
+			dispatch({
+				type: "setPage",
+				value: page
+			});
+		}
+	}//handleLinkClick
 
 
 	//RENDER
-	//-------------------------
+	//--------------------------------
 	return(
-		<Entity
-			{...components}>
-			<Entity
-				primitive="a-chunky-link"
-				text-geometry={`value: ${text}; font: #consolas-font-bold; size: 0.162; height: 0.04;`}
-				mixin="text-color"
-				events={{ click: action }}>
-			</Entity>
-		</Entity>
+		<a 
+			href={href}
+			onClick={handleLinkClick}
+			{...attributes}>
+			{children}
+		</a>
 	);
+
 }//Link

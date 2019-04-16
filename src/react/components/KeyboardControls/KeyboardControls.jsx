@@ -24,7 +24,7 @@ export default function KeyboardControls(props){
 			case "Escape":
 				action = { 
 					type: "setPage",
-					value: "hub"
+					value: ""
 				};
 				break;
 		}

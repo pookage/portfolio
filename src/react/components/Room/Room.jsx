@@ -15,7 +15,7 @@ export default function Room(props){
 		activePage
 	} = useContext(Page).state;
 
-	const isActive = activePage != "hub"
+	const isActive = activePage != ""
 
 	return(
 		<Entity

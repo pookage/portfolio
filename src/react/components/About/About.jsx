@@ -3,6 +3,8 @@ import { Page } from "Contexts/Page.js";
 import { Animation } from "Contexts/Animation.js";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LanguageScroller from "ReactComponents/LanguageScroller/LanguageScroller.jsx";
+import LazyImage from "ReactComponents/LazyImage/LazyImage.jsx";
+import Link from "ReactComponents/Link/Link.jsx";
 import animations from "Shared/animations.css";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/About/About.css";
@@ -66,7 +68,7 @@ export default function About(){
 							</li>
 						</ul>
 						<p className={`${font.body} ${s.body}`}>
-							Sound up your street? <a href="#contact">Get in touch</a>.
+							Sound up your street? <Link href="/contact">Get in touch</Link>.
 						</p>
 					</section>
 					
@@ -76,7 +78,8 @@ export default function About(){
 					style={{ transitionDelay: `${0.1}s`}}
 				/>
 				<div className={`${s.portrait} ${animations.slide} ${hide ? animations.right : animations.in}`}>
-					<img 
+					<LazyImage
+						active={true} 
 						className={s.image}
 						src="Assets/photos/portrait.jpg"
 						alt="Portrait of Pookage Hayes, smiling with his elbows on the desk."

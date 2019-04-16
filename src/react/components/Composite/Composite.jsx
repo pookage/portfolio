@@ -6,29 +6,28 @@ import s from "ReactComponents/Composite/Composite.css";
 
 export default function Composite(props){
 
-	//PROPS
-	//--------------------------------
-	const {
-		size,   // (string)[mobile, tablet, desktop]
-		images = [], // (array) of screenshots to render in the composite
-	} = props;
-
-	const screenshots = images.map(renderScreenshot);
-
-
 	//HOOKS
 	//-------------------------------
 	const { 
 		activeSectionIndex,
-		activeComposite 
+		activeComposite,
+		activated 
 	} = useContext(CompositeScroll).state;
 
 	const scroller = useRef();
 	useEffect(scrollToActiveScreenshot);
 
 
+	//PRIVATE VARS
+	//----------------------------------
+	const {
+		size,        // (string)[mobile, tablet, desktop]
+		images = [], // (array) of screenshots to render in the composite
+	} = props;
+	const screenshots = images.map(renderScreenshot);
 
-	//UTILS
+
+	//EFFECT HANDLING
 	//------------------------------
 	function scrollToActiveScreenshot(){
 
@@ -43,6 +42,7 @@ export default function Composite(props){
 			});
 		}
 	}//scrollToActiveScreenshot
+
 
 	//RENDER 
 	//------------------------------
@@ -67,6 +67,7 @@ export default function Composite(props){
 				ref={image}
 				key={id}>
 				<LazyImage
+					active={activated}
 					className={`${s.image} ${isActive ? s.active : s.inactive}`}	
 					alt={description}
 					src={src}

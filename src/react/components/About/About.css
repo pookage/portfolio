@@ -64,6 +64,7 @@
 		right: 0;
 		overflow: hidden;
 		clip-path: polygon(66% 0%, 100% 0%, 100% 100%, 0% 100%);
+		background-color: #ebf0e9; /* the wall colour in the photo to show whilst the asset loads */
 	}
 		.image {
 			display: block;

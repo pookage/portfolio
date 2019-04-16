@@ -9,6 +9,7 @@ const dist   = path.resolve(__dirname, "dist");
 const assets = path.resolve(__dirname, "assets");
 
 //MAYBE LOOK INTO THIS: https://www.npmjs.com/package/babel-plugin-minify-dead-code-elimination
+//FOOR SPA STUFF: https://tylermcginnis.com/react-router-cannot-get-url-refresh/
 
 function buildConfig(env, args){
 
@@ -48,7 +49,8 @@ function buildConfig(env, args){
 				],
 				devServer: {
 					contentBase: "./dist",
-					https: true
+					https: true,
+					historyApiFallback: true
 				}
 			};
 			break;
@@ -64,7 +66,8 @@ function buildConfig(env, args){
 		entry: `${src}/index.js`,
 		output: {
 			filename: "bundle.js",
-			path: dist
+			path: dist,
+			 publicPath: "/"
 		},
 		module: {
 			rules: [

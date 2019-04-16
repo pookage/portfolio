@@ -6,7 +6,7 @@ import Styles from "ReactComponents/mixins/Styles.jsx";
 import Assets from "ReactComponents/mixins/Assets.jsx";
 import Title from "ReactComponents/Title/Title.jsx";
 import Camera from "ReactComponents/Camera/Camera.jsx";
-import Link from "ReactComponents/Link/Link.jsx";
+import Link3D from "ReactComponents/Link3D/Link3D.jsx";
 import Wall from "ReactComponents/Wall/Wall.jsx";
 import Room from "ReactComponents/Room/Room.jsx";
 
@@ -39,21 +39,21 @@ export default function BedroomScene(){
 					<Entity 
 						id="links"
 						position="0 0.2 -0.03">
-						<Link
+						<Link3D
 							position="0 0 0"
 							target="portfolio">
 							PORTFOLIO
-						</Link>
-						<Link
+						</Link3D>
+						<Link3D
 							position="0 -0.19 0"
 							target="about">
 							ABOUT
-						</Link>
-						<Link
+						</Link3D>
+						<Link3D
 							position="0 -0.38 0"
 							target="contact">
 							CONTACT
-						</Link>
+						</Link3D>
 					</Entity>
 				</Wall>
 

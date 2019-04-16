@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { CompositeScroll } from "Contexts/CompositeScroll.js";
+import React, { useState } from "react";
 import s from "ReactComponents/LazyImage/LazyImage.css";
 
 export default function LazyImage(props) {
@@ -7,7 +6,6 @@ export default function LazyImage(props) {
 	//HOOKS
 	//------------------------------------
 	const [ loaded, setLoaded ] = useState(false);
-	const { activated }         = useContext(CompositeScroll).state;
 
 
 	//EVENT HANDLING
@@ -22,12 +20,13 @@ export default function LazyImage(props) {
 	const {
 		className,
 		src,
+		active,
 		...remainingProps
 	} = props;
 
 	return(
 		<img
-			src={!!activated ? src : ""}
+			src={!!active ? src : ""}
 			className={`${!loaded ? s.loading : s.loaded} ${className}`}
 			onLoad={reveal} 
 			{...remainingProps} 

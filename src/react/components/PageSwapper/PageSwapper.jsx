@@ -9,23 +9,18 @@ export default function PageSwapper(props){
 	//----------------------------------------
 	const { state: pageState, dispatch: pageDispatch } = useContext(Page);
 	const { state: animState, dispatch: animDispatch } = useContext(Animation);
-	useEffect(fireOpenAnimations, [pageState.activePage])
+	useEffect(fireOpenAnimations, [pageState.activePage]);
 
 
-	//EVENT HANDLING
+	//PRIVATE VARS
 	//----------------------------------------
 	let closeTimeout;
-	
-	function tryToClose(event){
-		const isHiding        = animState.animation == "hide";
-		const emittedByHiding = event.nativeEvent.target.className.indexOf("animations") > -1;
-		if(isHiding && emittedByHiding){
-			clearTimeout(closeTimeout);
-			closeTimeout = setTimeout(goBack, 10);
-		}
-	}//tryToClose
+
+
+	//EFFECT HANDLING
+	//----------------------------------------
 	function fireOpenAnimations(){
-		if(pageState.activePage != "hub"){
+		if(pageState.activePage != ""){
 			setTimeout(() => {
 				animDispatch({
 					type: "animate",
@@ -34,10 +29,22 @@ export default function PageSwapper(props){
 			}, 1000);
 		}
 	}//fireOpenAnimations
+
+
+	//EVENT HANDLING
+	//----------------------------------------
+	function tryToClose(event){
+		const isHiding        = animState.animation == "hide";
+		const emittedByHiding = event.nativeEvent.target.className.indexOf("animations") > -1;
+		if(isHiding && emittedByHiding){
+			clearTimeout(closeTimeout);
+			closeTimeout = setTimeout(goBack, 10);
+		}
+	}//tryToClose
 	function goBack(){
 		pageDispatch({ 
 			type: "setPage", 
-			value: "hub" 
+			value: "" 
 		});
 	}//goBack
 

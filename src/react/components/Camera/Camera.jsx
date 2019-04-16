@@ -9,7 +9,7 @@ export default function Camera(){
 		activePage
 	} = useContext(Page).state;
 
-	const active = activePage != "hub";
+	const active = activePage != "";
 
 	return(
 		<Entity
