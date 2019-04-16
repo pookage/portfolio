@@ -77,18 +77,55 @@
 					transform: translate(-50%,0%);	
 					opacity: 1;
 				}
-					.popout .label {
+					.popout .link {
 						display: inline-block;
-						padding: 0.62em 1.62em;	
 						transform: rotate(-22.5deg);
-						font-size: var(--subheading-size);
-						color: var(--base-color);
-						background-color: var(--accent-color);
-						pointer-events: all;
 					}
-					.popout .label:hover {
-						text-decoration: none;
-					}
+						/*little animation fiddly things*/
+						.popout .link::before,
+						.popout .link::after {
+							content: "";
+							display: block;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							background-color: var(--accent-color);
+							transform: translateX(0);
+							transition-property: transform;
+							transition-duration: .3s;
+							transition-timing-function: var(--ease-out-back)
+						}
+						.popout .link::before {
+							width: 0.62em;
+							transition-delay: .2s
+						}
+						.popout .link::after {
+							width: 0.388em;
+							transition-delay: .3s;
+						}
+						.language:hover .popout .link::before {
+							transform: translateX(-1em);
+						}
+						.language:hover .popout .link::after {
+							transform: translateX(-1.7em)
+						}
+
+						.popout .label {
+							display: inline-block;
+							padding: 0.62em 1.62em 0.62em 1em;
+							position: relative;	
+							font-size: var(--subheading-size);
+							color: var(--base-color);
+							background-color: var(--accent-color);
+							pointer-events: all;
+							clip-path: polygon(0% 0%, 90% 0%, 90% 25%, 100% 50%, 90% 75%, 90% 100%, 0% 100%);
+						}
+						
+						.popout .label:hover {
+							text-decoration: none;
+						}
+
 
 /* TOUCHSCREEN-ONLY DEVICES
 -------------------------------------*/

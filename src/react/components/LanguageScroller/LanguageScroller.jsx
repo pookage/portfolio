@@ -92,11 +92,13 @@ export default function LanguageScroller(props){
 				/>
 				<span className={s.popout}>
 					<Link
-						className={`${font.subtitle} ${s.label}`}
+						className={`${font.subtitle} ${s.link}`}
 						style={{ transform: `rotate(-${angle}deg)`}}
 						href={website} 
 						target="_blank">
-						{name}
+						<span className={s.label}>
+							{name}
+						</span>
 					</Link>
 				</span>
 			</li>
