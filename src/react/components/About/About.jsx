@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Page } from "Contexts/Page.js";
-import { Twitter, LinkedIn } from "Shared/shapes.jsx";
+import { Twitter, LinkedIn, Github } from "Shared/shapes.jsx";
 import PageSwapper from "ReactComponents/PageSwapper/PageSwapper.jsx";
 import StickyQuickNav from "ReactComponents/StickyQuickNav/StickyQuickNav.jsx";
 import LanguageScroller from "ReactComponents/LanguageScroller/LanguageScroller.jsx";
@@ -105,7 +105,18 @@ export default function About(){
 								/>
 							</a>
 						</li>
-						
+						<li className={s.network}>
+							<a
+								className={`${s.link}`} 
+								href="https://github.com/pookage"
+								target="_blank"
+								aria-label="Github"
+								title="View my code on Github">
+								<Github 
+									className={`${s.logo}`}
+								/>
+							</a>
+						</li>
 					</ul>
 				</footer>
 			</div>

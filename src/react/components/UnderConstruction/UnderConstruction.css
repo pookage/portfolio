@@ -1,0 +1,18 @@
+.wrapper {
+	display: block;
+	padding: 2.62em 2.62em;
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	z-index: 3;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+	.title {
+		margin-bottom: 0.62em;
+	}
+
+@media(max-width: 1024px){
+	.wrapper {
+		display: none;
+	}
+}

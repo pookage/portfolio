@@ -6,7 +6,7 @@ import BedroomScene from "ReactComponents/BedroomScene/BedroomScene.jsx";
 import Portfolio from "ReactComponents/Portfolio/Portfolio.jsx";
 import About from "ReactComponents/About/About.jsx";
 import Contact from "ReactComponents/Contact/Contact.jsx";
-import App from "ReactComponents/App/App.jsx";
+import UnderConstruction from "ReactComponents/UnderConstruction/UnderConstruction.jsx";
 import "Shared/global.css";
 
 window.addEventListener("DOMContentLoaded", init);
@@ -15,6 +15,7 @@ function init(){
 	ReactDOM.render(
 		(
 			<PageProvider>
+				<UnderConstruction />
 				<KeyboardControls>
 					<BedroomScene />
 					<Portfolio />
