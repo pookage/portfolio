@@ -25,13 +25,13 @@ const initialState = {
 //------------------------------
 function PageProvider(props){
 	
-
 	//HOOKS
 	//----------------------------------
 	const [ state, dispatch ] = useReducer(reducer, initialState);
+	const { activePage }      = state;
 	useEffect(syncBrowserNavigation);
-	useEffect(updateBrowserHistory, [ state.activePage ]);
-	useEffect(updatePageTitle, [ state.activePage ]);
+	useEffect(updateBrowserHistory, [ activePage ]);
+	useEffect(updatePageTitle, [ activePage ]);
 
 
 	//PRIVATE VARS
@@ -39,9 +39,6 @@ function PageProvider(props){
 	const {
 		children = []
 	} = props;
-	const {
-		activePage = ""
-	} = state
 
 
 	//EFFECT HANDLING
@@ -72,7 +69,7 @@ function PageProvider(props){
 	}//handleHistoryChange
 
 
-	//UTILS
+	//REDUCER
 	//----------------------------------
 	function reducer(state, action){
 
