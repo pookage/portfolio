@@ -14,17 +14,23 @@ export default function About(){
 	const { state: pageState } = useContext(Page);
 	const { state: animState } = useContext(Animation);
 
+
+	//PRIVATE VARS
+	//---------------------------------------------
+	const isAbout = pageState.activePage == "about";
+	const hide    = animState.animation == "hide";
+
+
 	//RENDER
 	//---------------------------------------------
-	if(pageState.activePage == "about"){
-
+	if(isAbout){
 		return(
 			<article className={s.wrapper}>
 				<StickyQuickNav
 					className={s.back} 
 					HTMLTag="div"
 				/>
-				<div className={s.container}>
+				<div className={`${s.container} ${animations.slide} ${hide ? animations.out : animations.in}`}>
 					<section className={s.ahoy}>
 						<header>
 							<h1 className={`${font.title} ${s.title}`}>
@@ -65,8 +71,11 @@ export default function About(){
 					</section>
 					
 				</div>
-				<LanguageScroller />
-				<div className={s.portrait}>
+				<LanguageScroller
+					className={`${animations.slide} ${hide ? animations.up : animations.in}`}
+					style={{ transitionDelay: `${0.1}s`}}
+				/>
+				<div className={`${s.portrait} ${animations.slide} ${hide ? animations.right : animations.in}`}>
 					<img 
 						className={s.image}
 						src="Assets/photos/portrait.jpg"

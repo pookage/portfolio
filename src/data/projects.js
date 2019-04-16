@@ -874,7 +874,7 @@ export const projects = [
 		safeTitle: "suspiria",
 		date: "2018-11",
 		description: [
-			"A media-rich promotional site for Luca Guadagnino's 2018 remake of Suspiria."
+			"A media-rich promotional site for Luca Guadagnino's 2018 remake of Suspiria. Awarded 'Honourable Mention' for Awwwards SOTD, nov 2018."
 		],
 		images: {
 			desktop: [

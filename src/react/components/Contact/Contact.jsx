@@ -23,15 +23,17 @@ export default function Contact(){
 	const email   = useRef();
 	const message = useRef();
 
+
+	//PRIVATE VARS
+	//------------------------------------------------
 	const securityPhrase = "may the force be with you";
+	const hide           = animState.animation == "hide";
+	const sending        = status.code != 0;
+
 
 	//EVENT HANDLING
 	//-----------------------------------------------
 	function validate(event){
-
-		//store current value
-
-
 		//combined validation
 		const inputs       = [ name, email, message ];
 		const isValid      = inputs.every(input => input.current.validity.valid);
@@ -88,7 +90,6 @@ export default function Contact(){
 				message
 			});
 		}
-
 	}//parseEmailResponse
 	function parseError(error){
 
@@ -104,7 +105,9 @@ export default function Contact(){
 		countDown(countdown);
 	}//parseError
 
+
 	//UTILS
+	//------------------------------------------------
 	function countDown(count){
 		if(count == 1){
 			setCountdown(6);
@@ -125,8 +128,6 @@ export default function Contact(){
 	//----------------------------------------------
 	if(pageState.activePage == "contact"){
 
-		const hide    = animState.animation == "hide";
-		const sending = status.code != 0;
 		return(
 			<article className={`${s.wrapper}`}>
 				<StickyQuickNav 

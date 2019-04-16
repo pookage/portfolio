@@ -3,13 +3,25 @@ import { languages } from "Data/languages.js";
 import font from "Shared/fonts.css";
 import s from "ReactComponents/LanguageScroller/LanguageScroller.css";
 
-export default function LanguageScroller(){
+export default function LanguageScroller(props){
 
 	//HOOKS
 	//------------------------------------
 	const [ angle, setAngle ]   = useState(22.5);
 	const [ arrows, setArrows ] = useState({ top: false, bottom: true });
 	useEffect(syncLanguageRotation);
+
+
+	//PRIVATE VARS
+	//-------------------------------------
+	const {
+		className,
+		...animationProps
+	} = props;
+	const {
+		top: atTop,
+		bottom: atBottom
+	} = arrows;
 
 
 	//EFFECT HANDLING
@@ -88,22 +100,16 @@ export default function LanguageScroller(){
 		);
 	}//renderLanguage
 
-	const {
-		top,
-		bottom
-	} = arrows;
-
-	console.log({ top, bottom });
-
 	return(
-		<div className={s.wrapper}>
+		<div className={`${s.wrapper}`}>
 			<figure
-				className={`${s.container} ${top ? s.topArrow : ""} ${bottom ? s.bottomArrow : ""}`} 
+				className={`${s.container} ${atTop ? s.topArrow : ""} ${atBottom ? s.bottomArrow : ""}`} 
 				aria-label="Known languages and frameworks."
 				style={{ transform: `rotate(${angle}deg)`}}
 				onScroll={updateScrollPrompts}>
 				<ul 
-					className={s.list}>
+					className={`${s.list} ${className}`}
+					{...animationProps}>
 					{languages.map(renderLanguage)}
 				</ul>
 			</figure>

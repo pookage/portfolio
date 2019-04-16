@@ -9,13 +9,25 @@
 .slide.out {
 	opacity: 0;
 	transform: translateX(-1em);
-	transition: opacity .3s, transform .3s;
 }
 .slide.in {
 	opacity: 1;
 	transform: translateX(0);
-	transition: opacity .3s, transform .3s;
 }
+.slide.right {
+	opacity: 0;
+	transform: translateX(1em);
+	transition-delay: 0.1s;
+}
+.slide.up {
+	opacity: 0;
+	transform: translateY(-1em);
+}
+.slide.down {
+	opacity: 0;
+	transform: translateY(1em);
+}
+
 
 .fade {
 	transition: opacity .3s;
