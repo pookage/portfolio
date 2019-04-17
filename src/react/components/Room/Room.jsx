@@ -26,7 +26,6 @@ export default function Room(props){
 
 	const isActive = activePage != "home";
 
-	console.log( { folded });
 
 	//EFFECT HANDLING
 	//-----------------------------------------

@@ -69,7 +69,7 @@ export default function BedroomScene(){
 					<Entity
 						primitive="a-plane"
 						id="floor"
-						color="#111111" 
+						color="#191919" 
 						height="5"
 						width="5"
 						rotation="-90 0 0"

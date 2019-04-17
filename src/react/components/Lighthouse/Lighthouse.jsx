@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
-import { Entity } from "aframe-react";
+import LazyModel from "ReactComponents/LazyModel/LazyModel.jsx";
 export default function Lighthouse(){
 
 	const { folded } = useContext(Page).state.home;
 
 	return(
-		<Entity
+		<LazyModel
 			primitive="a-obj-model"
 			id="lighthouse"
-			src="#lighthouse-model"
+			src="Assets/3d/lighthouse/model.obj"
 			position="2.4 2.085 -2.4"
 			rotation="0 180 0"
 			mixin="cel-shade"
 			visible={!folded}>
-		</Entity>
+		</LazyModel>
 	);
 }//Lighthouse
