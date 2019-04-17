@@ -78,7 +78,16 @@ function buildConfig(env, args){
 						loader: "babel-loader",
 						options: {
 							presets: [
-								"@babel/preset-env",
+								[
+									"@babel/preset-env", {
+										"targets": {
+											browsers: [
+												"> 2%, not dead",
+												"not ie > 0"
+											]
+										}
+									},
+								],
 								"@babel/preset-react"
 							],
 							plugins: [
