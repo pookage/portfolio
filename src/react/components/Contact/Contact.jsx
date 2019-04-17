@@ -36,9 +36,17 @@ export default function Contact(){
 		//combined validation
 		const inputs       = [ name, email, message ];
 		const isValid      = inputs.every(input => input.current.validity.valid);
-		const hasKeyPhrase = message.current.value.toLowerCase().indexOf(securityPhrase) > -1;
-		setValid(isValid && hasKeyPhrase);
+		
+		setValid(isValid);
 	}//validate
+	function validatePassphrase(event){
+		const hasKeyPhrase = message.current.value.toLowerCase().indexOf(securityPhrase) > -1;
+		if(!hasKeyPhrase){
+			message.current.setCustomValidity("Don't forget to include the bot-proof passphrase!");
+		} else {
+			message.current.setCustomValidity("");
+		}
+	}//validatePassphrase	
 	function sendEmail(event){
 		event.preventDefault();
 		
@@ -178,6 +186,11 @@ export default function Contact(){
 								onKeyUp={validate}
 								required 
 							/>
+							<div className={s.validator}>
+								<div className={s.dot} />
+								<div className={s.dot} />
+								<div className={s.dot} />
+							</div>
 						</LabelledInput>
 						<LabelledInput 
 							name="Email"
@@ -192,6 +205,11 @@ export default function Contact(){
 								onKeyUp={validate}
 								required
 							/>
+							<div className={s.validator}>
+								<div className={s.dot} />
+								<div className={s.dot} />
+								<div className={s.dot} />
+							</div>
 						</LabelledInput>
 						<LabelledInput 
 							name="Subject"
@@ -208,6 +226,11 @@ export default function Contact(){
 								<option>I'm looking for a mentor.</option>
 								<option>I've found a bug on your site!</option>
 							</Select>
+							<div className={s.validator}>
+								<div className={s.dot} />
+								<div className={s.dot} />
+								<div className={s.dot} />
+							</div>
 						</LabelledInput>
 						<LabelledInput 
 							name="Message"
@@ -216,16 +239,22 @@ export default function Contact(){
 								className={`${s.input} ${s.message}`}
 								name="message"
 								id="contact__message" 
-								onKeyUp={validate}
+								onKeyUp={(event) => {
+									validatePassphrase(event)
+									validate(event);
+								}}
 								ref={message}
 								placeholder="eg. I'd like to bring you onto a project I'm working on..."
 								required>
 							</textarea>
+							<div className={s.validator}>
+								<div className={s.dot} />
+								<div className={s.dot} />
+								<div className={s.dot} />
+							</div>
 						</LabelledInput>
 						<button
-							className={s.submit}
-							disabled={!valid}
-							title={!valid && `Don't forget to include the passphrase - "${securityPhrase}"!`}>
+							className={`${s.submit} ${valid ? s.enabled : s.disabled}`}>
 							<span className={`${s.label} ${font.subtitle}`}>
 								Send
 							</span>

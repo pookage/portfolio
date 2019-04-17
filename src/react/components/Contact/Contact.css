@@ -69,22 +69,91 @@
 					color: var(--base-color);
 					background-color: transparent;
 				}
+
 				.input:focus,
 				.input:valid {
 					outline: 0;
-					background-color: var(--accent-color);
+					/*background-color: var(--accent-color);*/
 				}
 					.input::placeholder,
 					select[data-value=select__option_0]:focus,
 					select[data-value=select__option_0]:focus option:first-child {
-						color: var(--inactive-color);
+						color: var(--aside-color);
 					}
 					.input option {
 						background-color: var(--accent-color);
 					}
+				
+				/*VALIDATOR
+				--------------------------------------------*/
+				.validator {
+					display: flex;
+					width: 2.62em;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					right: 0;
+					transform: scaleX(0);
+					justify-content: center;
+					align-items: center;
+					background-color: var(--accent-color);
+					transform-origin: 100% 50%;
+					transition: transform .3s;
+				}
+				.input:focus ~ .validator,
+				.input:valid ~ .validator {
+					transform: scaleX(1);
+				}
+					.validator::before {
+						content: "";
+						display: block;
+						height: 100%;
+						width: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						transform: scale(0.5);
+						opacity: 0;
+						background-size: 50% auto;
+						background-repeat: no-repeat;
+						background-position: center;
+						transition: transform .3s, opacity .3s;
+					}
+					.validator::before {
+						background-image: url(Assets/icons/tick.svg);
+					}
+					.input:valid ~ .validator::before {
+						transform: scale(1);
+						opacity: 1;
+					}
+					.dot {
+						display: inline-block;
+						height: 1em;
+						width: 1em;
+						font-size: 0.5em;
+						background-color: var(--base-color);
+						border-radius: 100%;
+						opacity: 0;
+						transition: opacity .3s;
+						animation-name: scaleInOut;
+						animation-iteration-count: infinite;
+						animation-duration: 1s;
+					}
+					.dot:nth-child(1){ animation-delay: 0s;   }
+					.dot:nth-child(2){ animation-delay: 0.2s; }
+					.dot:nth-child(3){ animation-delay: 0.4s; }
+
+					.input:not(:valid):focus ~ .validator .dot { 
+						opacity: 1; 
+					}
+
+
 				.message {
 					min-height: 16.2em;
 				}
+
+				/*SUBMIT BUTTON MAGIC
+				/---------------------------------------------*/
 				.submit {
 					width: 100%;
 					padding: 1em ;
@@ -93,13 +162,13 @@
 					background-color: transparent;
 					transition: transform .1s;
 				}
-					.label {
+					.submit .label {
 						position: relative;
 						display: inline-block;
 						font-size: var(--subheading-size);
-						color: var(--accent-color);
+						transition: color .3s;
 					}
-						.label::after {
+						.submit .label::after {
 							content: "";
 							display: inline-block;
 							width: 125%;
@@ -107,25 +176,35 @@
 							position: absolute;
 							left: 50%;
 							top: 50%;
-							background-color: var(--accent-color);
 							transition: transform .3s;
 						}
-				.submit:disabled {
-					/*pointer-events: none;*/
+				.submit.disabled {
 					cursor: not-allowed;
 				}
-					.submit:disabled .label::after{
-						transform: translate(-50%, -50%) scaleX(1);
+					.submit.disabled .label {
+						color: var(--aside-color);
 					}
-					.submit:not(:disabled) .label::after {
-						transform: translate(-50%, -50%) scaleX(0);
+						.submit.disabled .label::after {
+							background-color: var(--aside-color);
+							transform: translate(-50%, -50%) scaleX(1);
+						}
+				.submit.enabled {}
+				.submit.enabled:active {
+					transform: scale(0.9);
+				}
+					.submit.enabled .label {
+						color: var(--accent-color);
 					}
-					.submit:not(:disabled):hover .label {
+					.submit.enabled:hover .label {
 						text-decoration: underline;
 					}
-					.submit:not(:disabled):active {
-						transform: scale(0.9);
-					}
+						.submit.enabled .label::after {
+							background-color: var(--accent-color);
+							transform: translate(-50%, -50%) scaleX(0);
+						}
+					
+			/*HEART RESPONSES etc
+			----------------------------------*/		
 			.response {
 				display: flex;
 				height: 100%;
@@ -137,7 +216,6 @@
 				justify-content: center;
 				align-items: center;
 			}
-				/*all hearts*/
 				.response::before,
 				.response::after {
 					content: "";
@@ -233,5 +311,13 @@
 		transform: scale(0.375);
 	}
 
+}
 
+@keyframes scaleInOut {
+	0%, 50%, 100% {
+		transform: scale(0.75);
+	}
+	25% {
+		transform: scale(1);
+	}
 }

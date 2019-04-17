@@ -6,9 +6,10 @@ export default function LabelledInput(props){
 	const {
 		name,
 		className,
-		children: input
+		children
 	} = props;
 
+	const [ input, validator ] = children;
 	const id = input.props.id;
 	return(
 		<div className={`${s.wrapper} ${className}`}>
@@ -18,6 +19,7 @@ export default function LabelledInput(props){
 				htmlFor={id}>
 				{name}
 			</label>
+			{validator}
 		</div>
 	);
 }//LabelledInput
