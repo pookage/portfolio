@@ -53,7 +53,6 @@ export default function PageSwapper(props){
 		//if the page has become active and active, then add fade-in animations
 		//if this behaves erratically then change this to (isActive && (rendered & !visible))
 		if(isActive){
-			console.log("update updateVisibility")
 			//need to wait until after the component is in the DOM otherwise the CSS transitions won't work
 			setTimeout(() => {
 				dispatch({

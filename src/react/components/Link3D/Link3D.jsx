@@ -6,17 +6,22 @@ import { Page } from "Contexts/Page.js";
 
 export default function Link(props){
 
-	//STATE STUFF
+	//HOOKS
+	//----------------------------
+	const { state, dispatch } = useContext(Page);
+
+
+	//PRIVATE VARS
 	//---------------------------
 	const {
 		target: page   = "",
 		children: text = "",
 		...components
 	} = props;
-
 	const {
-		dispatch
-	} = useContext(Page);
+		folded
+	} = state.home
+
 
 	//EVENT HANDLING
 	//------------------------
@@ -32,6 +37,7 @@ export default function Link(props){
 	//-------------------------
 	return(
 		<Entity
+			visible={!folded}
 			{...components}>
 			<Entity
 				primitive="a-chunky-link"

@@ -7,7 +7,8 @@ const landingPage  = new URL(window.location.href).pathname.split("/")[1] || "ho
 const initialState = {
 	activePage: landingPage,
 	home: { //do you need to fine rendered/visible for home?
-		visible: true
+		visible: true,
+		folded: landingPage != "home"
 	},
 	portfolio: {
 		visible: false
@@ -88,6 +89,10 @@ function PageProvider(props){
 
 			case "setPageVisibility":
 				change[page].visible  = value.visible;
+				break;
+
+			case "setRoomFolded":
+				change.home.folded = value.folded;
 				break;
 		}
 

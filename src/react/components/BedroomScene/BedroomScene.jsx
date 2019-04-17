@@ -8,9 +8,17 @@ import Title from "ReactComponents/Title/Title.jsx";
 import Camera from "ReactComponents/Camera/Camera.jsx";
 import Link3D from "ReactComponents/Link3D/Link3D.jsx";
 import Wall from "ReactComponents/Wall/Wall.jsx";
+import Bed from "ReactComponents/Bed/Bed.jsx";
+import Desk from "ReactComponents/Desk/Desk.jsx";
+import VRHeadset from "ReactComponents/VRHeadset/VRHeadset.jsx";
+import Lighthouse from "ReactComponents/Lighthouse/Lighthouse.jsx";
+import PlugSocket from "ReactComponents/PlugSocket/PlugSocket.jsx";
+import CardboardBox from "ReactComponents/CardboardBox/CardboardBox.jsx";
 import Room from "ReactComponents/Room/Room.jsx";
 
 export default function BedroomScene(){
+
+	// const { folded } = useContext(Page).state.home;
 
 	return(
 		<Scene
@@ -68,59 +76,17 @@ export default function BedroomScene(){
 						material="side: double;">
 					</Entity>
 					
-					<Entity
-						primitive="a-obj-model"
-						id="bed"
-						outline
-						position="1.45 0.7 1" 
-						rotation="0 90 0"
-						mixin="cel-shade"
-						src="#bed-model">
-					</Entity>
+					<Bed />
 					<Entity 
 						id="desk-group"
 						position="-1.75 1.18 -2"
 						rotation="0 180 0">
-						<Entity
-							primitive="a-obj-model"
-							id="desk"
-							src="#desk-model"
-							mixin="cel-shade">
-						</Entity>
-						<Entity
-							primitive="a-obj-model"
-							id="vive"
-							src="#vive-model"
-							scale="0.30 0.30 0.30"
-							position="-0.819 -0.05 0"
-							rotation="10 -30 0"
-							mixin="cel-shade">
-						</Entity>
+						<Desk />
+						<VRHeadset />
 					</Entity>
-					<Entity
-						primitive="a-obj-model"
-						id="lighthouse"
-						src="#lighthouse-model"
-						position="2.4 2.085 -2.4"
-						rotation="0 180 0"
-						mixin="cel-shade">
-					</Entity>
-					<Entity
-						primitive="a-obj-model" 
-						id="plug-socket"
-						src="#plug-model"
-						position="2.1 0.325 -2.45"
-						rotation="0 180 0"
-						mixin="cel-shade">
-					</Entity>
-					<Entity
-						primitive="a-obj-model"
-						id="cardboard-box"
-						position="1.222 0.24 -1.22"
-						rotation="0 160 0"
-						src="#box-model"
-						mixin="cel-shade">
-					</Entity>
+					<Lighthouse />
+					<PlugSocket />
+					<CardboardBox />
 				</Room>
 			</Entity>
 
