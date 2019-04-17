@@ -30,6 +30,7 @@ function PageProvider(props){
 	//----------------------------------
 	const [ state, dispatch ] = useReducer(reducer, initialState);
 	const { activePage }      = state;
+
 	useEffect(syncBrowserNavigation);
 	useEffect(updateBrowserHistory, [ activePage ]);
 	useEffect(updatePageTitle, [ activePage ]);
@@ -53,7 +54,9 @@ function PageProvider(props){
 		window.history.pushState({ page: activePage }, "", `/${url}`);
 	}//updateBrowserHistory
 	function updatePageTitle(){
-		document.title = `POOKAGE.dev | ${activePage}`;
+		const [ firstLetter, ...restOfWord ] = activePage;
+		const title = `${firstLetter.toUpperCase()}${restOfWord.join("")}`;
+		document.title = `POOKAGE.dev | ${title}`;
 	}//updatePageTitle
 
 

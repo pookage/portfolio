@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
-import LazyModel from "ReactComponents/LazyModel/LazyModel.jsx";
+import { Entity } from "aframe-react";
 export default function Bed(){
 
 	const { folded } = useContext(Page).state.home;
 
 	return(
-		<LazyModel
+		<Entity
 			primitive="a-obj-model"
 			id="bed"
 			outline
 			position="1.45 0.7 1" 
 			rotation="0 90 0"
 			mixin="cel-shade"
-			src="Assets/3d/bed/model.obj"
+			src="#bed-model"
 			visible={!folded}>
-		</LazyModel>
+		</Entity>
 	);
 
 }//Bed

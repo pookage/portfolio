@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
-import LazyModel from "ReactComponents/LazyModel/LazyModel.jsx";
+import { Entity } from "aframe-react";
 export default function Desk(){
 
 	const { folded } = useContext(Page).state.home;
 
 	return(
-		<LazyModel
+		<Entity
 			primitive="a-obj-model"
 			id="desk"
 			position="0 0 0"
-			src="Assets/3d/desk/model.obj"
+			src="#desk-model"
 			mixin="cel-shade"
 			visible={!folded}>
-		</LazyModel>
+		</Entity>
 	);
 }//Desk

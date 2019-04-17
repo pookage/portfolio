@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
 import { Page } from "Contexts/Page.js";
-import LazyModel from "ReactComponents/LazyModel/LazyModel.jsx";
+import { Entity } from "aframe-react";
 export default function CardboardBox(){
 
 	const { folded } = useContext(Page).state.home;
 
 	return(
-		<LazyModel
+		<Entity
 			primitive="a-obj-model"
 			id="cardboard-box"
 			position="1.222 0.24 -1.22"
 			rotation="0 160 0"
-			src="Assets/3d/box/model.obj"
+			src="#box-model"
 			mixin="cel-shade"
 			visible={!folded}>
-		</LazyModel>
+		</Entity>
 	);
 
 }//CardboardBox

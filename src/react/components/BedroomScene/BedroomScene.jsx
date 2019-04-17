@@ -22,6 +22,7 @@ export default function BedroomScene(){
 
 	return(
 		<Scene
+			loading-screen="dotsColor: #ef2d5e; backgroundColor: #000000;"
 			id="bedroom-scene" 
 			background="color: black;"
 			vr-mode-ui="enabled: false"
