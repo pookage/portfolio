@@ -8,8 +8,6 @@ const initialState   = {
 	activeComposite: "desktop"
 };
 
-let activationLock = false;
-
 //REDUCER SETUP
 //------------------------------
 function reducer(state, action){
@@ -34,17 +32,10 @@ function reducer(state, action){
 			};
 			break;
 		case "setActive":
-
-			if(!activationLock){
-				activationLock = true;
-				setTimeout(() => { 
-					activationLock = false;
-				}, 600);
-				change = {
-					...state, 
-					activated: value 
-				};
-			}
+			change = {
+				...state, 
+				activated: value 
+			};
 			break;
 	}
 
