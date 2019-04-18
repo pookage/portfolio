@@ -55,15 +55,6 @@ body {
 	color: var(--base-color);
 }
 
-p, a, button, li, select, option, input, textarea {
-	font-size: 1em;
-	font-family: "Consolas", sans-serif; /* should this be 'inherit'? */
-}
-
-p, li, a {
-	line-height: 1.5em
-}
-
 a:link, 
 a:visited, 
 a:active {
