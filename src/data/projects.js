@@ -25,47 +25,47 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/the-handmaiden/desktop/home__01",
+					src: "assets/composites/the-handmaiden/desktop/home__01",
 					page: "home",
 					description: "",
 					id: "the_handmaiden__desktop__landing"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/home__02",
+					src: "assets/composites/the-handmaiden/desktop/home__02",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__desktop__synopsis"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/home__03",
+					src: "assets/composites/the-handmaiden/desktop/home__03",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__desktop__gallery"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/home__04",
+					src: "assets/composites/the-handmaiden/desktop/home__04",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__desktop__characters"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/home__05",
+					src: "assets/composites/the-handmaiden/desktop/home__05",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__desktop__read_more"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/home__06",
+					src: "assets/composites/the-handmaiden/desktop/home__06",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__desktop__trailer"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/biography",
+					src: "assets/composites/the-handmaiden/desktop/biography",
 					description: "",
 					page: "biography",
 					id: "the_handmaiden__desktop__biography"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/filmography",
+					src: "assets/composites/the-handmaiden/desktop/filmography",
 					description: "",
 					page: "filmography",
 					id: "the_handmaiden__desktop__filmography"
 				}, {
-					src: "Assets/composites/the-handmaiden/desktop/novel",
+					src: "assets/composites/the-handmaiden/desktop/novel",
 					description: "",
 					page: "novel",
 					id: "the_handmaiden__desktop__novel"
@@ -73,47 +73,47 @@ export const projects = [
 			],
 			tablet: [
 				{
-					src: "Assets/composites/the-handmaiden/tablet/home__01",
+					src: "assets/composites/the-handmaiden/tablet/home__01",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__tablet__landing"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/home__02",
+					src: "assets/composites/the-handmaiden/tablet/home__02",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__tablet__synopsis"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/home__03",
+					src: "assets/composites/the-handmaiden/tablet/home__03",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__tablet__gallery"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/home__04",
+					src: "assets/composites/the-handmaiden/tablet/home__04",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__tablet__characters"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/home__05",
+					src: "assets/composites/the-handmaiden/tablet/home__05",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__tablet__read_more"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/home__06",
+					src: "assets/composites/the-handmaiden/tablet/home__06",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__tablet__trailer"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/biography",
+					src: "assets/composites/the-handmaiden/tablet/biography",
 					description: "",
 					page: "biography",
 					id: "the_handmaiden__tablet__biography"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/filmography",
+					src: "assets/composites/the-handmaiden/tablet/filmography",
 					description: "",
 					page: "filmography",
 					id: "the_handmaiden__tablet__filmography"
 				}, {
-					src: "Assets/composites/the-handmaiden/tablet/novel",
+					src: "assets/composites/the-handmaiden/tablet/novel",
 					description: "",
 					page: "novel",
 					id: "the_handmaiden__tablet__novel"
@@ -121,47 +121,47 @@ export const projects = [
 			],
 			mobile: [
 				{
-					src: "Assets/composites/the-handmaiden/mobile/home__01",
+					src: "assets/composites/the-handmaiden/mobile/home__01",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__mobile__landing"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/home__02",
+					src: "assets/composites/the-handmaiden/mobile/home__02",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__mobile__synopsis"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/home__03",
+					src: "assets/composites/the-handmaiden/mobile/home__03",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__mobile__gallery"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/home__04",
+					src: "assets/composites/the-handmaiden/mobile/home__04",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__mobile__characters"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/home__05",
+					src: "assets/composites/the-handmaiden/mobile/home__05",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__mobile__read_more"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/home__06",
+					src: "assets/composites/the-handmaiden/mobile/home__06",
 					description: "",
 					page: "home",
 					id: "the_handmaiden__mobile__trailer"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/biography",
+					src: "assets/composites/the-handmaiden/mobile/biography",
 					description: "",
 					page: "biography",
 					id: "the_handmaiden__mobile__biography"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/filmography",
+					src: "assets/composites/the-handmaiden/mobile/filmography",
 					description: "",
 					page: "filmography",
 					id: "the_handmaiden__mobile__filmography"
 				}, {
-					src: "Assets/composites/the-handmaiden/mobile/novel",
+					src: "assets/composites/the-handmaiden/mobile/novel",
 					description: "",
 					page: "novel",
 					id: "the_handmaiden__mobile__novel"
@@ -199,42 +199,42 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/suspiria/desktop/home__01",
+					src: "assets/composites/suspiria/desktop/home__01",
 					description: "",
 					page: "home",
 					id: "suspiria__desktop__landing"
 				},{
-					src: "Assets/composites/suspiria/desktop/home__02",
+					src: "assets/composites/suspiria/desktop/home__02",
 					description: "",
 					page: "home",
 					id: "suspiria__desktop__tanz"
 				},{
-					src: "Assets/composites/suspiria/desktop/home__03",
+					src: "assets/composites/suspiria/desktop/home__03",
 					description: "",
 					page: "home",
 					id: "suspiria__desktop__mother"
 				},{
-					src: "Assets/composites/suspiria/desktop/home__04",
+					src: "assets/composites/suspiria/desktop/home__04",
 					description: "",
 					page: "home",
 					id: "suspiria__desktop__reviews"
 				},{
-					src: "Assets/composites/suspiria/desktop/legends__landing",
+					src: "assets/composites/suspiria/desktop/legends__landing",
 					description: "",
 					page: "legends__landing",
 					id: "suspiria__desktop__legends_closed"
 				},{
-					src: "Assets/composites/suspiria/desktop/legends__gallery",
+					src: "assets/composites/suspiria/desktop/legends__gallery",
 					description: "",
 					page: "legends__gallery",
 					id: "suspiria__desktop__legends_open"
 				},{
-					src: "Assets/composites/suspiria/desktop/whispers",
+					src: "assets/composites/suspiria/desktop/whispers",
 					description: "",
 					page: "whispers",
 					id: "suspiria__desktop__soundtrack"
 				},{
-					src: "Assets/composites/suspiria/desktop/videos",
+					src: "assets/composites/suspiria/desktop/videos",
 					description: "",
 					page: "videos",
 					id: "suspiria__desktop__videos"
@@ -242,42 +242,42 @@ export const projects = [
 			],
 			tablet: [
 				{
-					src: "Assets/composites/suspiria/tablet/home__01",
+					src: "assets/composites/suspiria/tablet/home__01",
 					description: "",
 					page: "home",
 					id: "suspiria__tablet__landing"
 				},{
-					src: "Assets/composites/suspiria/tablet/home__02",
+					src: "assets/composites/suspiria/tablet/home__02",
 					description: "",
 					page: "home",
 					id: "suspiria__tablet__tanz"
 				},{
-					src: "Assets/composites/suspiria/tablet/home__03",
+					src: "assets/composites/suspiria/tablet/home__03",
 					description: "",
 					page: "home",
 					id: "suspiria__tablet__mother"
 				},{
-					src: "Assets/composites/suspiria/tablet/home__04",
+					src: "assets/composites/suspiria/tablet/home__04",
 					description: "",
 					page: "home",
 					id: "suspiria__tablet__reviews"
 				},{
-					src: "Assets/composites/suspiria/tablet/legends__landing",
+					src: "assets/composites/suspiria/tablet/legends__landing",
 					description: "",
 					page: "legends__landing",
 					id: "suspiria__tablet__legends_closed"
 				},{
-					src: "Assets/composites/suspiria/tablet/legends__gallery",
+					src: "assets/composites/suspiria/tablet/legends__gallery",
 					description: "",
 					page: "legends__gallery",
 					id: "suspiria__tablet__legends_open"
 				},{
-					src: "Assets/composites/suspiria/tablet/whispers",
+					src: "assets/composites/suspiria/tablet/whispers",
 					description: "",
 					page: "whispers",
 					id: "suspiria__tablet__soundtrack"
 				},{
-					src: "Assets/composites/suspiria/tablet/videos",
+					src: "assets/composites/suspiria/tablet/videos",
 					description: "",
 					page: "videos",
 					id: "suspiria__tablet__videos"
@@ -285,42 +285,42 @@ export const projects = [
 			],
 			mobile: [
 				{
-					src: "Assets/composites/suspiria/mobile/home__01",
+					src: "assets/composites/suspiria/mobile/home__01",
 					description: "",
 					page: "home",
 					id: "suspiria__mobile__landing"
 				},{
-					src: "Assets/composites/suspiria/mobile/home__02",
+					src: "assets/composites/suspiria/mobile/home__02",
 					description: "",
 					page: "home",
 					id: "suspiria__mobile__tanz"
 				},{
-					src: "Assets/composites/suspiria/mobile/home__03",
+					src: "assets/composites/suspiria/mobile/home__03",
 					description: "",
 					page: "home",
 					id: "suspiria__mobile__mother"
 				},{
-					src: "Assets/composites/suspiria/mobile/home__04",
+					src: "assets/composites/suspiria/mobile/home__04",
 					description: "",
 					page: "home",
 					id: "suspiria__mobile__reviews"
 				},{
-					src: "Assets/composites/suspiria/mobile/legends__landing",
+					src: "assets/composites/suspiria/mobile/legends__landing",
 					description: "",
 					page: "legends__landing",
 					id: "suspiria__mobile__legends_closed"
 				},{
-					src: "Assets/composites/suspiria/mobile/legends__gallery",
+					src: "assets/composites/suspiria/mobile/legends__gallery",
 					description: "",
 					page: "legends__gallery",
 					id: "suspiria__mobile__legends_open"
 				},{
-					src: "Assets/composites/suspiria/mobile/whispers",
+					src: "assets/composites/suspiria/mobile/whispers",
 					description: "",
 					page: "whispers",
 					id: "suspiria__mobile__soundtrack"
 				},{
-					src: "Assets/composites/suspiria/mobile/videos",
+					src: "assets/composites/suspiria/mobile/videos",
 					description: "",
 					page: "videos",
 					id: "suspiria__mobile__videos"
@@ -361,12 +361,12 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/alien-covenant/desktop/home",
+					src: "assets/composites/alien-covenant/desktop/home",
 					description: "",
 					page: "home",
 					id: "alien_covenant__desktop__home"
 				},{
-					src: "Assets/composites/alien-covenant/desktop/synopsis",
+					src: "assets/composites/alien-covenant/desktop/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "alien_covenant__desktop__synopsis"
@@ -374,12 +374,12 @@ export const projects = [
 			],
 			tablet: [
 				{
-					src: "Assets/composites/alien-covenant/tablet/home",
+					src: "assets/composites/alien-covenant/tablet/home",
 					description: "",
 					page: "home",
 					id: "alien_covenant__tablet__home"
 				},{
-					src: "Assets/composites/alien-covenant/tablet/synopsis",
+					src: "assets/composites/alien-covenant/tablet/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "alien_covenant__tablet__synopsis"
@@ -387,12 +387,12 @@ export const projects = [
 			],
 			mobile: [
 				{
-					src: "Assets/composites/alien-covenant/mobile/home",
+					src: "assets/composites/alien-covenant/mobile/home",
 					description: "",
 					page: "home",
 					id: "alien_covenant__device__home"
 				},{
-					src: "Assets/composites/alien-covenant/mobile/synopsis",
+					src: "assets/composites/alien-covenant/mobile/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "alien_covenant__device__synopsis"
@@ -419,117 +419,117 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/get-out/desktop/home__01",
+					src: "assets/composites/get-out/desktop/home__01",
 					description: "",
 					id: "get_out__desktop__landing"
 				},{
-					src: "Assets/composites/get-out/desktop/home__02",
+					src: "assets/composites/get-out/desktop/home__02",
 					description: "",
 					id: "get_out__desktop__foreword"
 				},{
-					src: "Assets/composites/get-out/desktop/home__03",
+					src: "assets/composites/get-out/desktop/home__03",
 					description: "",
 					id: "get_out__desktop__gallery_1"
 				},{
-					src: "Assets/composites/get-out/desktop/home__04",
+					src: "assets/composites/get-out/desktop/home__04",
 					description: "",
 					id: "get_out__desktop__artwork__skull"
 				},{
-					src: "Assets/composites/get-out/desktop/home__05",
+					src: "assets/composites/get-out/desktop/home__05",
 					description: "",
 					id: "get_out__desktop__artwork__yellow_teacup"
 				},{
-					src: "Assets/composites/get-out/desktop/home__06",
+					src: "assets/composites/get-out/desktop/home__06",
 					description: "",
 					id: "get_out__desktop__artwork__red_waves"
 				},{
-					src: "Assets/composites/get-out/desktop/home__07",
+					src: "assets/composites/get-out/desktop/home__07",
 					description: "",
 					id: "get_out__desktop__artwork__gallery_2"
 				},{
-					src: "Assets/composites/get-out/desktop/home__08",
+					src: "assets/composites/get-out/desktop/home__08",
 					description: "",
 					id: "get_out__desktop__artwork__teacup_light"
 				},{
-					src: "Assets/composites/get-out/desktop/home__09",
+					src: "assets/composites/get-out/desktop/home__09",
 					description: "",
 					id: "get_out__desktop__artwork__thanks"
 				}
 			],
 			tablet: [
 				{
-					src: "Assets/composites/get-out/tablet/home__01",
+					src: "assets/composites/get-out/tablet/home__01",
 					description: "",
 					id: "get_out__tablet__landing"
 				},{
-					src: "Assets/composites/get-out/tablet/home__02",
+					src: "assets/composites/get-out/tablet/home__02",
 					description: "",
 					id: "get_out__tablet__foreword"
 				},{
-					src: "Assets/composites/get-out/tablet/home__03",
+					src: "assets/composites/get-out/tablet/home__03",
 					description: "",
 					id: "get_out__tablet__gallery_1"
 				},{
-					src: "Assets/composites/get-out/tablet/home__04",
+					src: "assets/composites/get-out/tablet/home__04",
 					description: "",
 					id: "get_out__tablet__artwork__skull"
 				},{
-					src: "Assets/composites/get-out/tablet/home__05",
+					src: "assets/composites/get-out/tablet/home__05",
 					description: "",
 					id: "get_out__tablet__artwork__yellow_teacup"
 				},{
-					src: "Assets/composites/get-out/tablet/home__06",
+					src: "assets/composites/get-out/tablet/home__06",
 					description: "",
 					id: "get_out__tablet__artwork__red_waves"
 				},{
-					src: "Assets/composites/get-out/tablet/home__07",
+					src: "assets/composites/get-out/tablet/home__07",
 					description: "",
 					id: "get_out__tablet__artwork__gallery_2"
 				},{
-					src: "Assets/composites/get-out/tablet/home__08",
+					src: "assets/composites/get-out/tablet/home__08",
 					description: "",
 					id: "get_out__tablet__artwork__teacup_light"
 				},{
-					src: "Assets/composites/get-out/tablet/home__09",
+					src: "assets/composites/get-out/tablet/home__09",
 					description: "",
 					id: "get_out__tablet__artwork__thanks"
 				}
 			],
 			mobile: [
 				{
-					src: "Assets/composites/get-out/mobile/home__01",
+					src: "assets/composites/get-out/mobile/home__01",
 					description: "",
 					id: "get_out__mobile__landing"
 				},{
-					src: "Assets/composites/get-out/mobile/home__02",
+					src: "assets/composites/get-out/mobile/home__02",
 					description: "",
 					id: "get_out__mobile__foreword"
 				},{
-					src: "Assets/composites/get-out/mobile/home__03",
+					src: "assets/composites/get-out/mobile/home__03",
 					description: "",
 					id: "get_out__mobile__gallery_1"
 				},{
-					src: "Assets/composites/get-out/mobile/home__04",
+					src: "assets/composites/get-out/mobile/home__04",
 					description: "",
 					id: "get_out__mobile__artwork__skull"
 				},{
-					src: "Assets/composites/get-out/mobile/home__05",
+					src: "assets/composites/get-out/mobile/home__05",
 					description: "",
 					id: "get_out__mobile__artwork__yellow_teacup"
 				},{
-					src: "Assets/composites/get-out/mobile/home__06",
+					src: "assets/composites/get-out/mobile/home__06",
 					description: "",
 					id: "get_out__mobile__artwork__red_waves"
 				},{
-					src: "Assets/composites/get-out/mobile/home__07",
+					src: "assets/composites/get-out/mobile/home__07",
 					description: "",
 					id: "get_out__mobile__artwork__gallery_2"
 				},{
-					src: "Assets/composites/get-out/mobile/home__08",
+					src: "assets/composites/get-out/mobile/home__08",
 					description: "",
 					id: "get_out__mobile__artwork__teacup_light"
 				},{
-					src: "Assets/composites/get-out/mobile/home__09",
+					src: "assets/composites/get-out/mobile/home__09",
 					description: "",
 					id: "get_out__mobile__artwork__thanks"
 				}
@@ -565,27 +565,27 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/son-of-bigfoot/desktop/landing",
+					src: "assets/composites/son-of-bigfoot/desktop/landing",
 					description: "",
 					page: "landing",
 					id: "son_of_bigfoot__desktop__landing"
 				},{
-					src: "Assets/composites/son-of-bigfoot/desktop/cta",
+					src: "assets/composites/son-of-bigfoot/desktop/cta",
 					description: "",
 					page: "cta",
 					id: "son_of_bigfoot__desktop__cta"
 				},{
-					src: "Assets/composites/son-of-bigfoot/desktop/confirmation",
+					src: "assets/composites/son-of-bigfoot/desktop/confirmation",
 					description: "",
 					page: "confirmation",
 					id: "son_of_bigfoot__desktop__confirmation"
 				},{
-					src: "Assets/composites/son-of-bigfoot/desktop/question",
+					src: "assets/composites/son-of-bigfoot/desktop/question",
 					description: "",
 					page: "question",
 					id: "son_of_bigfoot__desktop__question"
 				},{
-					src: "Assets/composites/son-of-bigfoot/desktop/result",
+					src: "assets/composites/son-of-bigfoot/desktop/result",
 					description: "",
 					page: "result",
 					id: "son_of_bigfoot__desktop__result"
@@ -593,27 +593,27 @@ export const projects = [
 			],
 			tablet: [
 				{
-					src: "Assets/composites/son-of-bigfoot/tablet/landing",
+					src: "assets/composites/son-of-bigfoot/tablet/landing",
 					description: "",
 					page: "landing",
 					id: "son_of_bigfoot__tablet__landing"
 				},{
-					src: "Assets/composites/son-of-bigfoot/tablet/cta",
+					src: "assets/composites/son-of-bigfoot/tablet/cta",
 					description: "",
 					page: "cta",
 					id: "son_of_bigfoot__tablet__cta"
 				},{
-					src: "Assets/composites/son-of-bigfoot/tablet/confirmation",
+					src: "assets/composites/son-of-bigfoot/tablet/confirmation",
 					description: "",
 					page: "confirmation",
 					id: "son_of_bigfoot__tablet__confirmation"
 				},{
-					src: "Assets/composites/son-of-bigfoot/tablet/question",
+					src: "assets/composites/son-of-bigfoot/tablet/question",
 					description: "",
 					page: "question",
 					id: "son_of_bigfoot__tablet__question"
 				},{
-					src: "Assets/composites/son-of-bigfoot/tablet/result",
+					src: "assets/composites/son-of-bigfoot/tablet/result",
 					description: "",
 					page: "result",
 					id: "son_of_bigfoot__tablet__result"
@@ -621,27 +621,27 @@ export const projects = [
 			],
 			mobile: [
 				{
-					src: "Assets/composites/son-of-bigfoot/mobile/landing",
+					src: "assets/composites/son-of-bigfoot/mobile/landing",
 					description: "",
 					page: "landing",
 					id: "son_of_bigfoot__mobile__landing"
 				},{
-					src: "Assets/composites/son-of-bigfoot/mobile/cta",
+					src: "assets/composites/son-of-bigfoot/mobile/cta",
 					description: "",
 					page: "cta",
 					id: "son_of_bigfoot__mobile__cta"
 				},{
-					src: "Assets/composites/son-of-bigfoot/mobile/confirmation",
+					src: "assets/composites/son-of-bigfoot/mobile/confirmation",
 					description: "",
 					page: "confirmation",
 					id: "son_of_bigfoot__mobile__confirmation"
 				},{
-					src: "Assets/composites/son-of-bigfoot/mobile/question",
+					src: "assets/composites/son-of-bigfoot/mobile/question",
 					description: "",
 					page: "question",
 					id: "son_of_bigfoot__mobile__question"
 				},{
-					src: "Assets/composites/son-of-bigfoot/mobile/result",
+					src: "assets/composites/son-of-bigfoot/mobile/result",
 					description: "",
 					page: "result",
 					id: "son_of_bigfoot__mobile__result"
@@ -676,81 +676,81 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/blindspotting/desktop/home__01",
+					src: "assets/composites/blindspotting/desktop/home__01",
 					description: "",
 					id: "blindspotting__desktop__landing"
 				},{
-					src: "Assets/composites/blindspotting/desktop/home__02",
+					src: "assets/composites/blindspotting/desktop/home__02",
 					description: "",
 					id: "blindspotting__desktop__posters"
 				},{
-					src: "Assets/composites/blindspotting/desktop/home__03",
+					src: "assets/composites/blindspotting/desktop/home__03",
 					description: "",
 					id: "blindspotting__desktop__gallery"
 				},{
-					src: "Assets/composites/blindspotting/desktop/home__04",
+					src: "assets/composites/blindspotting/desktop/home__04",
 					description: "",
 					id: "blindspotting__desktop__cards"
 				},{
-					src: "Assets/composites/blindspotting/desktop/home__05",
+					src: "assets/composites/blindspotting/desktop/home__05",
 					description: "",
 					id: "blindspotting__desktop__artwork"
 				},{
-					src: "Assets/composites/blindspotting/desktop/home__06",
+					src: "assets/composites/blindspotting/desktop/home__06",
 					description: "",
 					id: "blindspotting__desktop__trailer"
 				}
 			],
 			tablet: [
 				{
-					src: "Assets/composites/blindspotting/tablet/home__01",
+					src: "assets/composites/blindspotting/tablet/home__01",
 					description: "",
 					id: "blindspotting__tablet__landing"
 				},{
-					src: "Assets/composites/blindspotting/tablet/home__02",
+					src: "assets/composites/blindspotting/tablet/home__02",
 					description: "",
 					id: "blindspotting__tablet__posters"
 				},{
-					src: "Assets/composites/blindspotting/tablet/home__03",
+					src: "assets/composites/blindspotting/tablet/home__03",
 					description: "",
 					id: "blindspotting__tablet__gallery"
 				},{
-					src: "Assets/composites/blindspotting/tablet/home__04",
+					src: "assets/composites/blindspotting/tablet/home__04",
 					description: "",
 					id: "blindspotting__tablet__cards"
 				},{
-					src: "Assets/composites/blindspotting/tablet/home__05",
+					src: "assets/composites/blindspotting/tablet/home__05",
 					description: "",
 					id: "blindspotting__tablet__artwork"
 				},{
-					src: "Assets/composites/blindspotting/tablet/home__06",
+					src: "assets/composites/blindspotting/tablet/home__06",
 					description: "",
 					id: "blindspotting__tablet__trailer"
 				}
 			],
 			mobile: [
 				{
-					src: "Assets/composites/blindspotting/mobile/home__01",
+					src: "assets/composites/blindspotting/mobile/home__01",
 					description: "",
 					id: "blindspotting__mobile__landing"
 				},{
-					src: "Assets/composites/blindspotting/mobile/home__02",
+					src: "assets/composites/blindspotting/mobile/home__02",
 					description: "",
 					id: "blindspotting__mobile__posters"
 				},{
-					src: "Assets/composites/blindspotting/mobile/home__03",
+					src: "assets/composites/blindspotting/mobile/home__03",
 					description: "",
 					id: "blindspotting__mobile__gallery"
 				},{
-					src: "Assets/composites/blindspotting/mobile/home__04",
+					src: "assets/composites/blindspotting/mobile/home__04",
 					description: "",
 					id: "blindspotting__mobile__cards"
 				},{
-					src: "Assets/composites/blindspotting/mobile/home__05",
+					src: "assets/composites/blindspotting/mobile/home__05",
 					description: "",
 					id: "blindspotting__mobile__artwork"
 				},{
-					src: "Assets/composites/blindspotting/mobile/home__06",
+					src: "assets/composites/blindspotting/mobile/home__06",
 					description: "",
 					id: "blindspotting__mobile__trailer"
 				}
@@ -784,22 +784,22 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/hell-fest/desktop/map",
+					src: "assets/composites/hell-fest/desktop/map",
 					description: "",
 					page: "map",
 					id: "hell_fest__desktop__map"
 				},{
-					src: "Assets/composites/hell-fest/desktop/gallery",
+					src: "assets/composites/hell-fest/desktop/gallery",
 					description: "",
 					page: "gallery",
 					id: "hell_fest__desktop__gallery"
 				},{
-					src: "Assets/composites/hell-fest/desktop/synopsis",
+					src: "assets/composites/hell-fest/desktop/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "hell_fest__desktop__synopsis"
 				},{
-					src: "Assets/composites/hell-fest/desktop/cast",
+					src: "assets/composites/hell-fest/desktop/cast",
 					description: "",
 					page: "cast",
 					id: "hell_fest__desktop__cast"
@@ -807,22 +807,22 @@ export const projects = [
 			],
 			tablet: [
 				{
-					src: "Assets/composites/hell-fest/tablet/map",
+					src: "assets/composites/hell-fest/tablet/map",
 					description: "",
 					page: "map",
 					id: "hell_fest__tablet__map"
 				},{
-					src: "Assets/composites/hell-fest/tablet/gallery",
+					src: "assets/composites/hell-fest/tablet/gallery",
 					description: "",
 					page: "gallery",
 					id: "hell_fest__tablet__gallery"
 				},{
-					src: "Assets/composites/hell-fest/tablet/synopsis",
+					src: "assets/composites/hell-fest/tablet/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "hell_fest__tablet__synopsis"
 				},{
-					src: "Assets/composites/hell-fest/tablet/cast",
+					src: "assets/composites/hell-fest/tablet/cast",
 					description: "",
 					page: "cast",
 					id: "hell_fest__tablet__cast"
@@ -830,22 +830,22 @@ export const projects = [
 			],
 			mobile: [
 				{
-					src: "Assets/composites/hell-fest/mobile/map",
+					src: "assets/composites/hell-fest/mobile/map",
 					description: "",
 					page: "map",
 					id: "hell_fest__mobile__map"
 				},{
-					src: "Assets/composites/hell-fest/mobile/gallery",
+					src: "assets/composites/hell-fest/mobile/gallery",
 					description: "",
 					page: "gallery",
 					id: "hell_fest__mobile__gallery"
 				},{
-					src: "Assets/composites/hell-fest/mobile/synopsis",
+					src: "assets/composites/hell-fest/mobile/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "hell_fest__mobile__synopsis"
 				},{
-					src: "Assets/composites/hell-fest/mobile/cast",
+					src: "assets/composites/hell-fest/mobile/cast",
 					description: "",
 					page: "cast",
 					id: "hell_fest__mobile__cast"
@@ -879,27 +879,27 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/life-itself/desktop/landing",
+					src: "assets/composites/life-itself/desktop/landing",
 					description: "",
 					page: "landing",
 					id: "life_itself__desktop__landing"
 				},{
-					src: "Assets/composites/life-itself/desktop/synopsis",
+					src: "assets/composites/life-itself/desktop/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "life_itself__desktop__synopsis"
 				},{
-					src: "Assets/composites/life-itself/desktop/characters",
+					src: "assets/composites/life-itself/desktop/characters",
 					description: "",
 					page: "characters",
 					id: "life_itself__desktop__characters"
 				},{
-					src: "Assets/composites/life-itself/desktop/posters",
+					src: "assets/composites/life-itself/desktop/posters",
 					description: "",
 					page: "posters",
 					id: "life_itself__desktop__posters"
 				},{
-					src: "Assets/composites/life-itself/desktop/gallery",
+					src: "assets/composites/life-itself/desktop/gallery",
 					description: "",
 					page: "gallery",
 					id: "life_itself__desktop__gallery"
@@ -907,27 +907,27 @@ export const projects = [
 			],
 			tablet: [
 				{
-					src: "Assets/composites/life-itself/tablet/landing",
+					src: "assets/composites/life-itself/tablet/landing",
 					description: "",
 					page: "landing",
 					id: "life_itself__tablet__landing"
 				},{
-					src: "Assets/composites/life-itself/tablet/synopsis",
+					src: "assets/composites/life-itself/tablet/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "life_itself__tablet__synopsis"
 				},{
-					src: "Assets/composites/life-itself/tablet/characters",
+					src: "assets/composites/life-itself/tablet/characters",
 					description: "",
 					page: "characters",
 					id: "life_itself__tablet__characters"
 				},{
-					src: "Assets/composites/life-itself/tablet/posters",
+					src: "assets/composites/life-itself/tablet/posters",
 					description: "",
 					page: "posters",
 					id: "life_itself__tablet__posters"
 				},{
-					src: "Assets/composites/life-itself/tablet/gallery",
+					src: "assets/composites/life-itself/tablet/gallery",
 					description: "",
 					page: "gallery",
 					id: "life_itself__tablet__gallery"
@@ -935,27 +935,27 @@ export const projects = [
 			],
 			mobile: [
 				{
-					src: "Assets/composites/life-itself/mobile/landing",
+					src: "assets/composites/life-itself/mobile/landing",
 					description: "",
 					page: "landing",
 					id: "life_itself__mobile__landing"
 				},{
-					src: "Assets/composites/life-itself/mobile/synopsis",
+					src: "assets/composites/life-itself/mobile/synopsis",
 					description: "",
 					page: "synopsis",
 					id: "life_itself__mobile__synopsis"
 				},{
-					src: "Assets/composites/life-itself/mobile/characters",
+					src: "assets/composites/life-itself/mobile/characters",
 					description: "",
 					page: "characters",
 					id: "life_itself__mobile__characters"
 				},{
-					src: "Assets/composites/life-itself/mobile/posters",
+					src: "assets/composites/life-itself/mobile/posters",
 					description: "",
 					page: "posters",
 					id: "life_itself__mobile__posters"
 				},{
-					src: "Assets/composites/life-itself/mobile/gallery",
+					src: "assets/composites/life-itself/mobile/gallery",
 					description: "",
 					page: "gallery",
 					id: "life_itself__mobile__gallery"
@@ -988,27 +988,27 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/fifty-shades-darker/desktop/home__01",
+					src: "assets/composites/fifty-shades-darker/desktop/home__01",
 					description: "",
 					id: "fifty_shades_darker__desktop__landing"
 				},{
-					src: "Assets/composites/fifty-shades-darker/desktop/home__02",
+					src: "assets/composites/fifty-shades-darker/desktop/home__02",
 					description: "",
 					id: "fifty_shades_darker__desktop__clip_1"
 				},{
-					src: "Assets/composites/fifty-shades-darker/desktop/home__03",
+					src: "assets/composites/fifty-shades-darker/desktop/home__03",
 					description: "",
 					id: "fifty_shades_darker__desktop__clip_2"
 				},{
-					src: "Assets/composites/fifty-shades-darker/desktop/home__04",
+					src: "assets/composites/fifty-shades-darker/desktop/home__04",
 					description: "",
 					id: "fifty_shades_darker__desktop__gallery"
 				},{
-					src: "Assets/composites/fifty-shades-darker/desktop/home__05",
+					src: "assets/composites/fifty-shades-darker/desktop/home__05",
 					description: "",
 					id: "fifty_shades_darker__desktop__clip_3"
 				},{
-					src: "Assets/composites/fifty-shades-darker/desktop/home__06",
+					src: "assets/composites/fifty-shades-darker/desktop/home__06",
 					description: "",
 					id: "fifty_shades_darker__desktop__tickets"
 				}
@@ -1042,105 +1042,105 @@ export const projects = [
 		images: {
 			desktop: [
 				{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/roof",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/roof",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__roof"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/max",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/max",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__max"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/chloe",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/chloe",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__chloe"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/daisy",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/daisy",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__daisy"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/snowball",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/snowball",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__snowball"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/gidget",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/gidget",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__gidget"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/rooster",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/rooster",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__rooster"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/desktop/shop",
+					src: "assets/composites/the-secret-life-of-pets-2/desktop/shop",
 					description: "",
 					id: "the_secret_life_of_pets_2__desktop__shop"
 				}
 			],
 			tablet: [
 				{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/roof",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/roof",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__roof"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/max",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/max",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__max"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/chloe",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/chloe",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__chloe"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/daisy",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/daisy",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__daisy"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/snowball",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/snowball",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__snowball"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/gidget",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/gidget",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__gidget"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/rooster",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/rooster",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__rooster"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/tablet/shop",
+					src: "assets/composites/the-secret-life-of-pets-2/tablet/shop",
 					description: "",
 					id: "the_secret_life_of_pets_2__tablet__shop"
 				}
 			],
 			mobile: [
 				{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/roof",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/roof",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__roof"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/max",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/max",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__max"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/chloe",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/chloe",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__chloe"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/daisy",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/daisy",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__daisy"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/snowball",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/snowball",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__snowball"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/gidget",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/gidget",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__gidget"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/rooster",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/rooster",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__rooster"
 				},{
-					src: "Assets/composites/the-secret-life-of-pets-2/mobile/shop",
+					src: "assets/composites/the-secret-life-of-pets-2/mobile/shop",
 					description: "",
 					id: "the_secret_life_of_pets_2__mobile__shop"
 				}

@@ -120,7 +120,7 @@
 						transition: transform .3s, opacity .3s;
 					}
 					.validator::before {
-						background-image: url(Assets/icons/tick.svg);
+						background-image: url(assets/icons/tick.svg);
 					}
 					.input:valid ~ .validator::before {
 						transform: scale(1);
@@ -249,13 +249,13 @@
 				}
 
 				.response.status_2::before {
-					background-image: url(Assets/icons/heart__whole.svg);
+					background-image: url(assets/icons/heart__whole.svg);
 				}
 				.response.status_1::after {
-					background-image: url(Assets/icons/heart__empty.svg);	
+					background-image: url(assets/icons/heart__empty.svg);	
 				}
 				.response.status_-1::before {
-					background-image: url(Assets/icons/heart__broken.svg);
+					background-image: url(assets/icons/heart__broken.svg);
 				}
 				.text {
 					display: inline-block;

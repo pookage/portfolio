@@ -21,6 +21,7 @@ export default function About(){
 	//---------------------------------------------
 	const { visible } = state.about;
 	const baseDelay   = visible ? 1 : 0;
+	const resolution  = window.innerWidth > 1024 ? "large" : "small";
 
 	//RENDER
 	//---------------------------------------------
@@ -125,7 +126,7 @@ export default function About(){
 				<LazyImage
 					active={true} 
 					className={s.image}
-					src="Assets/photos/portrait.jpg"
+					src={`assets/photos/portrait__${resolution}.jpg`}
 					alt="Portrait of Pookage Hayes, smiling with his elbows on the desk."
 				/>
 			</div>

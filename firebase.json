@@ -8,7 +8,7 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "!/@(assets|Assets)/**",
         "destination": "/index.html"
       }
     ]
