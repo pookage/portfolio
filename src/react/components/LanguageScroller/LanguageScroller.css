@@ -38,12 +38,9 @@
 			border-top: 1em solid var(--accent-color);
 		}
 		.list {
-			display: flex;
 			height: 100%;
 			width: calc(100% + var(--scrollbar_width));
-			padding: calc(var(--language-size) * 1.125) 0;
-			flex-wrap: nowrap;
-			flex-direction: column;
+			padding-top: calc(var(--language-size) * 1.125);
 			overflow-y: scroll;
 			overflow-x: hidden;
 			list-style-type: none;
@@ -51,6 +48,9 @@
 			.language {
 				position: relative;
 				text-align: right;
+			}
+			.language:last-child {
+				margin-bottom: calc(var(--language-size) * 1.125);
 			}
 				.language + .language {
 					margin-top: 1em;
@@ -166,6 +166,8 @@
 			overflow-y: hidden;
 		}
 			.list {
+				display: flex;
+				flex-wrap: nowrap;
 				width: 100%;
 				height: calc(100% );
 				padding: 0 0 1.62em;
