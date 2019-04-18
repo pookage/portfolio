@@ -34,6 +34,7 @@ function PageProvider(props){
 	useEffect(syncBrowserNavigation);
 	useEffect(updateBrowserHistory, [ activePage ]);
 	useEffect(updatePageTitle, [ activePage ]);
+	useEffect(scrollToTop, [ activePage ]);
 
 
 	//PRIVATE VARS
@@ -55,10 +56,15 @@ function PageProvider(props){
 	}//updateBrowserHistory
 	function updatePageTitle(){
 		const [ firstLetter, ...restOfWord ] = activePage;
-		const title = `${firstLetter.toUpperCase()}${restOfWord.join("")}`;
+		const title    = `${firstLetter.toUpperCase()}${restOfWord.join("")}`;
 		document.title = `POOKAGE.dev | ${title}`;
 	}//updatePageTitle
-
+	function scrollToTop(){
+		window.scroll({
+			top: 0,
+			behavior: "smooth"
+		});
+	}//scrollToTop	
 
 	//EVENT HANDLING
 	//-----------------------------------
