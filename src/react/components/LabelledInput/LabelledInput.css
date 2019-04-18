@@ -24,3 +24,13 @@
 	.wrapper select[data-value=select__option_0]:focus option {
 		color: var(--base-color);
 	}
+
+/*
+	I actually mean @supports selector(A:placeholder-shown) but nothing supports that yet, ironically,
+	so in this case I'm just using this to target Edge
+*/
+@supports not (clip-path){
+	.label {
+		transform: translateY(-168%) !important;
+	}
+}
