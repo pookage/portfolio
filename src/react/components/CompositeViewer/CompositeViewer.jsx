@@ -11,17 +11,7 @@ export default function CompositeViewer(props){
 	useEffect(setupObserver)
 
 
-	//PRIVATE VARS
-	//-------------------------------------
-	const {
-		name,                // (string) name of the project being viewed
-		safeName,            // (string) a url-safe name of the project
-		pages,               // (array) of objects containing the coordinates of where to scroll the composite to
-		children: composites // <Composite /> components to render inside the viewer
-	} = props;
-
-
-	//EFFECT HANDLING
+	//UTILS
 	//--------------------------------------
 	function setupObserver(){
 
@@ -43,10 +33,10 @@ export default function CompositeViewer(props){
 			value: index 
 		});
 	}//setActiveSection
+
 	function activate(entries){
 		if(!state.activated){
 			if(entries[0].intersectionRatio > 0){
-				console.log("activate!", entries[0].intersectionRatio, name)
 				dispatch({
 					type: "setActive",
 					value: "true"
@@ -59,6 +49,13 @@ export default function CompositeViewer(props){
 
 	//RENDER LOGIC
 	//-------------------------------
+	const {
+		name,                // (string) name of the project being viewed
+		safeName,            // (string) a url-safe name of the project
+		pages,               // (array) of objects containing the coordinates of where to scroll the composite to
+		children: composites // <Composite /> components to render inside the viewer
+	} = props;
+
 	function renderButton(label, index){
 
 		const key    = `${safeName}-${label}-button`;

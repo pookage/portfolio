@@ -14,6 +14,7 @@ export default function PageSwapper(props){
 
 	useEffect(updateRendered, [ activePage ]);
 	useEffect(updateVisibility, [ activePage ]);
+	useEffect(scrollToTop, [ rendered ]);
 
 
 	//PRIVATE VARS
@@ -65,6 +66,14 @@ export default function PageSwapper(props){
 			}, 100);
 		}
 	}//updateVisibility
+	function scrollToTop(){
+		if(rendered){
+			window.scroll({
+				top: 0,
+				behavior: "smooth"
+			});
+		}
+	}//scrollToTop
 
 
 	//EVENT HANDLING

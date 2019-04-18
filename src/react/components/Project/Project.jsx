@@ -30,8 +30,13 @@ export default function Project(props){
 		articles,    // (array) of objects for each medium article written about the project
 		style        // (object) any inline styles to be applied to the parent element
 	} = props;
+	const {
+		activePage,
+		portfolio
+	} = state;
 
-	const { visible } = state.portfolio;
+	const { visible } = portfolio;
+	const isActive    = activePage == "portfolio"
 	const readMoreId  = `button__${safeTitle}__read_more`;
 
 
@@ -53,7 +58,7 @@ export default function Project(props){
 		setExpanded(!expanded);
 	}//toggleExpand
 	function updateHash(entries){
-		if(entries[0].intersectionRatio > 0.95){
+		if(entries[0].intersectionRatio > 0.95 && isActive){
 			const historyURL = `${document.location.pathname}#${safeTitle}`;
 			history.replaceState(null, null, historyURL);
 		}

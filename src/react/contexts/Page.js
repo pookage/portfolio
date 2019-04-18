@@ -60,22 +60,21 @@ function PageProvider(props){
 		document.title = `POOKAGE.dev | ${title}`;
 	}//updatePageTitle
 	function scrollToTop(){
-		window.scroll({
-			top: 0,
-			behavior: "smooth"
-		});
+		
 	}//scrollToTop	
 
 	//EVENT HANDLING
 	//-----------------------------------
 	function handleHistoryChange(event){
-		const {
-			page = ""
-		} = event.state;
-		dispatch({
-			type: "setActivePage",
-			value: { page }
-		});
+		if(event.state){
+			const {
+				page = ""
+			} = event.state;
+			dispatch({
+				type: "setActivePage",
+				value: { page }
+			});
+		}
 	}//handleHistoryChange
 
 

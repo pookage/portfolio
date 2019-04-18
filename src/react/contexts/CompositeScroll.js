@@ -39,7 +39,7 @@ function reducer(state, action){
 				activationLock = true;
 				setTimeout(() => { 
 					activationLock = false;
-				}, 500);
+				}, 600);
 				change = {
 					...state, 
 					activated: value 
