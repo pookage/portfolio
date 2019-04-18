@@ -53,6 +53,7 @@ abbr {
 -----------------------------*/
 body {
 	color: var(--base-color);
+	background-color: #111;
 }
 
 a:link, 
