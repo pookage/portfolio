@@ -20,6 +20,7 @@ export default function Composite(props){
 
 	useEffect(scrollToActiveScreenshot, [ activeSectionIndex ]);
 	useEffect(syncImageSizes);
+	useEffect(activateAfterLongGaze, [ projectActivated ]);
 
 
 	//PRIVATE VARS
@@ -58,6 +59,38 @@ export default function Composite(props){
 		window.addEventListener("resize", updateImageSizes);
 		return () => { window.removeEventListener("resize", updateImageSizes)}
 	}//syncImageSizes
+	function activateAfterLongGaze(){
+
+		let gazeTimeout;
+		if(!hasInteracted){
+			const gazeTime = 3000;
+
+			gazeTimeout = setTimeout(() => {
+				const {
+					top, 
+					left,
+					bottom,
+					right
+				} = scroller.current.getBoundingClientRect();
+
+				const {
+					innerHeight,
+					innerWidth
+				} = window;
+
+				const insideTop    = top >= 0;
+				const insideLeft   = left >= 0;
+				const insideBottom = bottom <= innerHeight;
+				const insideRight  = right <= innerWidth;
+
+				if(insideTop && insideRight && insideBottom && insideLeft){
+					registerInteraction();
+				} else activateAfterLongGaze();
+			}, gazeTime)
+		}
+
+		return () => { clearTimeout(gazeTimeout)}
+	}//activateAfterLongGaze
 
 
 	//EVENT HANDLING
