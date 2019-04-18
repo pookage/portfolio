@@ -23,8 +23,6 @@ AFRAME.registerComponent("edge-tracker", {
 		this.lockRotation              = this.setRotationLock.bind(true, true);
 
 		//public var setup
-		this.originRotation        = this.data.rotation;    // designed rotation of the camera at 16:9
-		this.originRotationRadians = this.originRotation * (Math.PI / 180); // convert to radians
 		this.rotationRange         = 2.4175;                                // range (in radians) to rotate camera
 		this.focalOffset           = -20; //-23.5devices                    // degrees to offset final rotation calculation
 		this.lockTimeout           = null;                                  // ref for a timeout so that we're not applying rotation all the time
@@ -77,14 +75,15 @@ AFRAME.registerComponent("edge-tracker", {
 		} = window;
 
 		const {
-			originRotation,
-			originRotationRadians,
 			rotationRange,
 			focalOffset,
 			yAxis,
-			el
+			el,
+			data
 		} = this;
 
+		const originRotation        = data.rotation; // designed rotation of the camera at 16:9
+		const originRotationRadians = originRotation * (Math.PI / 180); // convert to radians
 		const aspectRatio = innerWidth / innerHeight; //NOT BEING USED - FIND A WAY TO USE THIS INSTEAD
 		const rotationDeg = (innerWidth / originRotation * Math.tan( originRotationRadians * rotationRange)) + focalOffset;
 		const rotationRad = 0.0174533 * rotationDeg;

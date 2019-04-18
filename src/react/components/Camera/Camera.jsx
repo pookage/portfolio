@@ -1,15 +1,51 @@
 import "Components/edge-tracker.js";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Entity } from "aframe-react";
 import { Page } from "Contexts/Page.js";
 
 export default function Camera(){
 
-	const {
-		activePage
-	} = useContext(Page).state;
+	//HOOKS
+	//------------------------------------
+	const { activePage }     = useContext(Page).state;
+	const [ fov, setFoV ]    = useState(60);
+	const [ angle, setAngle] = useState(-57.5)
+	useEffect(syncAnglesWithDevice);
 
-	const active = activePage != "home";
+
+	//PRIVATE VARS
+	//-------------------------------------
+	const active   = activePage != "home";
+
+
+	//EFFECT HANDLING
+	//-------------------------------------
+	function syncAnglesWithDevice(){
+		updateCameraAngles();
+		window.addEventListener("resize", updateCameraAngles);
+		return () => { window.removeEventListener("resize", updateCameraAngles) }
+	}//syncAnglesWithDevice
+
+
+	//EVENT HANDLING
+	//-------------------------------------
+	function updateCameraAngles(){
+
+		const {
+			innerWidth,
+			innerHeight
+		} = window;
+
+		const isMobile    = innerWidth < 767;
+		const isLandscape = innerWidth > innerHeight
+		const nextAngle   = isMobile ? -52 : -57.5;
+		const nextFov     = isMobile ? (isLandscape ? 50 : 70) : 60;
+
+		setFoV(nextFov);
+		setAngle(nextAngle)
+	}//updateCameraAngles
+	
+
 
 	return(
 		<Entity
@@ -17,12 +53,12 @@ export default function Camera(){
 			mixin="animation__camera__focus animation__camera__natural"
 			toggler={`active: ${active}`}
 			edge-tracker={
-				`rotation: ${-57.5};
+				`rotation: ${angle};
 				active: ${active}`
 			}>
 			<Entity
 				primitive="a-camera"
-				fov="60"
+				fov={fov}
 				position="0 0 0"
 				look-controls="enabled: false; hmdEnabled: false;">
 			</Entity>
