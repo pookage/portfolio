@@ -66,10 +66,9 @@ export default function Contact(){
 
 		fetch("https://robot-mailage.herokuapp.com/send", {
 			method: "POST",
-			mode: "cors",
 			body: JSON.stringify(body),
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "application/json"
 			}
 		})
 		.then(response => response.json())
@@ -100,9 +99,8 @@ export default function Contact(){
 	}//parseEmailResponse
 	function parseError(error){
 
-		const {
-			message = "Whoops, something unexpected went wrong - would you mind using a different form of contact for now?"
-		} = error.payload;
+		const message = (error.payload && error.payload.message) || "Whoops, something unexpected went wrong - would you mind using a different form of contact for now?"; 
+	
 		setStatus({
 			error: true,
 			code: -1,
