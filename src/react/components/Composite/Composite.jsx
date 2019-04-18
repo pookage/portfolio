@@ -40,10 +40,15 @@ export default function Composite(props){
 			const screenshot = vnode.ref.current;
 			const offset     = screenshot.offsetTop;
 
-			scroller.current.scrollTo({
-				top: screenshot.offsetTop,
-				behavior: "smooth"
-			});
+			try {
+				scroller.current.scrollTo({
+					top: screenshot.offsetTop,
+					behavior: "smooth"
+				});
+			} catch(error){
+				scroller.current.scrollTop = screenshot.offsetTop;
+			}
+
 		}
 	}//scrollToActiveScreenshot
 	function syncImageSizes(){
