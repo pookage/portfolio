@@ -30,11 +30,11 @@
 		transition: opacity .3s;
 	}
 
-@media(max-width: 1024px){
+/*@media(max-width: 1024px){
 	.wrapper {
 		scroll-snap-align: none;
 	}
-}
+}*/
 
 
 @keyframes pulse {
