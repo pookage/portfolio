@@ -11,6 +11,7 @@
 		.controls {
 			display: flex;
 			width: 100%;
+			position: relative;
 			justify-content: space-between;
 			align-items: flex-start;
 			font-size: var(--subheading-size);

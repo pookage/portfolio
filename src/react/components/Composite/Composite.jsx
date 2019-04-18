@@ -27,6 +27,7 @@ export default function Composite(props){
 		size,        // (string)[mobile, tablet, desktop]
 		images = [], // (array) of screenshots to render in the composite
 	} = props;
+	let prevPage;
 	const screenshots = images.map(renderScreenshot);
 
 
@@ -69,7 +70,6 @@ export default function Composite(props){
 
 	//RENDER 
 	//------------------------------
-	let prevPage;
 	function renderScreenshot(screenshot, index){
 
 		const {
@@ -81,7 +81,7 @@ export default function Composite(props){
 
 		const image    = useRef();
 		const isActive = index == activeSectionIndex;
-		const newPage  = page != prevPage;
+		const newPage  = page != (prevPage);
 
 		prevPage = page;
 		return(
