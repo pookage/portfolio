@@ -125,7 +125,14 @@
 						.popout .label:hover {
 							text-decoration: none;
 						}
-
+@supports not (clip-path){
+	.wrapper {
+		right: 35vw;
+	}
+	.container {
+		transform: none !important;
+	}
+}
 
 /* TOUCHSCREEN-ONLY DEVICES
 -------------------------------------*/
