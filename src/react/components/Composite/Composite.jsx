@@ -14,9 +14,9 @@ export default function Composite(props){
 		activated: projectActivated 
 	} = useContext(CompositeScroll).state;
 
-	const [ imageSize, setImageSize ]    = useState("small");
+	const [ imageSize, setImageSize ]      = useState("small");
 	const [ hasInteracted, setInteracted ] = useState(false);
-	const scroller                       = useRef();
+	const scroller                         = useRef();
 
 	useEffect(scrollToActiveScreenshot);
 	useEffect(syncImageSizes);
@@ -66,8 +66,10 @@ export default function Composite(props){
 
 		let resolution;
 
-		if(window.innerWidth > 1024)     resolution = "large";
-		else if(window.innerWidth > 767) resolution = "medium";
+		console.log(window.innerWidth)
+
+		if(window.innerWidth > 3000)     resolution = "large";
+		else if(window.innerWidth > 768) resolution = "medium";
 		else                             resolution = "small";
 
 		setImageSize(resolution)
