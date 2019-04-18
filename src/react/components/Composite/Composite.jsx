@@ -18,7 +18,7 @@ export default function Composite(props){
 	const [ hasInteracted, setInteracted ] = useState(false);
 	const scroller                         = useRef();
 
-	useEffect(scrollToActiveScreenshot);
+	useEffect(scrollToActiveScreenshot, [ activeSectionIndex ]);
 	useEffect(syncImageSizes);
 
 
@@ -66,8 +66,6 @@ export default function Composite(props){
 
 		let resolution;
 
-		console.log(window.innerWidth)
-
 		if(window.innerWidth > 3000)     resolution = "large";
 		else if(window.innerWidth > 768) resolution = "medium";
 		else                             resolution = "small";
@@ -90,11 +88,12 @@ export default function Composite(props){
 			page
 		} = screenshot;
 
-		const image   = useRef();
-		const show    = index == activeSectionIndex;
-		const newPage = page != (prevPage);
-		const isCover = index == 0;
-		const activated = projectActivated && (isCover || hasInteracted);
+		const image        = useRef();
+		const show         = index == activeSectionIndex;
+		const newPage      = page != (prevPage);
+		const isCover      = index == 0;
+		const hasNavigated = activeSectionIndex != 0;
+		const activated    = projectActivated && (isCover || hasInteracted || hasNavigated);
 
 		prevPage = page;
 		return(
