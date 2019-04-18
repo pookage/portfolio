@@ -125,7 +125,7 @@
 						.popout .label:hover {
 							text-decoration: none;
 						}
-@supports not (clip-path){
+@supports not (clip-path: polygon(0% 0%, 0% 100%, 50% 100%)){
 	.wrapper {
 		right: 35vw;
 	}
