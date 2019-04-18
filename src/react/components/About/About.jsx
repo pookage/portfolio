@@ -51,7 +51,7 @@ export default function About(){
 						I obsess over perfecting animations, writing a11y-compliant markup, and faithfully implementing designs in a way that'll make your art department and I best buds.
 					</p>
 					<p className={`${font.body} ${s.body}`}>
-						If you're need a bit of extra muscle on a tight project, an injection of energy in this week's sprint, or just a bit of expertise to get your project off the ground, then get in touch! I'm open to all short / medium-term contracts of up to 6-months.
+						If you're in need of a bit of extra muscle on a tight project, an injection of energy in this week's sprint, or just a bit of expertise to get your project off the ground, then get in touch! I'm open to all short / medium-term contracts of up to 6-months.
 					</p>
 				</section>
 				<section 
