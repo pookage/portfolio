@@ -11,11 +11,12 @@ export default function Composite(props){
 	const { 
 		activeSectionIndex, 
 		activeComposite, 
-		activated 
+		activated: projectActivated 
 	} = useContext(CompositeScroll).state;
 
-	const [ imageSize, setImageSize ] = useState("small");
-	const scroller                    = useRef();
+	const [ imageSize, setImageSize ]    = useState("small");
+	const [ hasInteracted, setInteracted ] = useState(false);
+	const scroller                       = useRef();
 
 	useEffect(scrollToActiveScreenshot);
 	useEffect(syncImageSizes);
@@ -71,6 +72,9 @@ export default function Composite(props){
 
 		setImageSize(resolution)
 	}//updateImageSizes
+	function registerInteraction(){
+		if(!hasInteracted) setInteracted(true)
+	}//registerInteraction
 
 
 	//RENDER 
@@ -84,9 +88,11 @@ export default function Composite(props){
 			page
 		} = screenshot;
 
-		const image    = useRef();
-		const isActive = index == activeSectionIndex;
-		const newPage  = page != (prevPage);
+		const image   = useRef();
+		const show    = index == activeSectionIndex;
+		const newPage = page != (prevPage);
+		const isCover = index == 0;
+		const activated = projectActivated && (isCover || hasInteracted);
 
 		prevPage = page;
 		return(
@@ -96,7 +102,7 @@ export default function Composite(props){
 				key={id}>
 				<LazyImage
 					active={activated}
-					className={`${s.image} ${isActive ? s.active : s.inactive}`}	
+					className={`${s.image} ${show ? s.active : s.inactive}`}	
 					alt={description}
 					src={`${src}__${imageSize}.jpg`}
 				/>
@@ -108,7 +114,8 @@ export default function Composite(props){
 
 	return(
 		<section 
-			className={`${s.wrapper} ${s[size]} ${isActive ? s.active : s.inactive}`}>
+			className={`${s.wrapper} ${s[size]} ${isActive ? s.active : s.inactive}`}
+			onScroll={registerInteraction}>
 			<div 
 				className={s.container}
 				ref={scroller}>
