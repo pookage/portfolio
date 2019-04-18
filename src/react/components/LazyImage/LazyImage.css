@@ -1,13 +1,15 @@
 .wrapper {
 	position: relative;
+	scroll-snap-align: start;
+	pointer-events: none;
 }
 	.wrapper::before {
 		content: "Loading...";
 		display: block;
 		position: absolute;
-		top: 50%;
+		top: 1.62em;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateX(-50%);
 		font-size: 1rem;
 		font-family: "Consolas", "Inconsolas", monospace;
 		color: var(--accent-color);
@@ -19,14 +21,21 @@
 		animation: none;
 		opacity: 0;
 	}
-	.wrapper img {
+	.loading img {
 		height: 1em;
 		opacity: 0;
 	}
-	.wrapper.loaded img{
+	.loaded img{
 		opacity: 1;
 		transition: opacity .3s;
 	}
+
+@media(max-width: 1024px){
+	.wrapper {
+		scroll-snap-align: none;
+	}
+}
+
 
 @keyframes pulse {
 	0%, 100% {
