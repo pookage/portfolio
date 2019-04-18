@@ -25,12 +25,14 @@ export default function LazyImage(props) {
 	} = props;
 
 	return(
-		<img
-			src={!!active ? src : ""}
-			className={`${!loaded ? s.loading : s.loaded} ${className}`}
-			onLoad={reveal} 
-			{...remainingProps} 
-		/>
-	);
+		<div className={`${s.wrapper} ${!loaded ? s.loading : s.loaded}`}>
+			<img
+				src={!!active ? src : ""}
+				className={`${className}`}
+				onLoad={reveal} 
+				{...remainingProps} 
+			/>
+		</div>
+	)
 
 }
