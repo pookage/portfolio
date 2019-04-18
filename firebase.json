@@ -1,8 +1,5 @@
 {
   "hosting": {
-    "headers": [
-      { "source":"/index.html", "headers": [{"key": "Cache-Control", "value": "no-cache"}] }
-    ],
     "public": "dist",
     "ignore": [
       "firebase.json",
