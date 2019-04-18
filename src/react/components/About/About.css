@@ -122,6 +122,7 @@
 			}
 		.portrait {
 			width: 100%;
+			min-height: 67vw; 
 			max-width: none;
 			height: auto;
 			position: relative;
