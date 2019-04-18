@@ -64,7 +64,7 @@
 				.input {
 					display: block;
 					width: 100%;
-					padding: var(--input-padding);
+					padding: var(--input-padding) 2.62em var(--input-padding) var(--input-padding);
 					border: 2px solid var(--accent-color);
 					color: var(--base-color);
 					background-color: transparent;
