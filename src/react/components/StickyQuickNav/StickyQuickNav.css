@@ -48,8 +48,10 @@
 						display: block;
 						height: 100%;
 						width: 100%;
-						clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+						
 					}
+
+					/* FOR BROWSERS THAT DON'T SUPPORT CLIP-PATH OR @SUPPORTS*/
 					.arrow::before {
 						transform: scale(1);
 						transition: transform .1s;
@@ -58,6 +60,7 @@
 					.back:hover .arrow::before {
 						transform: scale(0.7);
 					}
+
 					
 					
 			.back:hover,
@@ -135,6 +138,25 @@
 			
 		}
 
+@supports (clip-path: polygon(0% 50%, 100% 0%, 100% 100%)){
+	.arrow::before {
+		background-color: var(--accent-color);
+	}
+	.arrow::after {
+		position: absolute;
+		top: -0.00em;
+		left: 0.045em;
+		transform: scale(0.7);
+		background-color: #222;
+		transition: transform .3s;
+	}
+	.arrow::before,
+	.arrow::after {
+		clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+		background-image: none;
+	}
+}
+
 
 @media(max-width: 1025px){
 	.wrapper {
@@ -167,11 +189,12 @@
 						transform: scale(1);
 					}
 						.arrow::before {
-							display: none;
+							background-image: url(assets/icons/cross__white.svg);
 						}
-						.arrow::after {
-							background-color: var(--base-color);
-						}
+					.label {
+						color: var(--base-color);
+					}
+						
 					
 					.back:hover .arrow,
 					.back:focus .arrow,
@@ -195,6 +218,14 @@
 				.toggle {
 					display: inline-block;
 				}
+	@supports(clip-path: polygon(0% 50%, 100% 0%, 100% 100%)){
+		.arrow::before {
+			display: none;
+		}
+		.arrow::after {
+			background-color: var(--base-color);
+		}
+	}
 }
 @media(max-width: 767px){
 	.wrapper {
@@ -206,31 +237,4 @@
 		.back {
 			margin-bottom: 1em;
 		}
-}
-
-
-@supports (clip-path: polygon(0% 50%, 100% 0%, 100% 100%)){
-	.arrow::before {
-		background-color: var(--accent-color);
-	}
-	.arrow::after {
-		position: absolute;
-		top: -0.00em;
-		left: 0.045em;
-		transform: scale(0.7);
-		background-color: #222;
-		transition: transform .3s;
-	}
-	.arrow::before,
-	.arrow::after {
-		clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-		background-image: none;
-	}
-/*	.back .arrow {
-		background: url(assets/icons/close.svg) center / contain no-repeat;
-	}
-		.back .arrow::before,
-		.back .arrow::after {
-			display: none
-		}*/
 }
