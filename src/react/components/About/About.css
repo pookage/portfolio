@@ -3,7 +3,7 @@
 	width: 100%;
 	min-height: 100vh;
 	--portrait-width: 33vw;
-	--language-size: 20em;
+	--language-size: 25vh;
 }
 	.back {
 		position: absolute;
