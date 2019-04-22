@@ -51,16 +51,15 @@
 						clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 					}
 					.arrow::before {
-						background-color: var(--accent-color);
+						transform: scale(1);
+						transition: transform .1s;
+						background: url(assets/icons/cross.svg) center / contain no-repeat;
 					}
-					.arrow::after {
-						position: absolute;
-						top: -0.00em;
-						left: 0.045em;
+					.back:hover .arrow::before {
 						transform: scale(0.7);
-						background-color: #222;
-						transition: transform .3s;
 					}
+					
+					
 			.back:hover,
 			.back:focus {
 				text-decoration: underline;
@@ -207,4 +206,31 @@
 		.back {
 			margin-bottom: 1em;
 		}
+}
+
+
+@supports (clip-path: polygon(0% 50%, 100% 0%, 100% 100%)){
+	.arrow::before {
+		background-color: var(--accent-color);
+	}
+	.arrow::after {
+		position: absolute;
+		top: -0.00em;
+		left: 0.045em;
+		transform: scale(0.7);
+		background-color: #222;
+		transition: transform .3s;
+	}
+	.arrow::before,
+	.arrow::after {
+		clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+		background-image: none;
+	}
+/*	.back .arrow {
+		background: url(assets/icons/close.svg) center / contain no-repeat;
+	}
+		.back .arrow::before,
+		.back .arrow::after {
+			display: none
+		}*/
 }
