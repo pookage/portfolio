@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useEffect } from "react";
+import IntersectionObserver from 'intersection-observer-polyfill';
 import { CompositeScroll } from "Contexts/CompositeScroll.js";
 import s from "ReactComponents/CompositeViewer/CompositeViewer.css";
 

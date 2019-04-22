@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
+import IntersectionObserver from 'intersection-observer-polyfill';
 import { Page } from "Contexts/Page.js";
 import { CompositeScrollProvider } from "Contexts/CompositeScroll.js";
 import DeviceSelector from "ReactComponents/DeviceSelector/DeviceSelector.jsx";

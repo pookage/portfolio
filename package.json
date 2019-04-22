@@ -45,6 +45,7 @@
   "dependencies": {
     "aframe-react": "^4.4.0",
     "aframe-text-geometry-component": "^0.5.1",
+    "intersection-observer-polyfill": "^0.1.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   }
