@@ -70,9 +70,99 @@ function Github(props){
 	);
 }//Github
 
+function Loading(props){
+	const {
+		className = ""
+	} = props;
+
+	return(
+		<svg
+			className={className} 
+			viewBox="0 0 100 100" 
+			preserveAspectRatio="xMidYMid">
+			<rect 
+				x="17.5" y="30" 
+				width="15" height="40" 
+				fill="#ef2d5e">
+				<animate 
+					attributeName="y" 
+					calcMode="spline" 
+					values="18;30;30" 
+					keyTimes="0;0.5;1" 
+					dur="1" 
+					keySplines="0 0.5 0.5 1;0 0.5 0.5 1" 
+					begin="-0.2s" 
+					repeatCount="indefinite">
+				</animate>
+				<animate 
+					attributeName="height" 
+					calcMode="spline" 
+					values="64;40;40" 
+					keyTimes="0;0.5;1" 
+					dur="1" 
+					keySplines="0 0.5 0.5 1;0 0.5 0.5 1" 
+					begin="-0.2s" 
+					repeatCount="indefinite">
+				</animate>
+			</rect>
+			<rect 
+				x="42.5" y="30" 
+				width="15" height="40" 
+				fill="#ef2d5e">
+				<animate 
+					attributeName="y" 
+					calcMode="spline" 
+					values="20.999999999999996;30;30" 
+					keyTimes="0;0.5;1" 
+					dur="1" 
+					keySplines="0 0.5 0.5 1;0 0.5 0.5 1" 
+					begin="-0.1s" 
+					repeatCount="indefinite">
+				</animate>
+				<animate 
+					attributeName="height" 
+					calcMode="spline" 
+					values="58.00000000000001;40;40" 
+					keyTimes="0;0.5;1" 
+					dur="1" 
+					keySplines="0 0.5 0.5 1;0 0.5 0.5 1" 
+					begin="-0.1s" 
+					repeatCount="indefinite">
+				</animate>
+			</rect>
+			<rect 
+				x="67.5" y="29.9946" 
+				width="15" height="40.0108" 
+				fill="#ef2d5e">
+				<animate 
+					attributeName="y" 
+					calcMode="spline" 
+					values="24;30;30" 
+					keyTimes="0;0.5;1" 
+					dur="1" 
+					keySplines="0 0.5 0.5 1;0 0.5 0.5 1" 
+					begin="0s" 
+					repeatCount="indefinite">
+				</animate>
+				<animate 
+					attributeName="height" 
+					calcMode="spline" 
+					values="52;40;40" 
+					keyTimes="0;0.5;1" 
+					dur="1" 
+					keySplines="0 0.5 0.5 1;0 0.5 0.5 1" 
+					begin="0s" 
+					repeatCount="indefinite">
+				</animate>
+			</rect>
+		</svg>
+	);
+}//Loading
+
 export {
 	Triangle,
 	Twitter,
 	LinkedIn,
-	Github
+	Github,
+	Loading
 }

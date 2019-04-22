@@ -3,45 +3,27 @@
 	scroll-snap-align: start;
 	pointer-events: none;
 }
-	.wrapper::before {
-		content: "Loading...";
+	.loader {
+		content: "";
 		display: block;
+		height: 20%;
+		width: auto;
 		position: absolute;
-		top: 1.62em;
+		top: 50%;
 		left: 50%;
-		transform: translateX(-50%);
-		font-size: 1rem;
-		font-family: "Consolas", "Inconsolas", monospace;
-		color: var(--accent-color);
-		opacity: 0.5;
-		transition: opacity .3s;
-		animation: pulse 1s infinite;
+		transform: translate(-50%, -50%);
 	}
-	.loaded::before {
-		animation: none;
-		opacity: 0;
-	}
+.loading {
+	min-height: 100%;
+}
 	.loading img {
-		height: 1em;
 		opacity: 0;
 	}
 	.loaded img{
 		opacity: 1;
 		transition: opacity .3s;
 	}
-
-/*@media(max-width: 1024px){
-	.wrapper {
-		scroll-snap-align: none;
+	.loaded::before {
+		animation: none;
+		opacity: 0;
 	}
-}*/
-
-
-@keyframes pulse {
-	0%, 100% {
-		opacity: 0.5;
-	}
-	50% {
-		opacity: 1
-	}
-}

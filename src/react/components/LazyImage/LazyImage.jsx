@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Loading } from "Shared/shapes.jsx";
 import s from "ReactComponents/LazyImage/LazyImage.css";
 
 export default function LazyImage(props) {
@@ -25,10 +26,10 @@ export default function LazyImage(props) {
 	} = props;
 
 	return(
-		<div className={`${s.wrapper} ${!loaded ? s.loading : s.loaded}`}>
+		<div className={`${s.wrapper} ${className} ${!loaded ? s.loading : s.loaded}`}>
+			{!loaded && <Loading className={s.loader} />}
 			<img
 				src={!!active ? src : ""}
-				className={`${className}`}
 				onLoad={reveal} 
 				{...remainingProps} 
 			/>

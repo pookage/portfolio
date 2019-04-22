@@ -19,7 +19,7 @@
 		.newPage:not(:first-child) {
 			border-top: 0.25rem dashed var(--accent-color);
 		}
-			.image {
+			.image img{
 				display: block;
 				width: 100%;
 				height: auto;

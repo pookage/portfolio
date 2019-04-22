@@ -96,15 +96,18 @@
 		background-color: #ebf0e9; /* the wall colour in the photo to show whilst the asset loads */
 	}
 		.image {
-			display: block;
 			height: 100%;
-			width: auto;
-			position: absolute;
-			top: 50%;
-			right: 50%;
-			transform: translate(calc(50% + 15vh), -50%);
-			
 		}
+			.image img{
+				display: block;
+				height: 100%;
+				width: auto;
+				position: absolute;
+				top: 50%;
+				right: 50%;
+				transform: translate(calc(50% + 15vh), -50%);
+				
+			}
 
 @media(max-width: 900px){
 	.wrapper {
@@ -122,14 +125,14 @@
 			}
 		.portrait {
 			width: 100%;
-			min-height: 67vw; 
+			min-height: 65vw; 
 			max-width: none;
 			height: auto;
 			position: relative;
 			order: 1;
 			clip-path: none;
 		}
-			.image {
+			.image img{
 				width: 100%;
 				height: auto;
 				position: relative;
