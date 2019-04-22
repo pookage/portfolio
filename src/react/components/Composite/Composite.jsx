@@ -131,12 +131,11 @@ export default function Composite(props){
 		prevPage = page;
 		return(
 			<div
-				className={`${newPage ? s.newPage : ""}`} 
 				ref={image}
 				key={id}>
 				<LazyImage
 					active={activated}
-					className={`${s.image} ${show ? s.active : s.inactive}`}	
+					className={`${s.image} ${show ? s.active : s.inactive} ${newPage ? s.newPage : ""}`}	
 					alt={description}
 					src={`${src}__${imageSize}.jpg`}
 				/>

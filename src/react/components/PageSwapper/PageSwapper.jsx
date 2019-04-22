@@ -11,10 +11,11 @@ export default function PageSwapper(props){
 	const [ rendered, setRendered ] = useState(false);
 	const { page }                  = props;
 	const { activePage }            = state;
+	const { folded }                = state.home;
 
-	useEffect(updateRendered, [ activePage ]);
-	useEffect(updateVisibility, [ activePage ]);
-	useEffect(scrollToTop, [ rendered ]);
+	useEffect(updateRendered, [ activePage, folded ]);
+	useEffect(updateVisibility, [ activePage, folded ]);
+	useEffect(scrollToTop, [ rendered, folded ]);
 
 
 	//PRIVATE VARS
@@ -29,7 +30,8 @@ export default function PageSwapper(props){
 
 	let animationTimer; 
 	const { visible } = state[page];
-	const isActive    = page == activePage;
+	
+	const isActive    = page == activePage && folded;
 	
 
 	//EFFECT HANDLING

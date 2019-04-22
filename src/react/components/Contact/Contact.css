@@ -66,6 +66,8 @@
 					width: 100%;
 					padding: var(--input-padding) 2.62em var(--input-padding) var(--input-padding);
 					border: 2px solid var(--accent-color);
+					border-radius: 0;
+					-webkit-appearance: none;
 					color: var(--base-color);
 					background-color: transparent;
 				}

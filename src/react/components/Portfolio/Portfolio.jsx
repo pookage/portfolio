@@ -18,7 +18,6 @@ export default function Portfolio(props){
 	//PRIVATE VARS
 	//-----------------------------------
 	const { visible } = state.portfolio;
-	const baseDelay   = visible ? 1 : 0; // wait 1 second on the transition in, but not out
 
 
 	//RENDER LOGIC
@@ -30,8 +29,7 @@ export default function Portfolio(props){
 		} = project
 
 		const key   = `sticky__anchor__${safeTitle}`;
-		const itemDelay = Math.min(index * 0.025, 0.3);
-		const delay = baseDelay + itemDelay;
+		const delay = Math.min(index * 0.025, 0.3);
 
 		return(
 			<li 
@@ -51,13 +49,12 @@ export default function Portfolio(props){
 			safeTitle
 		} = project;
 
-		const itemDelay = Math.min(index * 0.1, 0.3)
-		const animationDelay = baseDelay + itemDelay;
+		const delay = Math.min(index * 0.1, 0.3)
 
 		return(
 			<Project
 				key={`${safeTitle}-project`}
-				style={{ transitionDelay: `${animationDelay}s `}}
+				style={{ transitionDelay: `${delay}s `}}
 				{...project} 
 			/>
 		);

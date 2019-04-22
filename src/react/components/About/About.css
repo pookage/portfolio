@@ -16,6 +16,7 @@
 		margin-left: 10vw;
 		padding: 8.8em var(--side-padding);
 		width: calc(100% - var(--portrait-width) - calc(var(--language-size) / 2));
+		max-width: 50vw;
 		position: relative;
 		z-index: 1;
 		flex-direction: column;

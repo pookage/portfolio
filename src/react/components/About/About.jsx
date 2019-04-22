@@ -20,7 +20,6 @@ export default function About(){
 	//PRIVATE VARS
 	//---------------------------------------------
 	const { visible } = state.about;
-	const baseDelay   = visible ? 1 : 0;
 	const resolution  = window.innerWidth > 1024 ? "large" : "small";
 
 	//RENDER
@@ -38,7 +37,7 @@ export default function About(){
 			<div className={`${s.container}`}>
 				<section 
 					className={`${s.ahoy} ${animations.slide} ${visible ? animations.in : animations.out}`}
-					style={{ transitionDelay: `${baseDelay + 0.1}s`}}>
+					style={{ transitionDelay: `${0.1}s`}}>
 					<header>
 						<h1 className={`${font.title} ${s.title}`}>
 							Ahoy
@@ -56,7 +55,7 @@ export default function About(){
 				</section>
 				<section 
 					className={`${s.mentoring} ${animations.slide} ${visible ? animations.in : animations.out}`}
-					style={{ transitionDelay: `${baseDelay + 0.2}s`}}>
+					style={{ transitionDelay: `${0.2}s`}}>
 					<h1 className={`${font.subtitle} ${s.subtitle}`}>
 						Let's Make WebDev Better
 					</h1>
@@ -80,7 +79,7 @@ export default function About(){
 				</section>
 				<footer 
 					className={`${s.socialMedia} ${animations.slide} ${visible ? animations.in : animations.out}`}
-					style={{ transitionDelay: `${baseDelay + 0.3}s`}}>
+					style={{ transitionDelay: `${0.3}s`}}>
 					<ul className={s.networks}>
 						<li className={s.network}>
 							<a 
