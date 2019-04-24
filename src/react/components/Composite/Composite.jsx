@@ -128,9 +128,18 @@ export default function Composite(props){
 		const hasNavigated = activeSectionIndex != 0;
 		const activated    = projectActivated && (isCover || hasInteracted || hasNavigated);
 
+		console.log({
+			projectActivated,
+			isCover,
+			hasNavigated,
+			hasNavigated,
+			activated
+		});
+
 		prevPage = page;
 		return(
 			<div
+				className={s.imageWrapper}
 				ref={image}
 				key={id}>
 				<LazyImage

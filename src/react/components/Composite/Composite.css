@@ -16,15 +16,18 @@
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 	}
-		.newPage:not(:first-child) {
-			border-top: 0.25rem dashed var(--accent-color);
+		.imageWrapper {
+			min-height: 1em;
 		}
-			.image img{
-				display: block;
-				width: 100%;
-				height: auto;
-				transition: opacity .3s;
+			.newPage:not(:first-child) {
+				border-top: 0.25rem dashed var(--accent-color);
 			}
+				.image img{
+					display: block;
+					width: 100%;
+					height: auto;
+					transition: opacity .3s;
+				}
 		
 .wrapper.desktop {
 	--aspect-ratio: 1.79em;
