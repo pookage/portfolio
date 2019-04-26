@@ -16,9 +16,7 @@
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 	}
-		.imageWrapper {
-			min-height: 1em;
-		}
+		.imageWrapper {}
 			.newPage:not(:first-child) {
 				border-top: 0.25rem dashed var(--accent-color);
 			}

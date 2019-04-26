@@ -15,7 +15,7 @@
 		transform: translate(-50%, -50%);
 	}
 .loading {
-	min-height: 100%;
+	min-height: 0.5em
 }
 	.loading img {
 		opacity: 0;
@@ -24,6 +24,7 @@
 		opacity: 1;
 		transition: opacity .3s;
 	}
+.loaded {}
 	.loaded::before {
 		animation: none;
 		opacity: 0;

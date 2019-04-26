@@ -12,6 +12,7 @@ export default function PageSwapper(props){
 	const { page }                  = props;
 	const { activePage }            = state;
 	const { folded }                = state.home;
+	const isActive                  = page == activePage && folded;
 
 	useEffect(updateRendered, [ activePage, folded ]);
 	useEffect(updateVisibility, [ activePage, folded ]);
@@ -30,8 +31,6 @@ export default function PageSwapper(props){
 
 	let animationTimer; 
 	const { visible } = state[page];
-	
-	const isActive    = page == activePage && folded;
 	
 
 	//EFFECT HANDLING
@@ -83,7 +82,7 @@ export default function PageSwapper(props){
 	function tryToRemove(event){
 
 		//if we're animating out...
-		if(!visible){
+		if(!visible && !isActive){
 			//and the element that fired the transitionend wasn't animating in...
 			const leaving = !event.target.classList.contains(animations.in);
 			if(leaving){

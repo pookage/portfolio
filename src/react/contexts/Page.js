@@ -34,7 +34,6 @@ function PageProvider(props){
 	useEffect(syncBrowserNavigation);
 	useEffect(updateBrowserHistory, [ activePage ]);
 	useEffect(updatePageTitle, [ activePage ]);
-	useEffect(scrollToTop, [ activePage ]);
 
 
 	//PRIVATE VARS
@@ -59,9 +58,6 @@ function PageProvider(props){
 		const title    = `${firstLetter.toUpperCase()}${restOfWord.join("")}`;
 		document.title = `POOKAGE.dev | ${title}`;
 	}//updatePageTitle
-	function scrollToTop(){
-		
-	}//scrollToTop	
 
 	//EVENT HANDLING
 	//-----------------------------------
