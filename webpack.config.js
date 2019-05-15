@@ -1,7 +1,6 @@
 //dependencies
 const path                    = require("path");
 const HtmlWebpackPlugin       = require('html-webpack-plugin');
-const DynamicCdnWebpackPlugin = require('dynamic-cdn-webpack-plugin');
 
 //folders
 const src    = path.resolve(__dirname, "src");
@@ -29,8 +28,7 @@ function buildConfig(env, args){
 							removeComments: true,
 							collapseWhitespace: true
 						}
-					}),
-					new DynamicCdnWebpackPlugin()
+					})
 				]
 			}
 			break;
@@ -44,8 +42,7 @@ function buildConfig(env, args){
 				plugins: [
 					new HtmlWebpackPlugin({
 						template: `${src}/index.html`
-					}),
-					new DynamicCdnWebpackPlugin()
+					})
 				],
 				devServer: {
 					contentBase: "./dist",
@@ -67,7 +64,7 @@ function buildConfig(env, args){
 		output: {
 			filename: "bundle.js",
 			path: dist,
-			 publicPath: "/"
+			publicPath: "/"
 		},
 		module: {
 			rules: [
