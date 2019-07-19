@@ -5,4 +5,4 @@ Personal portfolio site for pookage.dev
 - 3D interactions
 - Articles
 - Newsfeed
-- Contact form
+- Contact forms
