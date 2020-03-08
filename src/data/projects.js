@@ -22,6 +22,7 @@ export const projects = [
 			"A companion site for Park Chan-Wook's 2016 film of the same name, with heavy emphasis placed on its artwork matching aesthetic.",
 			"Winner of the 'Best Online Campaign of the Year' Screen Award, 2017."
 		],
+		showreel: "https://www.youtube.com/watch?v=dk1RPKV2_6I",
 		images: {
 			desktop: [
 				{
@@ -196,6 +197,7 @@ export const projects = [
 		description: [
 			"A media-rich promotional site for Luca Guadagnino's 2018 remake of Suspiria. Awarded 'Honourable Mention' for Awwwards SOTD, nov 2018."
 		],
+		showreel: "https://www.youtube.com/watch?v=P191kqHWc_A",
 		images: {
 			desktop: [
 				{
@@ -416,6 +418,7 @@ export const projects = [
 		description: [
 			"A site to showcase the artwork and artists commissioned for the Art Book to Jordan Peele's 2017 film 'Get Out'."
 		],
+		showreel: "https://www.youtube.com/watch?v=wHaaK3MMnXI",
 		images: {
 			desktop: [
 				{
@@ -562,6 +565,7 @@ export const projects = [
 		description: [
 			"A facial-recognition-powered AR quiz, in which your face (from webcam or file-upload) becomes more hairy for each question that you answer correctly."
 		],
+		showreel: "https://www.youtube.com/watch?v=qV44yQdp5eY",
 		images: {
 			desktop: [
 				{
@@ -781,6 +785,7 @@ export const projects = [
 		description: [
 			"A map / exploration-based media site to share clips and stills from the 2018 horror flick: Hell Fest."
 		],
+		showreel: "https://www.youtube.com/watch?v=yE_Lpsj4fmE",
 		images: {
 			desktop: [
 				{
@@ -876,6 +881,7 @@ export const projects = [
 		description: [
 			"A media-rich promotional site for the 2018 film: Life Itself."
 		],
+		showreel: "https://www.youtube.com/watch?v=LxW9XS0i_hg",
 		images: {
 			desktop: [
 				{
@@ -985,6 +991,7 @@ export const projects = [
 		description: [
 			"A desktop-only teaser site for the 2017 film of the same name."
 		],
+		showreel: "https://www.youtube.com/watch?v=SgvPhNgvlhE",
 		images: {
 			desktop: [
 				{

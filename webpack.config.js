@@ -76,13 +76,7 @@ function buildConfig(env, args){
 						options: {
 							presets: [
 								[
-									"@babel/preset-env", {
-										"targets": {
-											browsers: [
-												"> 2%, not dead"
-											]
-										}
-									},
+									"@babel/preset-env"
 								],
 								"@babel/preset-react"
 							],

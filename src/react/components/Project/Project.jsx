@@ -25,6 +25,7 @@ export default function Project(props){
 		title,       // (string) name of the project
 		safeTitle,   // (string) a url-safe name for the project
 		description, // (string) a short description of what the project was about
+		showreel,    // (string) url to a youtube video demoing the site
 		images,      // (object) containing arrays of screenshots for desktop / mobile / tablet
 		pages,       // (array) of objects containing scroll co-ordinates for each page
 		tags,        // (array) of strings for each tech used on the project
@@ -143,7 +144,8 @@ export default function Project(props){
 				<CompositeViewer
 					name={title}
 					safeName={safeTitle}
-					pages={pages}>
+					pages={pages}
+					demo={showreel}>
 					<Composite size="desktop" images={images.desktop} />
 					<Composite size="tablet" images={images.tablet} />
 					<Composite size="mobile" images={images.mobile} />
